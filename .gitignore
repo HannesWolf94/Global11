@@ -143,8 +143,8 @@ atlassian-ide-plugin.xml
 
 ######################
 
+*.tern-project
  
-
 *.pydevproject
 
 .project
