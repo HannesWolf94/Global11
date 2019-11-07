@@ -1,0 +1,29 @@
+nav {
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	float: centre;
+	color: white;
+ 	padding: 14px 16px;
+    text-decoration: none;
+}	
+nav a {
+    color: white;
+ 	padding: 14px 16px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #005f5f;
+}   
+h1 {
+	font-size: 45px;
+	font-family: felix titling;
+	padding: 5px;
+}
+h2 {
+	font-size: 30px;
+	font-family: felix titling;
+	padding: 5px;
+}
