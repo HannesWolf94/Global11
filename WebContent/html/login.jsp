@@ -1,14 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="head.jspf" %> 
-<link rel="stylesheet" type="text/css" href="../style/style.css">
-<form action = "../LoginServlet" method="GET">
-    	<h2>Login</h2><br>
-	    <label for ="e"> Email </label><br>
-	    <input type="email" placeholder="Email" name="email" id ="e" required autofocus><br>
-	    <label  for ="p"> Passwort </label><br>
-	    <input type="password" placeholder="Passwort" name="passwort" id ="p" required><br>
-	    <button type="submit" id="loginButton">Login!</button><br>
-    <br>
-    <a href="registrierung.jsp"> Noch kein Konto? Jetzt registrieren!</a>
-</form>
-<%@ include file="footer.jspf" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset = UTF-8">
+<title>Login</title>
+</head>
+<body>
+
+	<form action="../Login" method="post">
+		<div>
+		<label for="name"> Name:</label> <input type="text" name="name">
+		<label for="password"> Password:</label> <input type="text" name= "password">
+		<button class="button" type="submit" value ="Submit"> login </button>
+		</div>
+	
+	</form>
+
+</body>
+</html>
