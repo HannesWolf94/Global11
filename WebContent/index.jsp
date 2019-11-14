@@ -3,8 +3,8 @@
 
 <html lang="de">
     <head>
-  		<meta http-equiv="Content-Type" charset="ISO-8859-1"> <!-- ka was des http-Zeug is!! -->
-  		<titel> Global 11 </titel>
+  		<meta http-equiv="Content-Type" charset="UTF-8"> <!-- ka was des http-Zeug is!! -->
+  		<title>Startseite</title>
     </head>
 
     <body>
