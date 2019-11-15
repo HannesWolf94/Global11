@@ -36,8 +36,6 @@ public class Login extends HttpServlet {
 
 		anmelden(request, response);
 
-		PrintWriter out = response.getWriter();
-
 		String email = request.getParameter("email");
 		String pass = request.getParameter("password");
 

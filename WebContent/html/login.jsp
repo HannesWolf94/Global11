@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form action="../Login" method="post">
+	<form action="${pageContext.request.contextPath}/Login" method="post">
 		<div>
 		<label for="email"> Name:</label> <input type="text" name="email">
 		<label for="password"> Password:</label> <input type="text" name= "password">

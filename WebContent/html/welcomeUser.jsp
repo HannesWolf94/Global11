@@ -7,7 +7,9 @@
 	<title>Welcome User</title>
 </head>
 <body>
-   <a href="logout.jsp"> Logout</a>
+    	<nav>
+            <%@include file="../jspf/navigation.jspf"%>
+    	</nav>
 	<h1> you are login successfully </h1>
 	
 </body>
