@@ -5,17 +5,18 @@
     <head>
     	<base href="${pageContext.request.requestURI}" />
   		<meta http-equiv="Content-Type" charset="UTF-8"> <!-- ka was des http-Zeug is!! -->
-  		<title>Startseite</title>
+  		<title>Userverwaltung</title>
     </head>
 
     <body>
-    <a href="index.jsp"> Home</a>
+    <a href="../index.jsp"> Home</a>
 
-	<a href="html/login.jsp"> Login</a>
-
-	<a href="html/logout.jsp"> Logout</a>
+	<a href="login.jsp"> Login</a>
 	
-	<a href="html/registrierung.jsp"> Registrierung </a>
+	<a href="logout.jsp"> Logout</a>
+	
+	
+	
 	
     </body>
 </html>

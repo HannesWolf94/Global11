@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome User</title>
+	<base href="${pageContext.request.requestURI}" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Welcome User</title>
 </head>
 <body>
    <a href="logout.jsp"> Logout</a>
