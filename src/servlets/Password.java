@@ -21,14 +21,14 @@ import beans.User;
 /**
  * Servlet implementation class passwordServlet
  */
-@WebServlet(name = "Password")
+@WebServlet("Password")
 public class Password extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup ="java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
        
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String newPassword = request.getParameter("newPassword");
 		String passwordConfirmation = request.getParameter("passwordConfirmation");
@@ -67,11 +67,11 @@ public class Password extends HttpServlet {
 		
 		// Kein Fehler entdeckt: DB-Zugriff
 		try(Connection conn = ds.getConnection(); 
-			PreparedStatement pstm = conn.prepareStatement("UPDATE user"
+			PreparedStatement pstm = conn.prepareStatement("UPDATE users"
 					+ " SET password = ?"
 					+ "WHERE email = ?");){
 
-			pstm.setString(1,newPassword);
+			pstm.setString(1, newPassword);
 			pstm.setString(2, user.getEmail());
 			pstm.executeUpdate();
 			conn.close();
@@ -84,12 +84,8 @@ public class Password extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
 }

@@ -25,11 +25,6 @@ public class UserverwaltungAdmin extends HttpServlet {
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;   
 
-    public UserverwaltungAdmin() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -52,7 +47,8 @@ public class UserverwaltungAdmin extends HttpServlet {
 		List<UserInfoAdmin> userverwaltungAdminList = new ArrayList<UserInfoAdmin>(); 
         try (Connection con = ds.getConnection();
                 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM users")) {
-               try (ResultSet rs = pstmt.executeQuery()) {
+        	
+        	try (ResultSet rs = pstmt.executeQuery()) {
                    while (rs != null && rs.next()) {
                        UserInfoAdmin form = new UserInfoAdmin();
 
