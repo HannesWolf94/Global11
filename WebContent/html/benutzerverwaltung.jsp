@@ -10,7 +10,7 @@
 <title>Profil</title>
 </head>
 <body>
-		<form id="password" action="/Password" method="post">
+		<form id="password" action="${pageContext.request.contextPath}/Password" method="post">
 			<fieldset>
 				<legend>Passwort ändern</legend>
 				<div>
@@ -21,20 +21,16 @@
 				<div>
 					<label for="newPassword"> new Password : </label> <br> <input
 						type="password" name="newPassword" id="newPassword" size="10"
-						maxlength="10" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}"
-						title="Das Passwort muss mindestens ein Großbuchstabe,ein Kleinbuchstabe und eine Zahl enthalten und die Länge des Passwort ist mindestens 4 Zeichen lang"
-						required>
+						maxlength="10" required>
 				</div>
 				<div>
 					<label for="passwordConfirmation"> new Password
 						Confirmation: </label><br> <input type="password"
 						id="passwordConfirmation" name="passwordConfirmation" size="10"
-						maxlength="10" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}"
-						title="Das Passwort muss mindestens ein Großbuchstabe,ein Kleinbuchstabe und eine Zahl enthalten und die Länge des Passwort ist mindestens 4 Zeichen lang"
-						required>
+						maxlength="10" required>
 				</div>
 				<div>
-					<button class="button" name="submit" type="submit">Passwort ändern</button>
+					<button class="button" name="submit" type="submit"> Passwort ändern</button>
 				</div>
 			</fieldset>
 
