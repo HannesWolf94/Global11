@@ -10,13 +10,11 @@
 	<header>
 		<h1>Passwort erfolgreich geändert</h1>
 	</header>
-		<main>
 		<div>
 			<h3>Passwort wurde erfolgreich geändert</h3>
 			<form action="benutzerverwaltung.jsp">
 				<button class="button" type="submit" value ="Submit"> Weiter zur Profil </button>
 			</form>
 		</div>
-		</main>
 </body>
 </html>

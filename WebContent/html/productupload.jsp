@@ -9,7 +9,6 @@
 <body>
 	<form action="../Produktupload" method="post">
 		<div>
-		<label for="id"> ID:</label> <input type="text" name="id"><br />
 			<label for="label"> Label:</label> <input type="text" name="label"><br />
 			<label for="type"> Typ:</label> <input type="text" name="type"><br />
 				 <label for="colour"> Farbe:</label> <input type="text" name="colour"><br />
