@@ -34,12 +34,11 @@ public class Produktupload extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Product form = new Product();
-		form.setId(request.getParameter("id"));
 		form.setLabel(request.getParameter("label"));
 		form.setType(request.getParameter("type"));
 		form.setColour(request.getParameter("colour"));
-		form.setPrice(request.getParameter("price"));
-		form.setSize(request.getParameter("size"));
+		form.setPrice(Double.parseDouble(request.getParameter("price")));
+		form.setSize(Integer.parseInt(request.getParameter("size")));
 		form.setImage(request.getParameter("image"));
 		speichern(form);
 		response.sendRedirect("html/newProduct.jsp");
@@ -49,14 +48,13 @@ public class Produktupload extends HttpServlet {
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO product (prod_id, prod_label, prod_type, prod_colour, prod_price, prod_size, prod_image) VALUES (?, ?, ?, ?, ?, ?, ?)")) {
-			pstmt.setInt(1, form.getId());
-			pstmt.setString(2, form.getLabel());
-			pstmt.setString(3, form.getType());
-			pstmt.setString(4, form.getColour());
-			pstmt.setDouble(5, form.getPrice());
-			pstmt.setInt(6, form.getSize());
-			pstmt.setString(7, form.getImage());
+						"INSERT INTO product (prod_label, prod_type, prod_colour, prod_price, prod_size, prod_image) VALUES (?, ?, ?, ?, ?, ?)")) {
+			pstmt.setString(1, form.getLabel());
+			pstmt.setString(2, form.getType());
+			pstmt.setString(3, form.getColour());
+			pstmt.setDouble(4, form.getPrice());
+			pstmt.setInt(5, form.getSize());
+			pstmt.setString(6, form.getImage());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
