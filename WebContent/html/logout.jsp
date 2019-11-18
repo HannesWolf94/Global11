@@ -1,20 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-	<base href="${pageContext.request.requestURI}" />
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Logout</title>
+<base href="${pageContext.request.requestURI}" />
+<title>Abmelden</title>
 </head>
 <body>
-
-<%
-
-session.invalidate();
-response.sendRedirect("../index.jsp");
-%>
-
-
+	<header>
+		<h1>Abmelden</h1>
+	</header>
+	<div>
+		<form method="post" action="/Logout">
+			<h3>Sie haben sich erfolgreich ausgeloggt</h3>
+		</form>
+		<form action=${pageContext.request.contextPath}/index.jsp>
+			<button class="button" type="submit" value ="Submit"> Weiter zur Startseite </button>
+		</form>
+	</div>
+	
 </body>
 </html>
+l>

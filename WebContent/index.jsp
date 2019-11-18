@@ -18,7 +18,11 @@
 
 	<a href="html/logout.jsp"> Logout</a>
 	
-	<a href="html/registrierung.jsp"> Registrierung </a> -->
+	<a href="html/productupload.jsp"> Produkt Upload</a>
+	
+	<a href="html/registrierung.jsp"> Registrierung </a>
+	
+	<a href="html/benutzerverwaltung.jsp"> Benutzerverwaltung </a> -->
 	
     </body>
 </html>
