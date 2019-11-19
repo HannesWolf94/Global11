@@ -12,13 +12,6 @@
     	<nav>
             <%@include file="jspf/navigation.jspf"%>
     	</nav>
-   <!--  <a href="index.jsp"> Home</a>
 
-	<a href="html/login.jsp"> Login</a>
-
-	<a href="html/logout.jsp"> Logout</a>
-	
-	<a href="html/registrierung.jsp"> Registrierung </a> -->
-	
     </body>
 </html>
