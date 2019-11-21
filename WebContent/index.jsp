@@ -1,6 +1,3 @@
-<%@page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-
 <html lang="de">
     <head>
     	<base href="${pageContext.request.requestURI}" />
@@ -14,4 +11,7 @@
     	</nav>
 
     </body>
+    <footer>
+                <%@include file="jspf/footer.jspf"%>
+    </footer>
 </html>
