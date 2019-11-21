@@ -11,8 +11,8 @@
 
 	<form action="${pageContext.request.contextPath}/Login" method="post">
 		<div>
-		<label for="email"> Name:</label> <input type="text" name="email">
-		<label for="password"> Password:</label> <input type="text" name= "password">
+		<label for="email"> Name:</label> <input type="text" name="email" id="email">
+		<label for="password"> Password:</label> <input type="password" name= "password" id="password">
 		<button class="button" type="submit" value ="Submit"> login </button>
 		</div>
 	
