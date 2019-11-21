@@ -1,5 +1,5 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html lang="de">
@@ -18,7 +18,7 @@
 	</nav>
 	<form id="UserverwaltungAdmin"
 		action="${pageContext.request.contextPath}/UserverwaltungAdmin"
-		method="post">
+		method="POST">
 		<button name="button" id="button" type="submit">Refresh</button>
 
 		<table>
