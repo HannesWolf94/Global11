@@ -88,7 +88,4 @@ public class UserInfoAdmin implements Serializable  {
 	    public void setUserAdmin(int userAdmin) {
 	        this.userAdmin = userAdmin;
 	    }
-	    
-
-
 }
