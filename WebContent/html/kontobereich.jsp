@@ -32,7 +32,7 @@
 				<div>
 					<button class="button" name="submit" type="submit">Daten ändern und
 						speichern</button>
-					<button class="button" name="reset" type="reset">Zurücksetzten</button>
+					<button class="button" name="reset" type="reset">Zurücksetzen</button>
 				</div>
 			</fieldset>
 		</form>
