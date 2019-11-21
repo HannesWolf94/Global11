@@ -19,6 +19,7 @@ public class User implements Serializable {
 	private String lastName;
 	private String email;
 	private String password;
+	private String passwordRepeat;
 	private String street; 
 	private String city; 
 
@@ -57,6 +58,12 @@ public class User implements Serializable {
 	}
 	public void setCity(String city) {
 		this.city = city; 
+	}
+	public String getPasswordRepeat() {
+		return passwordRepeat;
+	}
+	public void setPasswordRepeat(String passwordRepeat) {
+		this.passwordRepeat = passwordRepeat;
 	}
 	
 
