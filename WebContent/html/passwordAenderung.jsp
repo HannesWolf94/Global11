@@ -12,7 +12,7 @@
 	</header>
 		<div>
 			<h3>Passwort wurde erfolgreich geändert</h3>
-			<form action="benutzerverwaltung.jsp">
+			<form action="kontobereich.jsp">
 				<button class="button" type="submit" value ="Submit"> Weiter zur Profil </button>
 			</form>
 		</div>

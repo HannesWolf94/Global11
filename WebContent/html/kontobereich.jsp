@@ -7,9 +7,35 @@
 <html lang="de">
 <head>
 <base href="${pageContext.request.requestURI}" />
-<title>Profil</title>
+<title>Kontobereich</title>
 </head>
 <body>
+
+<form action="${pageContext.request.contextPath}/Kontobereich" method="post">
+			<fieldset>
+				<legend> Persönliche Daten bearbeiten</legend>
+				<div>
+					<label for="firstName"> Vorname </label><br> <input
+						name="firstName" id="firstName" type="text"
+						value="${user.firstname}">
+				</div>
+				<div>
+					<label for="lastName">Lastname: </label><br> <input
+						name="lastName" type="text" id="lastName"
+						value="${user.lastname}">
+				</div>
+				<div>
+					<label for="email"> E-Mail : </label> <br> <input name="email"
+						type="email" id="email"
+						value="${user.email}">
+				</div>
+				<div>
+					<button class="button" name="submit" type="submit">Daten ändern und
+						speichern</button>
+					<button class="button" name="reset" type="reset">Zurücksetzten</button>
+				</div>
+			</fieldset>
+		</form>
 		<form id="password" action="${pageContext.request.contextPath}/Password" method="post">
 			<fieldset>
 				<legend>Passwort ändern</legend>
