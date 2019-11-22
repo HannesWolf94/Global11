@@ -66,8 +66,6 @@ public class UserverwaltungAdmin extends HttpServlet {
 				userverwaltungAdminList.add(form);
 			}
 
-			userverwaltungAdminList.stream().forEach(u -> System.out.println(u.getUserFirstName()));
-			
 			request.setAttribute("userverwaltungAdminList", userverwaltungAdminList);
 			con.close();
 		} catch (Exception ex) {
