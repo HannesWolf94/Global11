@@ -19,8 +19,6 @@
 	<form id="UserverwaltungAdmin"
 		action="${pageContext.request.contextPath}/UserverwaltungAdmin"
 		method="POST">
-		<button name="button" id="button" type="submit">Refresh</button>
-
 		<table>
 			<tbody>
 				<tr>
@@ -35,17 +33,17 @@
 				<c:forEach items="${userverwaltungAdminList}" var="userverwaltung">
 					<tr>
 						<td>${userverwaltung.userId}</td>
-						<td><input type="text" name="userEmail" id="userEmail" value="${userverwaltung.userEmail}"></td>
-						<td><input type="text" name="userFirstName" id="userFirstName" value="${userverwaltung.userFirstName}"></td>
-						<td><input type="text" name="userLastName" id="userLastName" value="${userverwaltung.userLastName}"></td>
-						<td><input type="text" name="userStreet" id="userStreet" value="${userverwaltung.userStreet}"></td>
-						<td><input type="text" name="userCity" id="userCity" value="${userverwaltung.userCity}"></td>
+						<td>${userverwaltung.email}</td>
+						<td><input type="text" name="userFirstName" id="userFirstName" value="${userverwaltung.firstName}"></td>
+						<td><input type="text" name="userLastName" id="userLastName" value="${userverwaltung.lastName}"></td>
+						<td><input type="text" name="userStreet" id="userStreet" value="${userverwaltung.street}"></td>
+						<td><input type="text" name="userCity" id="userCity" value="${userverwaltung.city}"></td>
 						<td><input type="checkbox" name="userAdmin" id="userAdmin" value="${userverwaltung.userAdmin}"></td>
-						<td><button name="button" id="button" type="submit"> ändern </button></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<button name="button" id="button" type="submit" action="UserverwaltungAdmin" > ändern </button>
 	</form>
 <div id="footer">
 		<%@include file="../jspf/footer.jspf"%>

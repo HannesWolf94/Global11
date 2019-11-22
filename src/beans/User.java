@@ -14,15 +14,25 @@ import javax.ejb.Stateless;
 @Stateless
 @LocalBean
 public class User implements Serializable {
-
+	
+	private int userId;
 	private String firstName;
 	private String lastName;
-	private String email;
+	private String email; 
 	private String password;
 	private String passwordRepeat;
 	private String street; 
 	private String city; 
+	private int userAdmin; 
 
+	public int getUserId() {
+        return userId;
+    }
+    
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -64,6 +74,12 @@ public class User implements Serializable {
 	}
 	public void setPasswordRepeat(String passwordRepeat) {
 		this.passwordRepeat = passwordRepeat;
+	}
+	 public int getUserAdmin() {
+	    return userAdmin;
+	}
+	 public void setUserAdmin(int userAdmin) {
+	    this.userAdmin = userAdmin;
 	}
 	
 

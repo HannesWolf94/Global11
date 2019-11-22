@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.sql.*;
-import beans.UserInfoAdmin;
+import beans.User;
 
 @WebServlet("UserverwaltungAdmin")
 public class UserverwaltungAdmin extends HttpServlet {
@@ -32,34 +32,34 @@ public class UserverwaltungAdmin extends HttpServlet {
 			throws ServletException, IOException {
 		String sql = "SELECT * FROM users";
 
-		ArrayList<UserInfoAdmin> userverwaltungAdminList = new ArrayList<>();
+		ArrayList<User> userverwaltungAdminList = new ArrayList<>();
 		try {
 			final Connection con = ds.getConnection();
 			PreparedStatement pstm = con.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
 
 			int userId;
-			String userEmail;
-			String userFirstName;
-			String userLastName;
-			String userStreet;
-			String userCity;
+			String email;
+			String firstName;
+			String lastName;
+			String street;
+			String city;
 			int userAdmin;
 
 			while (rs.next()) {
-				UserInfoAdmin form = new UserInfoAdmin();
+				User form = new User();
 				userId = rs.getInt("user_id");
 				form.setUserId(userId);
-				userEmail = rs.getString("email");
-				form.setUserEmail(userEmail);
-				userFirstName = rs.getString("first_name");
-				form.setUserFirstName(userFirstName);
-				userLastName = rs.getString("last_name");
-				form.setUserLastName(userLastName);
-				userStreet = rs.getString("street");
-				form.setUserStreet(userStreet);
-				userCity = rs.getString("city");
-				form.setUserCity(userCity);
+				email = rs.getString("email");
+				form.setEmail(email);
+				firstName = rs.getString("first_name");
+				form.setFirstName(firstName);
+				lastName = rs.getString("last_name");
+				form.setLastName(lastName);
+				street = rs.getString("street");
+				form.setStreet(street);
+				city = rs.getString("city");
+				form.setCity(city);
 				userAdmin = rs.getInt("admin");
 				form.setUserAdmin(userAdmin);
 
