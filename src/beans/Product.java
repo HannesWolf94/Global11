@@ -11,6 +11,7 @@ import javax.ejb.Stateless;
 @LocalBean
 public class Product implements Serializable {
 
+	private int	prodId;
 	private String label;
 	private String type;
 	private String colour;
@@ -54,6 +55,12 @@ public class Product implements Serializable {
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public int getProdId() {
+		return prodId;
+	}
+	public void setProdId(int prodId) {
+		this.prodId = prodId;
 	}
 
 
