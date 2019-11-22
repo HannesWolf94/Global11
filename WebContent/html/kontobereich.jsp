@@ -42,7 +42,7 @@
 				<div>
 					<button class="button" name="submit" type="submit">Daten ändern und
 						speichern</button>
-					<button class="button" name="reset" type="reset">Zurücksetzen</button>
+					<button class="button" name="reset" type="reset">zurücksetzen</button>
 				</div>
 		</form>
 		<form id="password" action="${pageContext.request.contextPath}/Password" method="post">
@@ -64,7 +64,20 @@
 				<div>
 					<button class="button" name="submit" type="submit"> Passwort ändern</button>
 				</div>
-		
+		</form>
+		<form method="post" action="${pageContext.request.contextPath}/AccountLoeschen">
+			<fieldset>
+				<div>
+					<label for="email"> Account löschen :</label> <input type="text"
+						name="email" id="email"
+						placeholder="Bitte Ihre Email eingeben" required>
+
+				</div>
+				<div>
+					<button class="button" name="submit" type="submit">löschen</button>
+					<button class="button" name="Reset" type="reset">zurücksetzen</button>
+				</div>
+			</fieldset>
 		</form>
 		<br>
 <div id="footer">
