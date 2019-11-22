@@ -7,14 +7,20 @@
 <title>Password ändern</title>
 </head>
 <body>
-	<header>
+	<div id="header">
+		<%@include file="../jspf/header.jspf"%>
+	</div>
+
 		<h1>Passwort erfolgreich geändert</h1>
-	</header>
+
 		<div>
 			<h3>Passwort wurde erfolgreich geändert</h3>
 			<form action="kontobereich.jsp">
 				<button class="button" type="submit" value ="Submit"> Weiter zur Profil </button>
 			</form>
 		</div>
+			<div id="footer">
+		<%@include file="../jspf/footer.jspf"%>
+	</div>
 </body>
 </html>

@@ -8,6 +8,9 @@
 <script type="text/javascript" src="../js/regiPwCheck.js"></script>
 </head>
 <body>
+	<div id="header">
+		<%@include file="../jspf/header.jspf"%>
+	</div>
 	<form action="../Registrierung" method="post">
 		<div>
 			<label for="email"> email:</label> <input type="email" name="email" id="email"><br />
@@ -27,6 +30,8 @@
 
 		</div>
 	</form>
-
+<div id="footer">
+		<%@include file="../jspf/footer.jspf"%>
+	</div>
 </body>
 </html>

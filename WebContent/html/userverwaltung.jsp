@@ -10,12 +10,12 @@
 </head>
 
 <body>
-	<header>
+<div id="header">
+		<%@include file="../jspf/header.jspf"%>
+	</div>
+
 		<h1>Userverwaltung</h1>
-	</header>
-	<nav>
-		<%@include file="../jspf/navigation.jspf"%>
-	</nav>
+
 	<form id="UserverwaltungAdmin"
 		action="${pageContext.request.contextPath}/UserverwaltungAdmin"
 		method="POST">
@@ -23,7 +23,6 @@
 
 		<table>
 			<tbody>
-				<h2>Userverwaltung</h2>
 				<tr>
 					<th>ID</th>
 					<th>Email</th>
@@ -49,6 +48,8 @@
 			</tbody>
 		</table>
 	</form>
-
+<div id="footer">
+		<%@include file="../jspf/footer.jspf"%>
+	</div>
 </body>
 </html>
