@@ -8,6 +8,9 @@
 	<title>Login</title>
 </head>
 <body>
+<div id="header">
+		<%@include file="../jspf/header.jspf"%>
+	</div>
 
 	<form action="${pageContext.request.contextPath}/Login" method="post">
 		<div>
@@ -17,6 +20,8 @@
 		</div>
 	
 	</form>
-
+	<div id="footer">
+		<%@include file="../jspf/footer.jspf"%>
+	</div>
 </body>
 </html>

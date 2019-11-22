@@ -11,9 +11,11 @@
 	<div id="header">
 		<%@include file="jspf/header.jspf"%>
 	</div>
+	<h1>GLOBAL 11 - Ihr Webshop für Fußballschuhe</h1>
+	<div><img src="img/Start.jpg" width=800 height=400 alt="start" class="responsive"></div>
 	<p class="blocksatz">Wir von Global 11 begrüßen dich recht herzlich
 		in unserem Sport Online Shop und wünschen dir viel Spaß beim Shoppen.
-		Bei uns findest du eine reichhaltige Artikel Auswahl rund um das Thema
+		Bei uns findest du eine reichhaltige Artikelauswahl rund um das Thema
 		Fußballschuhe.</p>
 
 	<nav class="nav">
