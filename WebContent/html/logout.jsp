@@ -7,6 +7,9 @@
 <title>Abmelden</title>
 </head>
 <body>
+<div id="header">
+		<%@include file="../jspf/header.jspf"%>
+	</div>
 	<header>
 		<h1>Abmelden</h1>
 	</header>
@@ -18,6 +21,8 @@
 			<button class="button" type="submit" value ="Submit"> Weiter zur Startseite </button>
 		</form>
 	</div>
-	
+		<div id="footer">
+		<%@include file="../jspf/footer.jspf"%>
+	</div>
 </body>
 </html>

@@ -48,7 +48,7 @@
 			</datalist>
 			<label for="image"> Bild: </label> <input type="file" name="image"
 				id="image"><br />
-			<button class="button" type="submit" value="Submit">upload</button>
+			<button class="button" type="submit" value="submit">upload</button>
 			<button class="button" name="Reset" type="reset">zurücksetzen</button>
 
 		</div>
