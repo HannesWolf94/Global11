@@ -54,7 +54,6 @@ public class Kontobereich extends HttpServlet {
 		String city = benutzer.getCity();
 		
 		
-		
 
 		try {
 			Connection conn = ds.getConnection();
@@ -63,8 +62,8 @@ public class Kontobereich extends HttpServlet {
 
 			pstm.setString(1, dbCheck(firstName, firstnameDb));
 			pstm.setString(2, dbCheck(lastName, lastnameDb));
-			pstm.setString(2, dbCheck(street, streetDb));
-			pstm.setString(2, dbCheck(city, cityDb));
+			pstm.setString(3, dbCheck(street, streetDb));
+			pstm.setString(4, dbCheck(city, cityDb));
 			pstm.executeUpdate();
 			conn.close();
 		}
