@@ -37,7 +37,10 @@ public class Kontobereich extends HttpServlet {
 		// aus der session
 		String firstnameDb = user.getFirstName();
 		String lastnameDb = user.getLastName();
+		String streetDb = user.getStreet();
+		String cityDb = user.getCity();
 		String emailDb = user.getEmail();
+		
 		
 		// aus dem formular
 		User benutzer = new User();
@@ -45,16 +48,23 @@ public class Kontobereich extends HttpServlet {
 		String firstName = benutzer.getFirstName();
 		benutzer.setLastName(request.getParameter("lastName"));
 		String lastName = benutzer.getLastName();
+		benutzer.setStreet(request.getParameter("street"));
+		String street = benutzer.getStreet();
+		benutzer.setCity(request.getParameter("city"));
+		String city = benutzer.getCity();
+		
 		
 		
 
 		try {
 			Connection conn = ds.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(
-					"UPDATE user" + " SET first_name = ?, last_name = ? " + "WHERE email = ?");
+					"UPDATE users" + " SET first_name = ?, last_name = ?, street = ?, city = ? " + "WHERE email = ?");
 
 			pstm.setString(1, dbCheck(firstName, firstnameDb));
 			pstm.setString(2, dbCheck(lastName, lastnameDb));
+			pstm.setString(2, dbCheck(street, streetDb));
+			pstm.setString(2, dbCheck(city, cityDb));
 			pstm.executeUpdate();
 			conn.close();
 		}
@@ -64,7 +74,7 @@ public class Kontobereich extends HttpServlet {
 			ex.printStackTrace();
 		}
 		session.setAttribute("user", benutzer);
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeuser.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/kontobereich.jsp");
 		dispatcher.forward(request, response);
 	}
 
