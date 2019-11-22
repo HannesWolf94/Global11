@@ -26,7 +26,6 @@
 				<tr>
 					<th>ID</th>
 					<th>Email</th>
-					<th>Passwort</th>
 					<th>Vorname</th>
 					<th>Nachname</th>
 					<th>Straße u. Hausnr.</th>
@@ -36,13 +35,13 @@
 				<c:forEach items="${userverwaltungAdminList}" var="userverwaltung">
 					<tr>
 						<td>${userverwaltung.userId}</td>
-						<td>${userverwaltung.userEmail}</td>
-						<td>${userverwaltung.userPassword}</td>
-						<td>${userverwaltung.userFirstName}</td>
-						<td>${userverwaltung.userLastName}</td>
-						<td>${userverwaltung.userStreet}</td>
-						<td>${userverwaltung.userCity}</td>
-						<td>${userverwaltung.userAdmin}</td>
+						<td><input type="text" name="userEmail" id="userEmail" value="${userverwaltung.userEmail}"></td>
+						<td><input type="text" name="userFirstName" id="userFirstName" value="${userverwaltung.userFirstName}"></td>
+						<td><input type="text" name="userLastName" id="userLastName" value="${userverwaltung.userLastName}"></td>
+						<td><input type="text" name="userStreet" id="userStreet" value="${userverwaltung.userStreet}"></td>
+						<td><input type="text" name="userCity" id="userCity" value="${userverwaltung.userCity}"></td>
+						<td><input type="checkbox" name="userAdmin" id="userAdmin" value="${userverwaltung.userAdmin}"></td>
+						<td><button name="button" id="button" type="submit"> ändern </button></td>
 					</tr>
 				</c:forEach>
 			</tbody>

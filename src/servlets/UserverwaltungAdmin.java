@@ -40,7 +40,6 @@ public class UserverwaltungAdmin extends HttpServlet {
 
 			int userId;
 			String userEmail;
-			String userPassword;
 			String userFirstName;
 			String userLastName;
 			String userStreet;
@@ -53,8 +52,6 @@ public class UserverwaltungAdmin extends HttpServlet {
 				form.setUserId(userId);
 				userEmail = rs.getString("email");
 				form.setUserEmail(userEmail);
-				userPassword = rs.getString("password");
-				form.setUserPassword(userPassword);
 				userFirstName = rs.getString("first_name");
 				form.setUserFirstName(userFirstName);
 				userLastName = rs.getString("last_name");
