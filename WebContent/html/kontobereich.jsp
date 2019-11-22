@@ -10,7 +10,9 @@
 <title>Kontobereich</title>
 </head>
 <body>
-
+<div id="header">
+		<%@include file="../jspf/header.jspf"%>
+	</div>
 <form id="Kontobereich" action="${pageContext.request.contextPath}/Kontobereich" method="post">
 				<div>
 					<label for="firstName"> Vorname </label><br> <input
@@ -62,12 +64,12 @@
 				<div>
 					<button class="button" name="submit" type="submit"> Passwort ändern</button>
 				</div>
-			</fieldset>
-
 		
 		</form>
 		<br>
-	
+<div id="footer">
+		<%@include file="../jspf/footer.jspf"%>
+	</div>	
 	
 </body>
 </html>
