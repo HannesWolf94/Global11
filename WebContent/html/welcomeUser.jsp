@@ -10,7 +10,7 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<h1>you are login successfully</h1>
+	<h1>eigloggt bischd</h1>
 
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>

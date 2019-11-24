@@ -7,7 +7,7 @@
 <title>Abmelden</title>
 </head>
 <body>
-<div id="header">
+	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 	<header>
@@ -18,10 +18,11 @@
 			<h3>Sie haben sich erfolgreich ausgeloggt</h3>
 		</form>
 		<form action=${pageContext.request.contextPath}/index.jsp>
-			<button class="button" type="submit" value ="Submit"> Weiter zur Startseite </button>
+			<button class="button" type="submit" value="Submit">Weiter
+				zur Startseite</button>
 		</form>
 	</div>
-		<div id="footer">
+	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>
 </body>
