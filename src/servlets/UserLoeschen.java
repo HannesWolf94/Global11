@@ -30,11 +30,22 @@ public class UserLoeschen extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8"); // In diesem Format erwartet das Servlet jetzt die Formulardaten
 		String email = request.getParameter("email");
+		String emailRepeat = request.getParameter("emailRepeat");
 		
-		delete(email);
+		if ((passwordCheck(email, emailRepeat) == true)) {
+			delete(email);
+
+	        final RequestDispatcher dispatcher = request.getRequestDispatcher("UserverwaltungAdmin");
+	        dispatcher.forward(request, response);
+        } else {
+//        	Fehlermeldung.jsp oder die Eingabefelder rot umranden wenn email nicht übereinstimmt 
+        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/login.jsp");
+             dispatcher.forward(request, response);
+        }
 		
-        final RequestDispatcher dispatcher = request.getRequestDispatcher("UserverwaltungAdmin");
-        dispatcher.forward(request, response);
+		
+		
+
 	}
 
 	private void delete(String email) throws ServletException {
@@ -47,6 +58,14 @@ public class UserLoeschen extends HttpServlet {
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
+		}
+	}
+	
+	protected boolean passwordCheck(String email, String emailRepeat) throws ServletException {
+		if (email.equals(emailRepeat)) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 

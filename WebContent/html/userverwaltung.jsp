@@ -49,6 +49,7 @@
 				<div>
 					<label for="email"> Account löschen :</label> 
 						<input type="text" name="email" id="email" placeholder="Bitte Email eingeben" required>
+						<input type="text" name="emailRepeat" id="emailRepeat" placeholder="Email erneut eingeben" required>
 				</div>
 				<div>
 					<button name="submit" id="button" type="submit">löschen</button>
