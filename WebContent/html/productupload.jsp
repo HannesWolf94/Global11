@@ -15,7 +15,7 @@
 	<form action="../Produktupload" method="post">
 		<div>
 			<label for="label"> Marke:</label> <input type="text"
-				list="labelList" name="label" id="label" required autofocus><br />
+				list="labelList" name="label" id="label" required ><br />
 			<label for="label"></label>
 			<datalist id="labelList">
 				<option value="Adidas">
