@@ -1,0 +1,50 @@
+body {
+	font: felix titling;
+}
+.blocksatz{
+	text-align: justify;
+}
+}
+a:hover {
+	font-weight: bold;
+}
+.leistungen {
+	width: 300px;
+	padding: 10px;
+	background-color: #F2F2F2;
+	border: black 1px solid;
+}
+footer {
+	text-align: center;
+	border-top: 3px solid black;
+}
+header {
+	text-align: center;
+	border-top: 3px solid black;
+table {
+	border-collapse: collapse;	
+	width: 50%;	
+}
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color:#005f5f;
+	color: white;
+}
+tbody {
+	text-align: center;
+}
+tr:hover {				
+	background-color: #F2F2F2;
+}
+img:hover {
+	transform: scale(1.2);
+}
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}

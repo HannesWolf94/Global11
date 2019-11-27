@@ -32,10 +32,17 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		anmelden(request, response);
+
 
 		String email = request.getParameter("email");
-		String pass = request.getParameter("password");
+//		String pass = request.getParameter("password");
+		
+		if (emailCheck(email)) {	
+			anmelden(request, response);
+		}else {
+        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/registrierung.jsp");
+            dispatcher.forward(request, response);
+		}
 
 	}
 
@@ -100,6 +107,23 @@ public class Login extends HttpServlet {
 			ex.getMessage();
 		}
 		return status;
+	}
+	
+	protected boolean emailCheck(String email) throws ServletException {
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM users WHERE email = ?")) {
+			pstmt.setString(1, email);
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					return true;
+				} else {
+					return false;
+				}
+			} catch (Exception e) {
+			}
+		} catch (Exception e) {
+		}
+		return false;
 	}
 
 }

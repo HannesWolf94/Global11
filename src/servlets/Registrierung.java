@@ -3,7 +3,7 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
+import java.sql.ResultSet;
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,19 +45,27 @@ public class Registrierung extends HttpServlet {
 		form.setCity(request.getParameter("city"));
 //		response.sendRedirect("html/welcomeUser.jsp");
 		
-		if ((passwordCheck(form.getPassword(), form.getPasswordRepeat()) == true)) {
-            speichern(form);
-            
-			HttpSession session = request.getSession();
-			session.setAttribute("user", form);
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeUser.jsp");
-			dispatcher.forward(request, response);
-        } else {
-        	 final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userverwaltung.jsp");
-             dispatcher.forward(request, response);
-        }
-
-    }
+		
+		if(emailCheck(form.getEmail())) {
+//			Fehlermeldung nicht auf UserverwaltungAdmin verweisen
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("UserverwaltungAdmin");
+            dispatcher.forward(request, response);
+		
+		} else {
+			if ((passwordCheck(form.getPassword(), form.getPasswordRepeat()) == true)) {
+	            speichern(form);
+	            
+				HttpSession session = request.getSession();
+				session.setAttribute("user", form);
+				final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeUser.jsp");
+				dispatcher.forward(request, response);
+	        } else {
+//				Fehlermeldung nicht auf userverwaltung.jsp verweisen
+	        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/index.jsp");
+	            dispatcher.forward(request, response);
+	        }
+		}
+	}
 	
 
 	private void speichern(User form) throws ServletException {
@@ -83,6 +91,23 @@ public class Registrierung extends HttpServlet {
 		} else {
 			return false;
 		}
+	}
+	
+	protected boolean emailCheck(String email) throws ServletException {
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM users WHERE email = ?")) {
+			pstmt.setString(1, email);
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					return true;
+				} else {
+					return false;
+				}
+			} catch (Exception e) {
+			}
+		} catch (Exception e) {
+		}
+		return false;
 	}
 
 }

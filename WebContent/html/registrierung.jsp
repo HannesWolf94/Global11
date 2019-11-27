@@ -13,15 +13,15 @@
 	</div>
 	<form action="../Registrierung" method="post">
 		<div>
-			<label for="email"> email:</label> <input type="email" name="email" id="email"><br />
+			<label for="email"> E-Mail:</label> <input type="email" name="email" id="email"><br />
 			<label for="pwRegi"> Passwort:</label> <input type="password"
 				name="password" id="pwRegi"><br /> <label for="pwRegiR">
 				Passwort wiederholen:</label> <input type="password" name="passwordRepeat" id="pwRegiR"><br />
 			<label for="firstname"> Vorname:</label> <input type="text"
 				name="firstname" id="firstname"><br /> <label for="lastname">
 				Nachname:</label> <input type="text" name="lastname" id="lastname"><br /> <label
-				for="street">Straße u. Hausnr.: </label> <input type="text"
-				name="street" id="street"><br /> <label for="city">PLZ u. Ort:
+				for="street">Straße und Hausnummer.: </label> <input type="text"
+				name="street" id="street"><br /> <label for="city">PLZ und Ort:
 			</label> <input type="text" name="city" id="city"><br />
 			<button class="button" type="submit" value="Submit">
 				registrieren</button>
