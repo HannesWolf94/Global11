@@ -31,9 +31,8 @@ public class ProduktAnzeigen extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String sql = "SELECT * FROM product";
-		System.out.println("TEst");
+		
 		ArrayList<Product> produktverwaltungAdminList = new ArrayList<>();
-		System.out.println("TEst");
 		try {
 			final Connection con = ds.getConnection();
 			PreparedStatement pstm = con.prepareStatement(sql);
@@ -46,14 +45,14 @@ public class ProduktAnzeigen extends HttpServlet {
 			double price;
 			int size;
 			String image;
-			System.out.println("TEst");
+
 			while (rs.next()) {
 				Product form = new Product();
 				prodId = rs.getInt("prod_id");
 				form.setProdId(prodId);
 				label = rs.getString("prod_label");
 				form.setLabel(label);
-				type = rs.getString("prod-type");
+				type = rs.getString("prod_type");
 				form.setType(type);
 				colour = rs.getString("prod_colour");
 				form.setColour(colour);
@@ -65,16 +64,14 @@ public class ProduktAnzeigen extends HttpServlet {
 				form.setImage(image);
 
 				produktverwaltungAdminList.add(form);
-				
 			}
-			System.out.println("TEst");
 
 			request.setAttribute("produktverwaltungAdminList", produktverwaltungAdminList);
 			con.close();
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ProduktAnzeigen.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/productAnzeigen.jsp");
 		dispatcher.forward(request, response);
 	}
 

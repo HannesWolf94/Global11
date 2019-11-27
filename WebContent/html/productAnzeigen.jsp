@@ -10,19 +10,17 @@
 </head>
 
 <body>
-<div id="header">
+	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 
 		<h1>Produkt anzeigen</h1>
 
-	<form id="ProduktAnzeigen"
-		action="${pageContext.request.contextPath}/ProduktAnzeigen"
-		method="POST">
-
+	<form id="ProduktAnzeigen" action="${pageContext.request.contextPath}/ProduktAnzeigen" method="POST">
 		<table>
 			<tbody>
 				<tr>
+					<th>ID</th>
 					<th>Marke</th>
 					<th>Typ</th>
 					<th>Farbe</th>
@@ -33,19 +31,18 @@
 				<c:forEach items="${produktverwaltungAdminList}" var="produktverwaltung">
 					<tr>
 						<td>${produktverwaltung.prodId}</td>
-						<td><input type="text" name="productLabel" id="productLabel" value="${produktverwaltung.label}"></td>
-						<td><input type="text" name="productType" id="productType" value="${produktverwaltung.type}"></td>
-						<td><input type="text" name="productColour" id="productColour" value="${produktverwaltung.colour}"></td>
-						<td><input type="text" name="productPrice" id="productPrice" value="${produktverwaltung.price}"></td>
-						<td><input type="text" name="productSize" id="productSize" value="${produktverwaltung.size}"></td>
-						<td><input type="text" name="productImage" id="productImage" value="${produktverwaltung.image}"></td>
-						<td><button name="button" id="button" type="submit"> löschen </button></td>
+						<td>${produktverwaltung.label}</td>
+						<td>${produktverwaltung.type}</td>
+						<td>${produktverwaltung.colour}</td>
+						<td>${produktverwaltung.price}</td>
+						<td>${produktverwaltung.size}</td>
+						<td>${produktverwaltung.image}</td> 
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</form>
-<div id="footer">
+	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>
 </body>
