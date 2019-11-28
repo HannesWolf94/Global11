@@ -68,6 +68,10 @@ public class Login extends HttpServlet {
 						form.setFirstName(firstname);
 						String lastname = rs.getString("last_name");
 						form.setLastName(lastname);
+						String street = rs.getString("street");
+						form.setStreet(street);
+						String city = rs.getString("city");
+						form.setCity(city);
 						String password = rs.getString("password");
 						form.setPassword(password);
 						request.setAttribute("form", form);

@@ -45,9 +45,9 @@ public class AccountLoeschen extends HttpServlet {
 		if (email.equals(benutzer)) {
 			delete(form);
 		} else{
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeuser.jsp");
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeUser.jsp");
 			dispatcher.forward(request, response);
-			return;
+//			return;
 		}
 		session.invalidate();
 

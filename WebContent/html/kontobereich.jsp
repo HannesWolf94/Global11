@@ -31,8 +31,7 @@
 				name="city" type="text" id="city" value="${user.city}">
 		</div>
 		<div>
-			<label for="email"> E-Mail: </label> <br> <input name="email"
-				type="email" id="email" value="${user.email}">
+			<label for="email"> E-Mail: ${user.email}</label> <br>
 		</div>
 		<div>
 			<button class="button" name="submit" type="submit">Daten
@@ -75,7 +74,7 @@
 				<button class="button" name="Reset" type="reset">zurücksetzen</button>
 			</div>
 		</fieldset>
-	</form>
+	</form> 
 	<br>
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>

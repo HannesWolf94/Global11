@@ -44,6 +44,8 @@ public class Kontobereich extends HttpServlet {
 		
 		// aus dem formular
 		User benutzer = new User();
+		benutzer.setEmail(request.getParameter("email"));
+		String email = benutzer.getEmail();
 		benutzer.setFirstName(request.getParameter("firstName"));
 		String firstName = benutzer.getFirstName();
 		benutzer.setLastName(request.getParameter("lastName"));
@@ -64,6 +66,7 @@ public class Kontobereich extends HttpServlet {
 			pstm.setString(2, dbCheck(lastName, lastnameDb));
 			pstm.setString(3, dbCheck(street, streetDb));
 			pstm.setString(4, dbCheck(city, cityDb));
+			pstm.setString(5, dbCheck(email, emailDb));
 			pstm.executeUpdate();
 			conn.close();
 		}
