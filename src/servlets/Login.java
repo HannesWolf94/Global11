@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,8 +51,6 @@ public class Login extends HttpServlet {
 		User user = new User();
 		user.setEmail(request.getParameter("email"));
 		user.setPassword(request.getParameter("password"));
-
-		PrintWriter out = response.getWriter();
 
 		if (passwortPruefen(user.getEmail(), user.getPassword()) == true) {
 			try (Connection con = ds.getConnection();
