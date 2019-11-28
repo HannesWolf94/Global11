@@ -39,7 +39,7 @@ public class UserLoeschen extends HttpServlet {
 	        dispatcher.forward(request, response);
         } else {
 //        	Fehlermeldung.jsp oder die Eingabefelder rot umranden wenn email nicht übereinstimmt 
-        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/login.jsp");
+        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
              dispatcher.forward(request, response);
         }
 		

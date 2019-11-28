@@ -85,7 +85,9 @@ public class Login extends HttpServlet {
 				throw new ServletException(e.getMessage());
 			}
 		} else {
-			out.println("Wrong username or password");
+        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/login.jsp");
+            dispatcher.forward(request, response);
+            
 		}
 
 	}

@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import beans.Product;
@@ -37,7 +36,7 @@ public class ProductDelete extends HttpServlet {
 	        dispatcher.forward(request, response);
         } else {
 //        	Fehlermeldung.jsp oder die Eingabefelder rot umranden wenn email nicht übereinstimmt 
-        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/impressum.jsp");
+        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
              dispatcher.forward(request, response);
         }
 		
