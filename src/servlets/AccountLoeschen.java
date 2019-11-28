@@ -47,7 +47,7 @@ public class AccountLoeschen extends HttpServlet {
 		} else{
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeUser.jsp");
 			dispatcher.forward(request, response);
-//			return;
+			return;
 		}
 		session.invalidate();
 

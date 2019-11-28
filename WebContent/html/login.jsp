@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +15,8 @@
 	<form action="${pageContext.request.contextPath}/Login" method="post">
 		<div>
 			<label for="email"> E-Mail:</label> <input type="text" name="email"
-				id="email"> <label for="password"> Passwort:</label> <input
-				type="password" name="password" id="password">
+				id="email" autofocus required> <label for="password"> Passwort:</label> <input
+				type="password" name="password" id="password" required>
 			<button class="button" type="submit" value="Submit">Login</button>
 		</div>
 
