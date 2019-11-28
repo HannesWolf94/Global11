@@ -7,4 +7,5 @@
 <a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung </a>
 <a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich </a>
 <a href= "${pageContext.request.contextPath}/ProduktAnzeigen"> Produkt anzeigen </a>
+<a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produkt anzeigen </a>
 

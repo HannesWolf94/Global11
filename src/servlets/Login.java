@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -53,8 +52,6 @@ public class Login extends HttpServlet {
 		user.setEmail(request.getParameter("email"));
 		user.setPassword(request.getParameter("password"));
 
-		PrintWriter out = response.getWriter();
-
 		if (passwortPruefen(user.getEmail(), user.getPassword()) == true) {
 			try (Connection con = ds.getConnection();
 					PreparedStatement pstmt = con.prepareStatement("SELECT * FROM users WHERE Email =? ")) {
@@ -85,7 +82,9 @@ public class Login extends HttpServlet {
 				throw new ServletException(e.getMessage());
 			}
 		} else {
-			out.println("Wrong username or password");
+        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/login.jsp");
+            dispatcher.forward(request, response);
+            
 		}
 
 	}

@@ -3,7 +3,6 @@ package beans;
 
 import java.io.IOException;
 import java.io.Serializable;
-
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 

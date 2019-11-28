@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.sql.*;
 import beans.Product;
 
-@WebServlet("ProduktAnzeigen")
-public class ProduktAnzeigen extends HttpServlet {
+@WebServlet("ProductAnzeigen")
+public class ProductAnzeigen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ProduktAnzeigen() {
+	public ProductAnzeigen() {
 		super();
 	}
 

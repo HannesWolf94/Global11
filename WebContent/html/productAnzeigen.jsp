@@ -16,7 +16,7 @@
 
 		<h1>Produkt anzeigen</h1>
 
-	<form id="ProduktAnzeigen" action="${pageContext.request.contextPath}/ProduktAnzeigen" method="POST">
+	<form id="ProductAnzeigen" action="${pageContext.request.contextPath}/ProductAnzeigen" method="POST">
 		<table>
 			<tbody>
 				<tr>
@@ -42,6 +42,18 @@
 			</tbody>
 		</table>
 	</form>
+	<form  id = "ProductDelete" action="${pageContext.request.contextPath}/ProductDelete" method = "POST">
+			<fieldset>
+				<div>
+					<label for="label"> Produkt löschen :</label> 
+						<input type="text" name="label" id="label" placeholder="Bitte ProduktId eingeben" required>
+						<input type="text" name="labelRepeat" id="labelRepeat" placeholder="ProduktId erneut eingeben" required>
+				</div>
+				<div>
+					<button name="submit" id="button" type="submit">löschen</button>
+				</div>
+			</fieldset>
+		</form>
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>
