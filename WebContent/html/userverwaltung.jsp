@@ -3,13 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
-<html lang="de">
+<html>
 <head>
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Userverwaltung</title>
+<script type="text/javascript" src="../js/emailconfirmation.js"></script>
 </head>
-
 <body>
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
