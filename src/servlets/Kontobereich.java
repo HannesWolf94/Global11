@@ -4,6 +4,7 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+
+import beans.Product;
 import beans.User;
 
 @WebServlet("Kontobereich")
@@ -23,59 +26,47 @@ public class Kontobereich extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doPost(request, response);
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
 	}
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-		// aus der session
-		String firstnameDb = user.getFirstName();
-		String lastnameDb = user.getLastName();
-		String streetDb = user.getStreet();
-		String cityDb = user.getCity();
-		String emailDb = user.getEmail();
 		
+		System.out.println("in kontobereichservlet " + user.getEmail());
 		
-		// aus dem formular
-		User benutzer = new User();
-		benutzer.setEmail(request.getParameter("email"));
-		String email = benutzer.getEmail();
-		benutzer.setFirstName(request.getParameter("firstName"));
-		String firstName = benutzer.getFirstName();
-		benutzer.setLastName(request.getParameter("lastName"));
-		String lastName = benutzer.getLastName();
-		benutzer.setStreet(request.getParameter("street"));
-		String street = benutzer.getStreet();
-		benutzer.setCity(request.getParameter("city"));
-		String city = benutzer.getCity();
-		
-		
+		String sql = "SELECT * FROM users WHERE email = ?";
 
 		try {
-			Connection conn = ds.getConnection();
-			PreparedStatement pstm = conn.prepareStatement(
-					"UPDATE users" + " SET first_name = ?, last_name = ?, street = ?, city = ? " + "WHERE email = ?");
+			final Connection con = ds.getConnection();
+			PreparedStatement pstm = con.prepareStatement(sql);
+			pstm.setString(1, user.getEmail());
 
-			pstm.setString(1, dbCheck(firstName, firstnameDb));
-			pstm.setString(2, dbCheck(lastName, lastnameDb));
-			pstm.setString(3, dbCheck(street, streetDb));
-			pstm.setString(4, dbCheck(city, cityDb));
-			pstm.setString(5, dbCheck(email, emailDb));
-			pstm.executeUpdate();
-			conn.close();
-		}
-		
+			ResultSet rs = pstm.executeQuery();
+			
+			if (rs.next()) {				
+				user.setUserId(rs.getInt("user_id"));
+				user.setFirstName(rs.getString("first_name"));
+				user.setLastName(rs.getString("last_name"));
+				user.setStreet(rs.getString("street"));
+				user.setCity(rs.getString("city"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				user.setUserAdmin(rs.getInt("admin"));
+			}
 
-		catch (SQLException ex) {
-			ex.printStackTrace();
+			con.close();
+		} catch (Exception ex) {
+			ex.getMessage();
 		}
-		session.setAttribute("user", benutzer);
+
+		session.setAttribute("user", user);
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/kontobereich.jsp");
 		dispatcher.forward(request, response);
 	}

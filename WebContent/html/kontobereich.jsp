@@ -11,8 +11,8 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<form id="Kontobereich"
-		action="${pageContext.request.contextPath}/Kontobereich" method="post">
+	<form method=post
+		action="${pageContext.request.contextPath}/KontoAendern">
 		<div>
 			<label for="firstName"> Vorname: </label><br> <input
 				name="firstName" id="firstName" type="text"
@@ -27,13 +27,16 @@
 				name="street" type="text" id="street" value="${user.street}">
 		</div>
 		<div>
-			<label for="city"> PLZ und Ort: </label> <br> <input
-				name="city" type="text" id="city" value="${user.city}">
+			<label for="city"> PLZ und Ort: </label> <br> <input name="city"
+				type="text" id="city" value="${user.city}">
 		</div>
 		<div>
-			<label for="email"> E-Mail: ${user.email}</label> <br>
+			<label for="email"> E-Mail:</label>
+			<p>${user.email}</p>
+			<br>
 		</div>
 		<div>
+
 			<button class="button" name="submit" type="submit">Daten
 				ändern und speichern</button>
 			<button class="button" name="reset" type="reset">zurücksetzen</button>
@@ -74,7 +77,7 @@
 				<button class="button" name="Reset" type="reset">zurücksetzen</button>
 			</div>
 		</fieldset>
-	</form> 
+	</form>
 	<br>
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>

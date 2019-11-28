@@ -30,6 +30,7 @@ public class Password extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		System.out.println("asdfasdf");
 		String newPassword = request.getParameter("newPassword");
 		String passwordConfirmation = request.getParameter("passwordConfirmation");
 		

@@ -5,6 +5,6 @@
 <a href= "${pageContext.request.contextPath}/html/registrierung.jsp"> Registrierung </a>
 <a href= "${pageContext.request.contextPath}/html/productupload.jsp"> Produkt Upload </a>
 <a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung </a>
-<a href= "${pageContext.request.contextPath}/html/kontobereich.jsp"> Kontobereich </a>
+<a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich </a>
 <a href= "${pageContext.request.contextPath}/ProduktAnzeigen"> Produkt anzeigen </a>
 
