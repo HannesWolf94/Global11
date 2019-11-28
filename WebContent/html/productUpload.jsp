@@ -12,7 +12,7 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<form action="../Produktupload" method="post">
+	<form action="../ProduktUpload" method="post">
 		<div>
 			<label for="label"> Marke:</label> <input type="text"
 				list="labelList" name="label" id="label" required ><br />

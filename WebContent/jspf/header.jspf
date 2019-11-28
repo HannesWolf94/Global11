@@ -3,9 +3,8 @@
 <a href= "${pageContext.request.contextPath}/html/login.jsp"> Login </a>
 <a href= "${pageContext.request.contextPath}/Logout"> Logout </a>
 <a href= "${pageContext.request.contextPath}/html/registrierung.jsp"> Registrierung </a>
-<a href= "${pageContext.request.contextPath}/html/productupload.jsp"> Produkt Upload </a>
+<a href= "${pageContext.request.contextPath}/html/productUpload.jsp"> Produkt Upload </a>
 <a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung </a>
 <a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich </a>
-<a href= "${pageContext.request.contextPath}/ProduktAnzeigen"> Produkt anzeigen </a>
 <a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produkt anzeigen </a>
 

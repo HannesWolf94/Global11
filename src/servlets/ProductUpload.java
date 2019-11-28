@@ -16,17 +16,17 @@ import javax.sql.DataSource;
 import beans.Product;
 
 /**
- * Servlet implementation class Produktupload
+ * Servlet implementation class ProduktUpload
  */
-@WebServlet("/Produktupload")
-public class Produktupload extends HttpServlet {
+@WebServlet("/ProduktUpload")
+public class ProductUpload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlGlobal11DS")
     private DataSource ds; 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Produktupload() {
+	public ProductUpload() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
