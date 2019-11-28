@@ -38,9 +38,7 @@ public class Kontobereich extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-		
-		System.out.println("in kontobereichservlet " + user.getEmail());
-		
+				
 		String sql = "SELECT * FROM users WHERE email = ?";
 
 		try {
@@ -63,7 +61,10 @@ public class Kontobereich extends HttpServlet {
 
 			con.close();
 		} catch (Exception ex) {
-			ex.getMessage();
+		//	ex.getMessage();
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/login.jsp");
+			dispatcher.forward(request, response);
+			return;
 		}
 
 		session.setAttribute("user", user);
