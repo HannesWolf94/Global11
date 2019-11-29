@@ -28,7 +28,7 @@
 						<th>Nachname</th>
 						<th>Straße u. Hausnr.</th>
 						<th>PLZ u. Ort</th>
-						<th>Admin</th>
+						
 					</tr>
 					<c:forEach items="${userverwaltungAdminList}" var="userverwaltung">
 						<tr>
@@ -38,7 +38,7 @@
 							<td>${userverwaltung.lastName}</td>
 							<td>${userverwaltung.street}</td>
 							<td>${userverwaltung.city}</td>
-							<td>${userverwaltung.userAdmin}</td>
+							
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -65,7 +65,7 @@
 						<input type="text" name="lastName" id="lastName" placeholder="Nachname" required>
 						<input type="text" name="street" id="street" placeholder="Straße u. Hausnr." required>
 						<input type="text" name="city" id="city" placeholder="PLZ u. Ort" required>
-						<input type="number" name="userAdmin" id="userAdmin" placeholder="0 = User | 1 = Admin" required> 
+						
 				</div>
 				<div>
 					<button name="submit" id="button" type="submit">ändern</button>

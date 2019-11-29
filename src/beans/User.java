@@ -17,7 +17,7 @@ public class User implements Serializable {
 	private String passwordRepeat;
 	private String street; 
 	private String city; 
-	private int userAdmin; 
+	 
 
 	public int getUserId() {
         return userId;
@@ -69,12 +69,7 @@ public class User implements Serializable {
 	public void setPasswordRepeat(String passwordRepeat) {
 		this.passwordRepeat = passwordRepeat;
 	}
-	 public int getUserAdmin() {
-	    return userAdmin;
-	}
-	 public void setUserAdmin(int userAdmin) {
-	    this.userAdmin = userAdmin;
-	}
+	
 	
 
 }

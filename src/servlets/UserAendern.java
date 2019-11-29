@@ -40,7 +40,7 @@ public class UserAendern extends HttpServlet {
 		form.setLastName(request.getParameter("lastName"));
 		form.setStreet(request.getParameter("street"));
 		form.setCity(request.getParameter("city"));
-		form.setUserAdmin(Integer.parseInt(request.getParameter("userAdmin")));
+		
 		
 		aendern(form);
 		
@@ -54,13 +54,12 @@ public class UserAendern extends HttpServlet {
 	private void aendern(User form) throws ServletException {
 		
 		try (Connection con = ds.getConnection();
-			PreparedStatement pstmt = con.prepareStatement("UPDATE users SET first_name = ?, last_name = ?, street = ?, city = ?, admin = ? WHERE email = ?")) {
+			PreparedStatement pstmt = con.prepareStatement("UPDATE users SET first_name = ?, last_name = ?, street = ?, city = ? WHERE email = ?")) {
 			pstmt.setString(1, form.getFirstName());
 			pstmt.setString(2, form.getLastName());
 			pstmt.setString(3, form.getStreet());
 			pstmt.setString(4, form.getCity());
-			pstmt.setInt(5,  form.getUserAdmin());
-			pstmt.setString(6, form.getEmail());
+			pstmt.setString(5, form.getEmail());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

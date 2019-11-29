@@ -60,8 +60,7 @@ public class UserverwaltungAdmin extends HttpServlet {
 				form.setStreet(street);
 				city = rs.getString("city");
 				form.setCity(city);
-				userAdmin = rs.getInt("admin");
-				form.setUserAdmin(userAdmin);
+				
 
 				userverwaltungAdminList.add(form);
 			}

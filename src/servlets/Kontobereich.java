@@ -56,7 +56,7 @@ public class Kontobereich extends HttpServlet {
 				user.setCity(rs.getString("city"));
 				user.setEmail(rs.getString("email"));
 				user.setPassword(rs.getString("password"));
-				user.setUserAdmin(rs.getInt("admin"));
+				
 			}
 
 			con.close();
