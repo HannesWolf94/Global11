@@ -12,7 +12,7 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<form action="../ProduktUpload" method="post">
+	<form id="product"action="../ProduktUpload" method="post" enctype="multipart/form-data">
 		<div>
 			<label for="label"> Marke:</label> <input type="text"
 				list="labelList" name="label" id="label" required ><br />
@@ -49,7 +49,7 @@
 				<option value="45">
 			</datalist>
 			<label for="image"> Bild: </label> <input type="file" name="image"
-				id="image" required autofocus><br />
+				id="image" accept="image/*" required autofocus><br />
 			<button class="button" type="submit" value="submit">upload</button>
 			<button class="button" name="Reset" type="reset">zurücksetzen</button>
 

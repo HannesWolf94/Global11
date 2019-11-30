@@ -44,7 +44,6 @@ public class ProductAnzeigen extends HttpServlet {
 			String colour;
 			double price;
 			int size;
-			String image;
 
 			while (rs.next()) {
 				Product form = new Product();
@@ -60,8 +59,6 @@ public class ProductAnzeigen extends HttpServlet {
 				form.setPrice(price);
 				size = rs.getInt("prod_size");
 				form.setSize(size);
-				image = rs.getString("prod_image");
-				form.setImage(image);
 
 				produktverwaltungAdminList.add(form);
 			}

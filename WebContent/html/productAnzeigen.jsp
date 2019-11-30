@@ -36,12 +36,17 @@
 						<td>${produktverwaltung.colour}</td>
 						<td>${produktverwaltung.price}</td>
 						<td>${produktverwaltung.size}</td>
-						<td>${produktverwaltung.image}</td> 
+						<td>Bild: <img src="Bild?id=${form}" ></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</form>
+	<em>Bild: </em><img src="Bild?prod_id=${form.id}">
+		<em>Bild: </em><img src="Bild?id=${form.id}">
+			<em>Bild: </em><img src="Bild?prod_id=${form}">
+				<em>Bild: </em><img src="Bild?id=${form}">
+	<em>Download-Link: </em><a href="Bild?id=${param}">Hier für Download klicken</a>
 	<form  id = "ProductDelete" action="${pageContext.request.contextPath}/ProductDelete" method = "POST">
 			<fieldset>
 				<div>
