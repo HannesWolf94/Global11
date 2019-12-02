@@ -1,4 +1,37 @@
 <!DOCTYPE html>
+<%--     <div id="leiste">
+        <c:choose>
+            <c:when test="${User.email != null }">
+                <nav>
+                    <ul>
+                        <c:if test="${User.email == 'admin@admin.de'}">
+                            <li><a href= "${pageContext.request.contextPath}/html/productUpload.jsp"> Produkt Upload </a></li>
+                             <li><a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung</a></li>
+                              <li><a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produkt anzeigen Admin</a></li>
+                                                            
+                        </c:if>
+                        <li><a href= "${pageContext.request.contextPath}/Logout"> Logout</a></li>
+                        <c:if test="${User.email != 'admin@admin.de'}">
+                            <li><a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich</a></li>
+                            <li><a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht</a></li>
+                        </c:if>
+                        <li><a href= "${pageContext.request.contextPath}/index.jsp"> Home</a></li>
+                    </ul>
+                </nav>
+            </c:when>
+            <c:otherwise>
+                <nav>
+                    <ul>
+                        <li><a href= "${pageContext.request.contextPath}/html/registrierung.jsp"> Registrierung</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/html/login.jsp"> Login</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/index.jsp"> Home</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht</a></li>
+                    </ul>
+                </nav>
+            </c:otherwise>
+        </c:choose>
+    </div> --%>
+    
 <a href= "${pageContext.request.contextPath}/index.jsp"> Home </a>
 <a href= "${pageContext.request.contextPath}/html/login.jsp"> Login </a>
 <a href= "${pageContext.request.contextPath}/Logout"> Logout </a>
@@ -8,4 +41,4 @@
 <a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich </a>
 <a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produkt anzeigen Admin </a>
 <a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht </a>
-
+ 
