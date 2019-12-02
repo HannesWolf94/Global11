@@ -7,6 +7,7 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Produkt anzeigen</title>
+<script type="text/javascript" src="../js/prodIdCheck.js"></script>
 </head>
 
 <body>
@@ -50,9 +51,9 @@
 	<form  id = "ProductDelete" action="${pageContext.request.contextPath}/ProductDelete" method = "POST">
 			<fieldset>
 				<div>
-					<label for="label"> Produkt löschen :</label> 
-						<input type="text" name="label" id="label" placeholder="Bitte ProduktId eingeben" required>
-						<input type="text" name="labelRepeat" id="labelRepeat" placeholder="ProduktId erneut eingeben" required>
+					<label for="prodId"> Produkt löschen :</label> 
+						<input type="text" name="prodId" id="prodId" placeholder="Bitte ProduktId eingeben" required>
+						<input type="text" name="prodIdRepeat" id="prodIdRepeat" placeholder="ProduktId erneut eingeben" required>
 				</div>
 				<div>
 					<button name="submit" id="button" type="submit">löschen</button>

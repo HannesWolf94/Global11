@@ -16,7 +16,6 @@ import javax.sql.DataSource;
 
 import beans.Product;
 
-
 @WebServlet("ProductDelete")
 public class ProductDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,44 +23,48 @@ public class ProductDelete extends HttpServlet {
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8"); // In diesem Format erwartet das Servlet jetzt die Formulardaten
-		String label = request.getParameter("label");
-		String labelRepeat = request.getParameter("labelRepeat");
-		
-		if ((labelCheck(label, labelRepeat) == true)) {
-			delete(label);
+		Integer prodId = Integer.valueOf(request.getParameter("prodId"));
+		Integer prodIdRepeat = Integer.valueOf(request.getParameter("prodIdRepeat"));
+		request.setAttribute("prodId", prodId);
 
-	        final RequestDispatcher dispatcher = request.getRequestDispatcher("ProductAnzeigen");
-	        dispatcher.forward(request, response);
-        } else {
-//        	Fehlermeldung.jsp oder die Eingabefelder rot umranden wenn email nicht übereinstimmt 
-        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
-             dispatcher.forward(request, response);
-        }
-		
+		if ((prodId == prodIdRepeat)) {
+			delete(prodId);
+
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("ProductAnzeigen");
+			dispatcher.forward(request, response);
+		} else {
+			// Fehlermeldung.jsp oder die Eingabefelder rot umranden wenn email nicht
+			// übereinstimmt
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
+			dispatcher.forward(request, response);
+		}
+
 	}
 
-	private void delete(String label) throws ServletException {
-		Product product = new Product(); 
-		product.setLabel(label); 
-		
+	private void delete(Integer prodId) throws ServletException {
+		Product product = new Product();
+		product.setProdId(prodId);
+
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("DELETE FROM product WHERE prod_label = ?;")) {
-			pstmt.setString(1, label);
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM product WHERE prod_id = ?")) {
+			pstmt.setInt(1, prodId);
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 	}
-	
-	protected boolean labelCheck(String label, String labelRepeat) throws ServletException {
-		if (label.equals(labelRepeat)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+
+	 protected boolean prodIdCheck(Integer prodId, Integer prodIdRepeat) throws
+	 ServletException {
+	 if (prodId == prodIdRepeat) {
+	 return true;
+	 } else {
+	 return false;
+	 }
+	 }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -70,3 +73,4 @@ public class ProductDelete extends HttpServlet {
 	}
 
 }
+ 
