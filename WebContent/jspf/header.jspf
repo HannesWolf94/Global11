@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<%--     <div id="leiste">
+     <div id="leiste">
         <c:choose>
-            <c:when test="${User.email != null }">
+            <c:when test="${sessionScope.user.email != null }">
                 <nav>
                     <ul>
-                        <c:if test="${User.email == 'admin@admin.de'}">
-                            <li><a href= "${pageContext.request.contextPath}/html/productUpload.jsp"> Produkt Upload </a></li>
+                        <c:if test="${user.email eq 'admin@admin.de'}">
+                            <li><a href= "${pageContext.request.contextPath}/ProductUpload"> Produkt Upload </a></li>
                              <li><a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung</a></li>
                               <li><a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produkt anzeigen Admin</a></li>
                                                             
                         </c:if>
                         <li><a href= "${pageContext.request.contextPath}/Logout"> Logout</a></li>
-                        <c:if test="${User.email != 'admin@admin.de'}">
+                        <c:if test="${user.email != 'admin@admin.de'}">
                             <li><a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich</a></li>
                             <li><a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht</a></li>
                         </c:if>
@@ -30,9 +30,9 @@
                 </nav>
             </c:otherwise>
         </c:choose>
-    </div> --%>
+    </div>
     
-<a href= "${pageContext.request.contextPath}/index.jsp"> Home </a>
+<%-- <a href= "${pageContext.request.contextPath}/index.jsp"> Home </a>
 <a href= "${pageContext.request.contextPath}/html/login.jsp"> Login </a>
 <a href= "${pageContext.request.contextPath}/Logout"> Logout </a>
 <a href= "${pageContext.request.contextPath}/html/registrierung.jsp"> Registrierung </a>
@@ -40,5 +40,5 @@
 <a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung </a>
 <a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich </a>
 <a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produkt anzeigen Admin </a>
-<a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht </a>
+<a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht </a> --%>
  
