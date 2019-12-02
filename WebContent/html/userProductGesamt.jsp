@@ -15,21 +15,34 @@
 	
 	<h1>Produkt anzeigen</h1>
    
-    <form id="UserProductGesamt" action="${pageContext.request.contextPath}/UserProductGesamt" method="POST">
-			<table>
+   		<table>
 				<tbody>
 					<c:forEach items="${productUserList}" var="product">
-
+							<tr> <td colspan="2"> <img src="../Bild?prod_id=${product.prodId}" > </td></tr> 
 							<tr><td colspan="2"> ${product.price} € <td></tr>
 		                    <tr>
-		                    	<td><a href="welcomeUser.jsp">${product.label}</a></td>
+		                    	<td>${product.label}</td>
 		                    	<td>${product.type}</td>
 		                    </tr>
 		                    <tr><td colspan="2">${product.colour}<td></tr>
+			                <tr>    
+			                	<td colspan="2">
+			                        <div class="auswaehlen">
+			                            <form action="../UserProductEinzeln" method="POST">
+			                                <input name="prodId" type="hidden" value="${product.prodId}">
+			                                <input name="label" type="hidden" value="${product.label}">
+			                                <input name="type" type="hidden" value="${product.type}">
+			                                <input name="price" type="hidden" value="${product.price}">
+			                                <input name="colour" type="hidden" value="${product.colour}">
+			                                <button name="submit" type="submit">zum Produkt</button>
+			                            </form>
+			                        </div>
+			                   	</td>
+			                </tr>
 					</c:forEach>
 				</tbody>
 			</table>
-		</form>
+
 
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>

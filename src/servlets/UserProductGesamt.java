@@ -45,21 +45,21 @@ public class UserProductGesamt extends HttpServlet {
 			String colour; 
 
 			while (rs.next()) {
-				Product form = new Product();
+				Product product = new Product();
 				prodId = rs.getInt("prod_id");
-				form.setProdId(prodId);
+				product.setProdId(prodId);
 				label = rs.getString("prod_label");
-				form.setLabel(label);
+				product.setLabel(label);
 				type = rs.getString("prod_type");
-				form.setType(type);
+				product.setType(type);
 				colour = rs.getString("prod_colour");
-				form.setColour(colour);
+				product.setColour(colour);
 				price = rs.getDouble("prod_price");
-				form.setPrice(price);
+				product.setPrice(price);
 //				image = rs.getString("prod_image");
 //				form.setImage(image);
 
-				productUserList.add(form);
+				productUserList.add(product);
 			}
 
 			request.setAttribute("productUserList", productUserList);
