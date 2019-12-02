@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Produkt anzeigen</title>
 <script type="text/javascript" src="../js/prodIdCheck.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 
 <body>
@@ -37,17 +38,12 @@
 						<td>${produktverwaltung.colour}</td>
 						<td>${produktverwaltung.price}</td>
 						<td>${produktverwaltung.size}</td>
-						<td>Bild: <img src="Bild?id=${form}" ></td>
+						<td>Bild: <img src="../Bild?prod_id=${produktverwaltung.prodId}" ></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</form>
-	<em>Bild: </em><img src="Bild?prod_id=${form.id}">
-		<em>Bild: </em><img src="Bild?id=${form.id}">
-			<em>Bild: </em><img src="Bild?prod_id=${form}">
-				<em>Bild: </em><img src="Bild?id=${form}">
-	<em>Download-Link: </em><a href="Bild?id=${param}">Hier für Download klicken</a>
 	<form  id = "ProductDelete" action="${pageContext.request.contextPath}/ProductDelete" method = "POST">
 			<fieldset>
 				<div>
