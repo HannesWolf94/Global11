@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registrierung</title>
 <script type="text/javascript" src="../js/regiPwCheck.js"></script>
+<script type="text/javascript" src="../js/cookieCheck.js"></script>
 </head>
 <body>
 	<div id="header">
