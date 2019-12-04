@@ -18,12 +18,32 @@
 		<!-- Bild einfügen  -->
     </div>
    
-   <div class="productbeschreibung" id="productbeschreibung"> 
+   <div class="product" id="product"> 
     	<em>${product.label} ${product.type} ${product.colour}</em>
     	<br>
     	<em>${product.price}</em>
     	<br>
-    	<%-- <em>${size.nr}</em> --%>
+    	<em>Größe: 
+    	<input type="text" list="sizeList" name="size" id="size" required autofocus>
+    		<datalist id="sizeList">
+    			<option value="40">
+    			<option value="41">
+    			<option value="42">
+    			<option value="43">
+    			<option value="44">
+    			<option value="45">
+    		</datalist>
+    	</em>
+    	<em>Anzahl: 
+    	<input type="text" list="anzahlList" name="anzahl" id="anzahl" required autofocus>
+    		<datalist id="anzahlList">
+    			<option value="1">
+    			<option value="2">
+    			<option value="3">
+    			<option value="4">
+    			<option value="5">
+    		</datalist>
+    	</em>
     	<form id="auswaehlen" method="post" action="ProductInWarenkorb">
         	<button name="submit" type="submit">in den Warenkorb</button>
         </form>

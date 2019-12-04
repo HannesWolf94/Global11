@@ -63,12 +63,10 @@ public class UserProductGesamt extends HttpServlet {
 			}
 
 			request.setAttribute("productUserList", productUserList);
-			con.close();
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userProductGesamt.jsp");
 		dispatcher.forward(request, response);
-	}
-
+		}
 }
