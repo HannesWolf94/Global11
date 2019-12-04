@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- Prüfe ob JavaScript aktiviert ist, wenn nicht leitet er zu einer Fehlerseite. -->
+<noscript>
+<!-- Automatische Weiterleitung zur nojs Seite machen -->
+    <a href= "${pageContext.request.contextPath}/html/nojs.jsp"> hier klicken</a>
+</noscript>
      <div id="leiste">
         <c:choose>
             <c:when test="${sessionScope.user.email != null }">
