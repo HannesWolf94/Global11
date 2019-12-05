@@ -6,13 +6,56 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Unsere Produkte</title>
+<script type="text/javascript" src="../js/suche.js"></script>
 </head>
-
+	
 <body>
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 	
+			<form action ="../Suche" method="POST">
+			<fieldset><legend>Produktsuche</legend>
+				<div>
+				  <label for="label">Hersteller:</label>
+				  <input type="text" name="label" id="label" placeholder="Hersteller">
+				</div>
+				<div>
+				  <button type="button" id="button" name="button" >Absenden</button>
+				  <button name="reset" type="reset">Zurücksetzen</button>
+				</div>
+			</fieldset>
+		</form>
+		<br>
+		<h3>Trefferliste</h3>
+	<c:choose>
+	<c:when test="${products == null || empty products}">
+		Keine Treffer!
+	</c:when>
+	<c:otherwise>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Hersteller</th>
+				<th>Typ</th>
+				<th>Farbe</th>
+				<th>Preis</th>
+			</tr>
+		<c:forEach var="product" items="${products}">
+			<tr>
+				<td>${product.prodId}</td>
+				<td>${product.label}</td>
+				<td>${product.type}</td>
+				<td>${product.colour}</td>
+				<td>${product.price}</td>
+			</tr>
+		</c:forEach>
+		</table>
+	</c:otherwise>
+</c:choose>
+
+
+
 	<h1>Produkt anzeigen</h1>
    
    		<table>

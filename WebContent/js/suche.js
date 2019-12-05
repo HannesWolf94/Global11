@@ -5,36 +5,55 @@ function init() {
 }
 
 function changeContent() {
-	var searchURL = "demo16servlet";
-	var lastname = document.getElementById("lastname").value;
-	if (lastname != null && lastname.length > 0)
-		searchURL += "?lastname=" + encodeURIComponent(lastname);
-
+	var searchURL = "Suche";
+	var label = document.getElementById("label").value;
+	if (label != null && label.length>0)
+		searchURL += "?label=" + encodeURIComponent(label);
+	
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			var employeeList = JSON.parse(xmlhttp.responseText);
-			if (employeeList == null || employeeList.length == 0) {
-				document.getElementById("hitlist").innerHTML = "Keine Treffer";
-				return;
-			}
-
-			var ausgabe = "<table><tr><th>Id</th><th>Vorname</th><th>Nachname</th><th>Alter</th></tr>";
-			for (var i = 0; i < employeeList.length; i++) {
-				ausgabe += "<tr><td>";
-				ausgabe += employeeList[i].id;
-				ausgabe += "</td><td>";
-				ausgabe += employeeList[i].firstname;
-				ausgabe += "</td><td>";
-				ausgabe += employeeList[i].lastname;
-				ausgabe += "</td><td>";
-				ausgabe += employeeList[i].age;
-				ausgabe += "</td></tr>";
-			}
-			ausgabe += "</table>";
-			document.getElementById("hitlist").innerHTML = ausgabe;
+			document.getElementById("hitlist").innerHTML = xmlhttp.responseText;
 		}
 	};
-	xmlhttp.open("GET", searchURL, true);
+	xmlhttp.open("GET", searchURL , true);
 	xmlhttp.send();
 }
+
+
+//function changeContent() {
+//	var searchURL = "Suche";
+//	var label = document.getElementById("label").value;
+//	if (label != null && label.length > 0)
+//		searchURL += "?label=" + encodeURIComponent(label);
+//
+//	var xmlhttp = new XMLHttpRequest();
+//	xmlhttp.onreadystatechange = function() {
+//		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//			var productList = JSON.parse(xmlhttp.responseText);
+//			if (productList == null || productList.length == 0) {
+//				document.getElementById("hitlist").innerHTML = "Keine Treffer";
+//				return;
+//			}
+//
+//			var ausgabe = "<table><tr><th>Id</th><th>Hersteller</th><th>Type</th><th>Farbe</th><th>Preis</th></tr>";
+//			for (var i = 0; i < productList.length; i++) {
+//				ausgabe += "<tr><td>";
+//				ausgabe += productList[i].prodId;
+//				ausgabe += "</td><td>";
+//				ausgabe += productList[i].label;
+//				ausgabe += "</td><td>";
+//				ausgabe += productList[i].type;
+//				ausgabe += "</td><td>";
+//				ausgabe += productList[i].colour;
+//				ausgabe += "</td></tr>";
+//				ausgabe += productList[i].price;
+//				ausgabe += "</td></tr>";
+//			}
+//			ausgabe += "</table>";
+//			document.getElementById("hitlist").innerHTML = ausgabe;
+//		}
+//	};
+//	xmlhttp.open("GET", searchURL, true);
+//	xmlhttp.send();
+//}

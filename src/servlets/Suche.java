@@ -35,10 +35,10 @@ public class Suche extends HttpServlet {
 		String label = request.getParameter("label");
 		
 		// DB-Zugriff
-		List<Product> productList = search(label);
+		List<Product> products = search(label);
 				
 		// Scope "Request"
-		request.setAttribute("productList", productList);
+		request.setAttribute("products", products);
 		
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userProductGesamt.jsp");
@@ -47,7 +47,7 @@ public class Suche extends HttpServlet {
 
 	private List<Product> search(String label) throws ServletException {
 		label = (label == null || label == "") ? "%" : "%" + label + "%";
-		List<Product> productList = new ArrayList<Product>();
+		List<Product> products = new ArrayList<Product>();
 		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
@@ -75,14 +75,14 @@ public class Suche extends HttpServlet {
 					Double price = Double.valueOf(rs.getDouble("prod_price"));
 					product.setPrice(price);
 					
-					productList.add(product);
+					products.add(product);
 				} // while rs.next()
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 		
-		return productList;
+		return products;
 	}
 
 	/**
