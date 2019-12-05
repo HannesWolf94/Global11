@@ -5,10 +5,8 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Startseite</title>
-
 <link rel="stylesheet" type="text/css" href="css/startseite.css" />
 </head>
-
 <body>
 	<div id="header">
 		<%@include file="jspf/header.jspf"%>
@@ -25,44 +23,36 @@
 
 <!--  vgl. https://www.w3schools.com/howto/howto_js_slideshow.asp -->
 <div class="slideshow-container">
-
 <div class="mySlides fade">
   <div class="numbertext">1 / 4</div>
-  <img src="img/Start.jpg" width=1000 height=500 alt="start">
+  <img src="img/Start.jpg" width=500 height=250 alt="start">
   <div class="text">Start</div>
 </div>
-
 <div class="mySlides fade">
   <div class="numbertext">2 / 4</div>
-  <img src="img/Nike.jpg" width=1000 height=500 alt="nike">
+  <img src="img/Nike.jpg" width=500 height=250 alt="nike">
   <div class="text">Nike</div>
 </div>
-
 <div class="mySlides fade">
   <div class="numbertext">3 / 4</div>
-  <img src="img/Puma.jpg" width=1000 height=500 alt="puma">
+  <img src="img/Puma.jpg" width=500 height=250 alt="puma">
   <div class="text">Puma</div>
 </div>
-
 <div class="mySlides fade">
   <div class="numbertext">4 / 4</div>
-  <img src="img/Adidas.jpg" width=1000 height=500 alt="adidas">
+  <img src="img/Adidas.jpg" width=500 height=250 alt="adidas">
   <div class="text">Adidas</div>
 </div>
-
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
 </div>
 <br>
-
 <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span>
   <span class="dot" onclick="currentSlide(4)"></span> 
 </div>
-
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);

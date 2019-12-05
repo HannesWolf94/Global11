@@ -6,7 +6,7 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" content="text/html; charset = UTF-8">
 <title>Login</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <script type="text/javascript" src="../js/cookieCheck.js"></script>
 </head>
 <body>

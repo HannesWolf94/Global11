@@ -6,6 +6,7 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registrierung</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 <script type="text/javascript" src="../js/regiPwCheck.js"></script>
 <script type="text/javascript" src="../js/cookieCheck.js"></script>
 </head>

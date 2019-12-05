@@ -1,50 +1,54 @@
-body {
-	font: felix titling;
+/* Erstellt von Michael
+Quelle: w3 school bei den bilder(max-width und height) damit es responsive ist
+und button https://www.w3schools.com/Css/tryit.asp?filename=trycss_buttons_animate3*/
+
+#footer {
+
 }
-.blocksatz{
-	text-align: justify;
+#header {
+
 }
+.Login {
+	width: 30%;
+	height: 100px;
+	float: center;
+	padding: 20px;
+	border: 1px solid grey;
+	display: inline-block;
 }
-a:hover {
+
+label {
 	font-weight: bold;
+	min-width: 6em;
+	display: inline-block;
+	text-align: left;
+	cursor: pointer;
 }
-.leistungen {
-	width: 300px;
-	padding: 10px;
-	background-color: #F2F2F2;
-	border: black 1px solid;
+
+button {
+	display: inline-block;
 }
-footer {
-	text-align: center;
-	border-top: 3px solid black;
+
+input {
+	width: 150px;
 }
-header {
-	text-align: center;
-	border-top: 3px solid black;
-table {
-	border-collapse: collapse;	
-	width: 50%;	
+
+input:hover {
+	background: #ffffb3;
+	border: 2px solid #efe816;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: center;
-	background-color:#005f5f;
-	color: white;
+
+button:hover {
+	background: #3e8e41;
 }
-tbody {
-	text-align: center;
+
+button:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
-tr:hover {				
-	background-color: #F2F2F2;
-}
-img:hover {
-	transform: scale(1.2);
-}
-* {
-    box-sizing: border-box;
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: black;
+/* Damit Felder nicht zu dicht folgen */
+form div {
+	padding: 0.2em;
 }
