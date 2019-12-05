@@ -2,17 +2,18 @@
 package servlets;
 
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
+//import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import java.io.IOException;
-import java.sql.*;
-import beans.Product;
+//import java.sql.*;
+import java.util.ArrayList;
+import beans.Warenkorb;
 
 @WebServlet("ProductInWarenkorb")
 public class ProductInWarenkorb extends HttpServlet {
@@ -35,39 +36,20 @@ public class ProductInWarenkorb extends HttpServlet {
 		Integer size = Integer.valueOf(request.getParameter("size"));
 		Integer anzahl = Integer.valueOf(request.getParameter("anzahl"));
 
-		HttpSession session = request.getSession();
-		session.setAttribute("user", form);
+		ArrayList<Warenkorb> productWarenkorb = new ArrayList<>();
 		
-		Product product = new Product();
-
-		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM product where prod_id = ?")) {
-			pstmt.setInt(1, prodId);
-			try (ResultSet rs = pstmt.executeQuery()) {
-				while (rs.next()) {
-					prodId = rs.getInt("prod_id");
-					product.setProdId(prodId);
-					label = rs.getString("prod_label");
-					product.setLabel(label);
-					type = rs.getString("prod_type");
-					product.setType(type);
-					colour = rs.getString("prod_colour");
-					product.setColour(colour);
-					price = rs.getDouble("prod_price");
-					product.setPrice(price);
-				}
-
-			}
-		} catch (Exception ex) {
-			ex.getMessage();
-		}
-
-		HttpSession session = request.getSession();
-		session.setAttribute("product", product);
+		Warenkorb warenkorb = new Warenkorb(); 
+		warenkorb.setProdId(prodId);
+		warenkorb.setLabel(label);
+		warenkorb.setType(type);
+		warenkorb.setColour(colour);
+		warenkorb.setPrice(price);
+		warenkorb.setSize(size);
+		warenkorb.setAnzahl(anzahl);
 		
-		request.setAttribute("productDB", productDB);
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userProductEinzeln.jsp");
-		dispatcher.forward(request, response);
+		productWarenkorb.add(warenkorb);
+		
+		request.setAttribute("productWarenkorb", productWarenkorb);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

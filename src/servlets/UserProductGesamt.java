@@ -1,3 +1,4 @@
+//erstellt von Johannes Wolf 
 package servlets;
 
 import javax.annotation.Resource;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.sql.*;
 import beans.Product;
 
-@WebServlet("/UserProductGesamt")
+@WebServlet("UserProductGesamt")
 public class UserProductGesamt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

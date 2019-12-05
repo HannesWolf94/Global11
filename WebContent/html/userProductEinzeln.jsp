@@ -19,15 +19,15 @@
     </div>
    
    <div class="product" id="product"> 
-    	<em>Bild:</em><img src="../Bild?prod_id=${productDB.prodId}" width="300"
+    	<img src="../Bild?prod_id=${productDB.prodId}" width="300"
                              height="150" alt="autobild">
     	<br> 
-    	<em>Produkt: </em>${productDB.prodId} ${productDB.label} ${productDB.type} ${productDB.colour}
+    	<em>Artikel: </em>${productDB.prodId} ${productDB.label} ${productDB.type} ${productDB.colour}
     	<br>
     	<em>Preis: </em> ${productDB.price}
     	<br>
     	<em>Größe: 
-    	<input type="number" list="sizeList" name="size" id="size" required autofocus>
+    	<input type="text" list="sizeList" name="size" id="size" required autofocus>
     		<datalist id="sizeList">
     			<option value="40">
     			<option value="41">
@@ -38,7 +38,7 @@
     		</datalist>
     	</em>
     	<em>Anzahl: 
-    	<input type="number" list="anzahlList" name="anzahl" id="anzahl" required autofocus>
+    	<input type="text" list="anzahlList" name="anzahl" id="anzahl" required autofocus>
     		<datalist id="anzahlList">
     			<option value="1">
     			<option value="2">
@@ -47,7 +47,7 @@
     			<option value="5">
     		</datalist>
     	</em>
-    	<form id="auswaehlen" method="post" action="ProductInWarenkorb">
+    	<form id="auswaehlen" method="post" action="../ProductInWarenkorb">
               <input name="prodId" type="hidden" value="${productDB.prodId}">
               <input name="label" type="hidden" value="${productDB.label}">
               <input name="type" type="hidden" value="${productDB.type}">

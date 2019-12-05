@@ -22,37 +22,27 @@
 						<th>Farbe</th>
 						<th>Größe</th>
 						<th>Anzahl</th>
-						<th colspan="2">Preis</th>
+						<th>Preis</th>
+						<th></th>
 					</tr>
 					<!-- evlt Sessionlist?? -->
-					<c:forEach items="${productUserList}" var="product">
+					<c:forEach items="${productWarenkorb}" var="warenkorb">
 					<tr> 
-						<td> <img src="../Bild?prod_id=${product.prodId}" width="50"
+						<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="50"
                              height="25" alt="autobild"> </td> 
-                       	<td>${product.label}</td>
-                    	<td>${product.type}</td>
-                    	<td>${product.colour}</td>
-                    	<td>Größe</td>
-                    	<td>Anzahl</td>  
-                    	<td> ${product.price} € <td>  
-	                	<td>
-	                        <div class="bestellen">
-	                            <form action="../Warenkorb" method="POST">
-	                                <input name="prodId" type="hidden" value="${product.prodId}">
-	                                <input name="label" type="hidden" value="${product.label}">
-	                                <input name="type" type="hidden" value="${product.type}">
-	                                <input name="price" type="hidden" value="${product.price}">
-	                                <input name="colour" type="hidden" value="${product.colour}">
-	                                <input name="size" type="hidden" value="${product.size}">
-	                                <input name="anzahl" type="hidden" value="${product.anzahl}">
-	                                <button name="submit" type="submit"> bestellen </button>
-	                            </form>
-	                        </div>
-	                   	</td>
+                       	<td>${warenkorb.label}</td>
+                    	<td>${warenkorb.type}</td>
+                    	<td>${warenkorb.colour}</td>
+                    	<td>${warenkorb.size}</td>
+                    	<td>${warenkorb.anzahl}</td>  
+                    	<td>${product.price} € <td>  
 	                </tr>
 					</c:forEach>
 				</tbody>
 			</table>
+            <form action="../Warenkorb" method="POST">
+               <button name="submit" type="submit"> bestellen </button>
+            </form>
 
 
 	<div id="footer">

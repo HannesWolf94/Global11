@@ -1,4 +1,4 @@
-//erstellt von Martin Scherzer
+//erstellt von Johannes Wolf
 package beans;
 
 import java.io.Serializable;
@@ -7,7 +7,7 @@ import javax.ejb.Stateless;
 
 @Stateless
 @LocalBean
-public class Product implements Serializable {
+public class Warenkorb implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int	prodId;
@@ -16,10 +16,8 @@ public class Product implements Serializable {
 	private String colour;
 	private double price; 
 	private int size;
-	private byte[] image;
-	private int anzahl; 
+	private int anzahl;
 	
-
 	public String getLabel() {
 		return label;
 	}
@@ -49,12 +47,6 @@ public class Product implements Serializable {
 	}
 	public void setSize(int size) {
 		this.size = size;
-	}
-	public byte[] getImage() {
-		return image;
-	}
-	public void setImage(byte[] image) {
-		this.image = image;
 	}
 	public int getProdId() {
 		return prodId;
