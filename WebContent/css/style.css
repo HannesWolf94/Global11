@@ -17,11 +17,11 @@ und button https://www.w3schools.com/Css/tryit.asp?filename=trycss_buttons_anima
 	display: inline-block;
 }
 
-label {
+ label {
 	font-weight: bold;
 	min-width: 6em;
 	display: inline-block;
-	text-align: left;
+	text-align: left; 
 	cursor: pointer;
 }
 
@@ -30,7 +30,7 @@ button {
 }
 
 input {
-	width: 150px;
+	width: 250px;
 }
 
 input:hover {
