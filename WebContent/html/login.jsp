@@ -6,6 +6,7 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" content="text/html; charset = UTF-8">
 <title>Login</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css" type="text/css">
 <script type="text/javascript" src="../js/cookieCheck.js"></script>
 </head>
 <body>
@@ -14,10 +15,15 @@
 	</div>
 
 	<form action="${pageContext.request.contextPath}/Login" method="post">
-		<div>
+		<div class="Login">
+		<p>
 			<label for="email"> E-Mail:</label> <input type="text" name="email"
-				id="email" autofocus required> <label for="password"> Passwort:</label> <input
+				id="email" autofocus required>
+		</p>
+		<p>
+			 <label for="password"> Passwort:</label> <input
 				type="password" name="password" id="password" required>
+		</p>
 			<button class="button" type="submit" value="Submit">Login</button>
 		</div>
 
