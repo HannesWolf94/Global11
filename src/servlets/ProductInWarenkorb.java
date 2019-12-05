@@ -8,18 +8,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.*;
 import beans.Product;
 
-@WebServlet("UserProductEinzeln")
-public class UserProductEinzeln extends HttpServlet {
+@WebServlet("ProductInWarenkorb")
+public class ProductInWarenkorb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
 
-	public UserProductEinzeln() {
+	public ProductInWarenkorb() {
 		super();
 	}
 
@@ -31,8 +32,13 @@ public class UserProductEinzeln extends HttpServlet {
 		String type = request.getParameter("type");
 		String colour = request.getParameter("colour");
 		Double price = Double.valueOf(request.getParameter("price"));
+		Integer size = Integer.valueOf(request.getParameter("size"));
+		Integer anzahl = Integer.valueOf(request.getParameter("anzahl"));
 
-		Product productDB = new Product();
+		HttpSession session = request.getSession();
+		session.setAttribute("user", form);
+		
+		Product product = new Product();
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM product where prod_id = ?")) {
@@ -40,15 +46,15 @@ public class UserProductEinzeln extends HttpServlet {
 			try (ResultSet rs = pstmt.executeQuery()) {
 				while (rs.next()) {
 					prodId = rs.getInt("prod_id");
-					productDB.setProdId(prodId);
+					product.setProdId(prodId);
 					label = rs.getString("prod_label");
-					productDB.setLabel(label);
+					product.setLabel(label);
 					type = rs.getString("prod_type");
-					productDB.setType(type);
+					product.setType(type);
 					colour = rs.getString("prod_colour");
-					productDB.setColour(colour);
+					product.setColour(colour);
 					price = rs.getDouble("prod_price");
-					productDB.setPrice(price);
+					product.setPrice(price);
 				}
 
 			}
@@ -56,6 +62,9 @@ public class UserProductEinzeln extends HttpServlet {
 			ex.getMessage();
 		}
 
+		HttpSession session = request.getSession();
+		session.setAttribute("product", product);
+		
 		request.setAttribute("productDB", productDB);
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userProductEinzeln.jsp");
 		dispatcher.forward(request, response);

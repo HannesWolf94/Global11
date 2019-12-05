@@ -1,3 +1,4 @@
+<!-- erstellt von Johannes Wolf  -->
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -46,8 +47,13 @@
     		</datalist>
     	</em>
     	<form id="auswaehlen" method="post" action="ProductInWarenkorb">
-        	<button name="submit" type="submit">in den Warenkorb</button>
-        </form>
+              <input name="prodId" type="hidden" value="${productDB.prodId}">
+              <input name="label" type="hidden" value="${productDB.label}">
+              <input name="type" type="hidden" value="${productDB.type}">
+              <input name="price" type="hidden" value="${productDB.price}">
+              <input name="colour" type="hidden" value="${productDB.colour}">
+              <button name="submit" type="submit">in den Warenkorb</button>
+		</form>
 	</div>
 
 	<div id="footer">
