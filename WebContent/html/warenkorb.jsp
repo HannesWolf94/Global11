@@ -25,11 +25,10 @@
 						<th>Preis</th>
 						<th></th>
 					</tr>
-					<!-- evlt Sessionlist?? -->
 					<c:forEach items="${productWarenkorb}" var="warenkorb">
 					<tr> 
 						<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="50"
-                             height="25" alt="autobild"> </td> 
+                             height="25" alt="Schuh"> </td> 
                        	<td>${warenkorb.label}</td>
                     	<td>${warenkorb.type}</td>
                     	<td>${warenkorb.colour}</td>

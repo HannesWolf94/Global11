@@ -44,7 +44,6 @@ public class ProductUpload extends HttpServlet {
 		form.setType(request.getParameter("type"));
 		form.setColour(request.getParameter("colour"));
 		form.setPrice(Double.parseDouble(request.getParameter("price")));
-		form.setSize(Integer.parseInt(request.getParameter("size")));
 		// Logausgabe über empfangene Parts
 				for (Part part : request.getParts()) {
 					log("Part received: " + part.getName());
@@ -62,13 +61,12 @@ public class ProductUpload extends HttpServlet {
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO product (prod_label, prod_type, prod_colour, prod_price, prod_size, prod_image) VALUES (?, ?, ?, ?, ?, ?)")) {
+						"INSERT INTO product (prod_label, prod_type, prod_colour, prod_price, prod_image) VALUES (?, ?, ?, ?, ?)")) {
 			pstmt.setString(1, form.getLabel());
 			pstmt.setString(2, form.getType());
 			pstmt.setString(3, form.getColour());
 			pstmt.setDouble(4, form.getPrice());
-			pstmt.setInt(5, form.getSize());
-			pstmt.setBinaryStream(6, filepart.getInputStream());
+			pstmt.setBinaryStream(5, filepart.getInputStream());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

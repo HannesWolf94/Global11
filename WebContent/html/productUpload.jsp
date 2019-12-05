@@ -17,14 +17,13 @@
 		<div>
 			<label for="label"> Marke:</label> <input type="text"
 				list="labelList" name="label" id="label" required ><br />
-			<label for="label"></label>
 			<datalist id="labelList">
 				<option value="Adidas">
 				<option value="Nike">
 				<option value="Puma">
 			</datalist>
 			<label for="type"> Typ:</label> <input type="text" name="type" id="type" required autofocus><br /> 
-			<label for="colour"> Farbe:</label> <input type="text" list="colourList" name="colour" id="colour" required autofocus><br /> <label for="colour"></label>
+			<label for="colour"> Farbe:</label> <input type="text" list="colourList" name="colour" id="colour" required autofocus><br />
 			<datalist id="colourList">
 				<option value="weiß">
 				<option value="schwarz">
@@ -33,18 +32,6 @@
 				<option value="rot">
 			</datalist>
 			<label for="price"> Preis:</label> <input type="text" name="price" id="price" placeholder="100.00" required autofocus><br /> 
-			<label for="size"> Größe:</label> <input type="text" list="sizeList" name="size" id="size" required autofocus><br /> 
-			<label for="size"></label>
-			<datalist id="sizeList">
-				<option value="38">
-				<option value="39">
-				<option value="40">
-				<option value="41">
-				<option value="42">
-				<option value="43">
-				<option value="44">
-				<option value="45">
-			</datalist>
 			<label for="image"> Bild: </label> <input type="file" name="image" id="image" accept="image/*" required autofocus><br />
 			<button class="button" type="submit" value="submit">upload</button>
 			<button class="button" name="Reset" type="reset">zurücksetzen</button>

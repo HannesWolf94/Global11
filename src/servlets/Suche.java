@@ -41,7 +41,7 @@ public class Suche extends HttpServlet {
 		request.setAttribute("products", products);
 		
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userProductGesamt.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("UserProductGesamt");
 		dispatcher.forward(request, response);	
 	}
 

@@ -23,7 +23,6 @@
 					<th>Typ</th>
 					<th>Farbe</th>
 					<th>Preis</th>
-					<th>Größe</th>
 					<th>Bild</th>
 				</tr>
 				<c:forEach items="${produktverwaltungAdminList}" var="produktverwaltung">
@@ -33,9 +32,8 @@
 						<td>${produktverwaltung.type}</td>
 						<td>${produktverwaltung.colour}</td>
 						<td>${produktverwaltung.price}</td>
-						<td>${produktverwaltung.size}</td>
-						<td>Bild: <img src="../Bild?prod_id=${produktverwaltung.prodId}" width="300"
-                             height="150" alt="autobild"></td>
+						<td> <img src="../Bild?prod_id=${produktverwaltung.prodId}" width="200"
+                             height="200" alt="Schuh"></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -49,7 +47,7 @@
 						<input type="text" name="prodIdRepeat" id="prodIdRepeat" placeholder="ProduktId erneut eingeben" required>
 				</div>
 				<div>
-					<button name="submit" id="button" type="submit">löschen</button>
+					<button name="submit" id="submit" type="submit">löschen</button>
 				</div>
 			</fieldset>
 		</form>

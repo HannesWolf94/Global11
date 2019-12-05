@@ -15,7 +15,6 @@ public class Product implements Serializable {
 	private String type;
 	private String colour;
 	private double price; 
-	private int size;
 	private byte[] image;
 	private int anzahl; 
 	
@@ -43,12 +42,6 @@ public class Product implements Serializable {
 	}
 	public void setPrice(double d) {
 		this.price = d;
-	}
-	public int getSize() {
-		return size;
-	}
-	public void setSize(int size) {
-		this.size = size;
 	}
 	public byte[] getImage() {
 		return image;
