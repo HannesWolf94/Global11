@@ -18,7 +18,8 @@
    		<table>
 				<tbody>
 					<c:forEach items="${productUserList}" var="product">
-							<tr> <td colspan="2"> <img src="../Bild?prod_id=${product.prodId}" > </td></tr> 
+							<tr> <td colspan="2"> <img src="../Bild?prod_id=${product.prodId}" width="300"
+                             height="150" alt="autobild" > </td></tr> 
 							<tr><td colspan="2"> ${product.price} € <td></tr>
 		                    <tr>
 		                    	<td>${product.label}</td>

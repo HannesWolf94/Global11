@@ -34,7 +34,8 @@
 						<td>${produktverwaltung.colour}</td>
 						<td>${produktverwaltung.price}</td>
 						<td>${produktverwaltung.size}</td>
-						<td>Bild: <img src="../Bild?prod_id=${produktverwaltung.prodId}" ></td>
+						<td>Bild: <img src="../Bild?prod_id=${produktverwaltung.prodId}" width="300"
+                             height="150" alt="autobild"></td>
 					</tr>
 				</c:forEach>
 			</tbody>

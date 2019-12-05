@@ -13,7 +13,7 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<form id="product"action="../ProduktUpload" method="post" enctype="multipart/form-data">
+	<form id="product"action="../ProductUpload" method="post" enctype="multipart/form-data">
 		<div>
 			<label for="label"> Marke:</label> <input type="text"
 				list="labelList" name="label" id="label" required ><br />

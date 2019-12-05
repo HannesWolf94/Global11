@@ -16,7 +16,7 @@ import javax.servlet.http.Part;
 
 import beans.Product;
 
-@WebServlet("/ProduktUpload")
+@WebServlet("/ProductUpload")
 @MultipartConfig(
         maxFileSize=1024*1024*5,
         maxRequestSize=1024*1024*5*5, 

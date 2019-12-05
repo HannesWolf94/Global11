@@ -27,7 +27,8 @@
 					<!-- evlt Sessionlist?? -->
 					<c:forEach items="${productUserList}" var="product">
 					<tr> 
-						<td> <img src="../Bild?prod_id=${product.prodId}" > </td> 
+						<td> <img src="../Bild?prod_id=${product.prodId}" width="50"
+                             height="25" alt="autobild"> </td> 
                        	<td>${product.label}</td>
                     	<td>${product.type}</td>
                     	<td>${product.colour}</td>

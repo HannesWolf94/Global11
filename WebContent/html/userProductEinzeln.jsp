@@ -19,7 +19,8 @@
     </div>
    
    <div class="product" id="product"> 
-    	<em>Bild:</em><img src="../Bild?prod_id=${productDB.prodId}" >
+    	<em>Bild:</em><img src="../Bild?prod_id=${productDB.prodId}" width="300"
+                             height="150" alt="autobild">
     	<br> 
     	<em>Produkt: </em>${productDB.prodId} ${productDB.label} ${productDB.type} ${productDB.colour}
     	<br>
