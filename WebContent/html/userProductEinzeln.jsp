@@ -15,16 +15,17 @@
 	
 	<div  class="bild">
 		<h1>Produktansicht</h1>
-		<!-- Bild einfügen  -->
     </div>
    
    <div class="product" id="product"> 
-    	<em>${product.label} ${product.type} ${product.colour}</em>
+    	<%-- <em>Bild:</em><img src="../Bild?prod_id=${product.prodId}" >
+    	<br> --%>
+    	<em>Produkt: </em> ${product.prodId} ${product.label} ${product.type} ${product.colour}
     	<br>
-    	<em>${product.price}</em>
+    	<em>Preis: </em> ${product.price}
     	<br>
     	<em>Größe: 
-    	<input type="text" list="sizeList" name="size" id="size" required autofocus>
+    	<input type="number" list="sizeList" name="size" id="size" required autofocus>
     		<datalist id="sizeList">
     			<option value="40">
     			<option value="41">
@@ -35,7 +36,7 @@
     		</datalist>
     	</em>
     	<em>Anzahl: 
-    	<input type="text" list="anzahlList" name="anzahl" id="anzahl" required autofocus>
+    	<input type="number" list="anzahlList" name="anzahl" id="anzahl" required autofocus>
     		<datalist id="anzahlList">
     			<option value="1">
     			<option value="2">

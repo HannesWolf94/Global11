@@ -1,0 +1,56 @@
+/* Erstellt von Michael
+Quelle: w3 school bei den bilder(max-width und height) damit es responsive ist
+und button https://www.w3schools.com/Css/tryit.asp?filename=trycss_buttons_animate3*/
+
+.Login {
+	width: 70%;
+	height: 100px;
+	float: left;
+	padding: 20px;
+	border: 1px solid grey;
+	display: inline-block;
+}
+
+#un {
+	font-size: 0.94em;
+}
+
+#pw {
+	font-size: 0.94em;
+}
+
+label {
+	font-weight: bold;
+	min-width: 6em;
+	display: inline-block;
+	text-align: left;
+	cursor: pointer;
+}
+
+button {
+	display: inline-block;
+}
+
+input {
+	width: 150px;
+}
+
+input:hover {
+	background: #ffffb3;
+	border: 2px solid #efe816;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+	background: #3e8e41;
+}
+
+button:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+/* Damit Felder nicht zu dicht folgen */
+form div {
+	padding: 0.2em;
+}

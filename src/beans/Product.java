@@ -62,10 +62,4 @@ public class Product implements Serializable {
 		this.prodId = prodId;
 	}
 
-
-
-
-	
-	
-
 }

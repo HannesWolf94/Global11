@@ -56,8 +56,6 @@ public class UserProductGesamt extends HttpServlet {
 				product.setColour(colour);
 				price = rs.getDouble("prod_price");
 				product.setPrice(price);
-//				image = rs.getString("prod_image");
-//				form.setImage(image);
 
 				productUserList.add(product);
 			}
