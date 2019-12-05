@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <footer>
-
-	<a href="${pageContext.request.contextPath}/html/impressum.jsp">
-		Impressum </a> <a href="${pageContext.request.contextPath}/index.jsp">
-		Home </a>
+	<a href="${pageContext.request.contextPath}/html/impressum.jsp">Impressum </a>
+	<a href="${pageContext.request.contextPath}/index.jsp">	Home </a>
 </footer>
 

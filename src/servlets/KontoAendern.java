@@ -17,9 +17,6 @@ import javax.sql.DataSource;
 
 import beans.User;
 
-/**
- * Servlet implementation class KontoAendern
- */
 @WebServlet("/KontoAendern")
 public class KontoAendern extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -61,7 +58,6 @@ public class KontoAendern extends HttpServlet {
 			pstm.setString(4, user.getCity());
 			pstm.setString(5, user.getEmail());
 			pstm.executeUpdate();
-//			conn.close();
 		}
 		
 		catch (SQLException ex) {
@@ -73,7 +69,6 @@ public class KontoAendern extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 	
-
 	protected String dbCheck(String infoDaten, String dbDaten) {
 		if (infoDaten != null && infoDaten.length() > 0) {
 			return infoDaten;

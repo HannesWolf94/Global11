@@ -11,8 +11,7 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<h1>Am Ende fragt man sich immer: WORAN HAT ES JELEJEN?</h1>
-
+	<h1>Hoppla, irgendwas ist wohl schief gelaufen!</h1>
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>

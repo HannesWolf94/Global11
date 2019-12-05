@@ -1,5 +1,4 @@
 package servlets;
-
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -44,7 +43,6 @@ public class UserverwaltungAdmin extends HttpServlet {
 			String lastName;
 			String street;
 			String city;
-			int userAdmin;
 
 			while (rs.next()) {
 				User form = new User();

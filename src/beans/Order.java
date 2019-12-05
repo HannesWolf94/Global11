@@ -1,7 +1,5 @@
 //erstellt von Martin Scherzer
 package beans;
-
-import java.io.IOException;
 import java.io.Serializable;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -9,7 +7,7 @@ import javax.ejb.Stateless;
 @Stateless
 @LocalBean
 public class Order implements Serializable {
-
+	private static final long serialVersionUID = 1L;
 	private int orderId; 
 	private Product product; 
 	private double gesamtpreis; 
@@ -51,11 +49,4 @@ public class Order implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-
-
-
-	
-	
-
 }

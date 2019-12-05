@@ -11,8 +11,7 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<h1>eigloggt bischd</h1>
-
+	<h1>Sie haben Sich erfolgreich eingeloggt</h1>
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>

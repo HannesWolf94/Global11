@@ -16,20 +16,16 @@ import javax.sql.DataSource;
 
 import beans.User;
 
-/**
- * Servlet implementation class Registrierung
- */
+
 @WebServlet("/Registrierung")
 public class Registrierung extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlGlobal11DS")
     private DataSource ds; 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
+
 	public Registrierung() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

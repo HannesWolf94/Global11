@@ -1,4 +1,3 @@
-// Maddl, Michi
 package servlets;
 
 import java.io.IOException;
@@ -36,8 +35,7 @@ public class ProductDelete extends HttpServlet {
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("ProductAnzeigen");
 			dispatcher.forward(request, response);
 		} else {
-			// Fehlermeldung.jsp oder die Eingabefelder rot umranden wenn email nicht
-			// übereinstimmt
+			// Fehlermeldung.jsp oder die Eingabefelder rot umranden wenn email nicht übereinstimmt
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
 			dispatcher.forward(request, response);
 		}
@@ -68,7 +66,6 @@ public class ProductDelete extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

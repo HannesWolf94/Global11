@@ -1,6 +1,4 @@
 package beans;
-
-import java.io.IOException;
 import java.io.Serializable;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -8,7 +6,7 @@ import javax.ejb.Stateless;
 @Stateless
 @LocalBean
 public class User implements Serializable {
-	
+	private static final long serialVersionUID = 1L;
 	private int userId;
 	private String firstName;
 	private String lastName;

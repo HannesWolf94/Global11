@@ -1,7 +1,6 @@
 //erstellt von Martin Scherzer
 package beans;
 
-import java.io.IOException;
 import java.io.Serializable;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -9,6 +8,7 @@ import javax.ejb.Stateless;
 @Stateless
 @LocalBean
 public class Product implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private int	prodId;
 	private String label;

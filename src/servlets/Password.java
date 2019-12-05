@@ -1,5 +1,4 @@
 package servlets;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,20 +16,14 @@ import javax.sql.DataSource;
 
 import beans.User;
 
-
-/**
- * Servlet implementation class passwordServlet
- */
 @WebServlet("Password")
 public class Password extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup ="java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
-       
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		System.out.println("asdfasdf");
 		String newPassword = request.getParameter("newPassword");
 		String passwordConfirmation = request.getParameter("passwordConfirmation");
 		
@@ -61,7 +54,7 @@ public class Password extends HttpServlet {
 		
 		// Fehler entdeckt? Falls ja, Umleitung zur Fehlerseite
 		if (error) {
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeUser.jsp");
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}else if((password.equals(request.getParameter("oldPassword"))))
@@ -86,7 +79,6 @@ public class Password extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 }

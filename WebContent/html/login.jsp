@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +13,6 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-
 	<form action="${pageContext.request.contextPath}/Login" method="post">
 		<div class="Login">
 		<p>
@@ -27,7 +25,6 @@
 		</p>
 			<button class="button" type="submit" value="Submit">Login</button>
 		</div>
-
 	</form>
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>

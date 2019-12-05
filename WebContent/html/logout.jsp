@@ -15,11 +15,10 @@
 	</header>
 	<div>
 		<form method="post" action="/Logout">
-			<h3>Sie haben sich erfolgreich ausgeloggt</h3>
+			<h3>Sie wurden erfolgreich ausgeloggt.</h3>
 		</form>
 		<form action=${pageContext.request.contextPath}/index.jsp>
-			<button class="button" type="submit" value="Submit">Weiter
-				zur Startseite</button>
+			<button class="button" type="submit" value="Submit">Weiter zur Startseite</button>
 		</form>
 	</div>
 	<div id="footer">

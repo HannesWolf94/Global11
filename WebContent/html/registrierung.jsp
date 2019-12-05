@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,8 +28,6 @@
 			<button class="button" type="submit" value="Submit">
 				registrieren</button>
 			<button class="button" name="Reset" type="reset">zurücksetzen</button>
-		 
-
 		</div>
 	</form>
 <div id="footer">

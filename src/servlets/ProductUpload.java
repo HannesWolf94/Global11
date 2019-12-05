@@ -16,9 +16,6 @@ import javax.servlet.http.Part;
 
 import beans.Product;
 
-/**
- * Servlet implementation class ProduktUpload
- */
 @WebServlet("/ProduktUpload")
 @MultipartConfig(
         maxFileSize=1024*1024*5,
@@ -35,7 +32,6 @@ public class ProductUpload extends HttpServlet {
 	 */
 	public ProductUpload() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -79,7 +75,6 @@ public class ProductUpload extends HttpServlet {
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

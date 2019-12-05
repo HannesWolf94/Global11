@@ -1,8 +1,7 @@
-<!-- Hannes --> 
+<!-- erstellt von Johannes Wolf --> 
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-
 <html>
 <head>
 <base href="${pageContext.request.requestURI}" />
@@ -14,9 +13,7 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-
 		<h1>Userverwaltung</h1>
-
 		<form id="UserverwaltungAdmin"
 			action="${pageContext.request.contextPath}/UserverwaltungAdmin" method="POST">
 			<table>
@@ -28,7 +25,6 @@
 						<th>Nachname</th>
 						<th>Straße u. Hausnr.</th>
 						<th>PLZ u. Ort</th>
-						
 					</tr>
 					<c:forEach items="${userverwaltungAdminList}" var="userverwaltung">
 						<tr>
@@ -38,7 +34,6 @@
 							<td>${userverwaltung.lastName}</td>
 							<td>${userverwaltung.street}</td>
 							<td>${userverwaltung.city}</td>
-							
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -65,14 +60,12 @@
 						<input type="text" name="lastName" id="lastName" placeholder="Nachname" required>
 						<input type="text" name="street" id="street" placeholder="Straße u. Hausnr." required>
 						<input type="text" name="city" id="city" placeholder="PLZ u. Ort" required>
-						
 				</div>
 				<div>
 					<button name="submit" id="button" type="submit">ändern</button>
 				</div>
 			</fieldset>
 		</form>
-
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>

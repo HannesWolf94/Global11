@@ -24,17 +24,14 @@ public class Login extends HttpServlet {
 
 	public Login() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
-
 
 		String email = request.getParameter("email");
-//		String pass = request.getParameter("password");
+
 		
 		if (emailCheck(email)) {	
 			anmelden(request, response);

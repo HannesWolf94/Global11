@@ -17,7 +17,7 @@
 		<h3>Passwort wurde erfolgreich geändert</h3>
 		<form action="kontobereich.jsp">
 			<button class="button" type="submit" value="Submit">Weiter
-				zur Profil</button>
+				zum Profil</button>
 		</form>
 	</div>
 	<div id="footer">

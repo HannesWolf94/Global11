@@ -1,10 +1,9 @@
-// Hannes
+// erstellt von Johannes Wolf
 package servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,13 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
-
 import beans.User;
 
 
-/**
- * Servlet implementation class Demo09Servlet
- */
 @WebServlet("/UserAendern")
 public class UserAendern extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +24,6 @@ public class UserAendern extends HttpServlet {
 	
 	public UserAendern() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,7 +34,6 @@ public class UserAendern extends HttpServlet {
 		form.setLastName(request.getParameter("lastName"));
 		form.setStreet(request.getParameter("street"));
 		form.setCity(request.getParameter("city"));
-		
 		
 		aendern(form);
 		
@@ -65,8 +58,4 @@ public class UserAendern extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 	}
-
-
-
 }
-

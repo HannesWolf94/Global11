@@ -1,4 +1,4 @@
-// Johannes Wolf
+// erstellt von Johannes Wolf
 package beans;
 
 import java.io.Serializable;

@@ -1,7 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
 <base href="${pageContext.request.requestURI}" />
@@ -10,14 +9,11 @@
 <script type="text/javascript" src="../js/prodIdCheck.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
-
 <body>
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-
 		<h1>Produkt anzeigen</h1>
-
 	<form id="ProductAnzeigen" action="${pageContext.request.contextPath}/ProductAnzeigen" method="POST">
 		<table>
 			<tbody>
