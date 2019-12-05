@@ -18,11 +18,11 @@
     </div>
    
    <div class="product" id="product"> 
-    	<%-- <em>Bild:</em><img src="../Bild?prod_id=${product.prodId}" >
-    	<br> --%>
-    	<em>Produkt: </em> ${product.prodId} ${product.label} ${product.type} ${product.colour}
+    	<em>Bild:</em><img src="../Bild?prod_id=${productDB.prodId}" >
+    	<br> 
+    	<em>Produkt: </em>${productDB.prodId} ${productDB.label} ${productDB.type} ${productDB.colour}
     	<br>
-    	<em>Preis: </em> ${product.price}
+    	<em>Preis: </em> ${productDB.price}
     	<br>
     	<em>Größe: 
     	<input type="number" list="sizeList" name="size" id="size" required autofocus>
