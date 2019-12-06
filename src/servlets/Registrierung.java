@@ -68,7 +68,7 @@ public class Registrierung extends HttpServlet {
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO users (email, password, first_name, last_name, street, city, admin) VALUES (?, ?, ?, ?, ?, ?, '0')")) {
+						"INSERT INTO users (email, password, first_name, last_name, street, city) VALUES (?, ?, ?, ?, ?, ?)")) {
 			pstmt.setString(1, form.getEmail());
 			pstmt.setString(2, form.getPassword());
 			pstmt.setString(3, form.getFirstName());
