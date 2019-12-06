@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
@@ -14,8 +14,8 @@
 	</div>
 	<h1>GLOBAL 11 - Ihr Webshop für Fußballschuhe</h1>
 	<div>
-		<img src="img/Start.jpg" width=800 height=400 alt="start"
-			class="responsive">
+		<img src="img/Start.jpg" width=960 height=540 alt="start"
+			class="image">
 	</div>
 	<p class="blocksatz">Wir von Global 11 begrüßen Dich recht herzlich
 		in unserem Sport Online Shop und wünschen Dir viel Spaß beim Shoppen.
@@ -26,22 +26,22 @@
 <div class="slideshow-container">
 <div class="mySlides fade">
   <div class="numbertext">1 / 4</div>
-  <img src="img/Start.jpg" width=1000 height=500 alt="start">
-  <div class="text">Start</div>
+  <img src="img/Sport.jpg" width=960 height=540 alt="sport">
+  <div class="text">Sport</div>
 </div>
 <div class="mySlides fade">
   <div class="numbertext">2 / 4</div>
-  <img src="img/Nike.jpg" width=1000 height=500 alt="nike">
+  <img src="img/Nike.jpg" width=960 height=540 alt="nike">
   <div class="text">Nike</div>
 </div>
 <div class="mySlides fade">
   <div class="numbertext">3 / 4</div>
-  <img src="img/Puma.jpg" width=1000 height=500 alt="puma">
+  <img src="img/Puma.jpg" width=960 height=600 alt="puma">
   <div class="text">Puma</div>
 </div>
 <div class="mySlides fade">
   <div class="numbertext">4 / 4</div>
-  <img src="img/Adidas.jpg" width=1000 height=500 alt="adidas">
+  <img src="img/Adidas.jpg" width=960 height=600 alt="adidas">
   <div class="text">Adidas</div>
 </div>
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
