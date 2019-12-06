@@ -2,10 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
 <base href="${pageContext.request.requestURI}" />
 <title>Kontobereich</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
 	<div id="header">
@@ -37,8 +39,7 @@
 		</div>
 		<div>
 
-			<button class="button" name="submit" type="submit">Daten
-				ändern und speichern</button>
+			<button class="button" name="submit" type="submit">Daten ändern und speichern</button>
 			<button class="button" name="reset" type="reset">zurücksetzen</button>
 		</div>
 	</form>

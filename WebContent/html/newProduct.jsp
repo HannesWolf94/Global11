@@ -7,6 +7,8 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>newProduct</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
 	<div id="header">

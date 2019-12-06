@@ -8,6 +8,8 @@
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Userverwaltung</title>
 <script type="text/javascript" src="../js/emailconfirmation.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
 	<div id="header">

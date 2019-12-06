@@ -6,8 +6,9 @@
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Unsere Produkte</title>
 <script type="text/javascript" src="../js/suche.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
-
 <body>
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>

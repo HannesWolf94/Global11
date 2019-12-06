@@ -6,8 +6,9 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Unsere Produkte</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
-
 <body>
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
@@ -16,7 +17,6 @@
 	<div >
 		<h1>Produktansicht</h1>
 	</div>
-
 	<div class="product" id="product">
 		<img src="../Bild?prod_id=${productDB.prodId}" width="500"
 			height="500" alt="Schuh"> <br> <em>Artikel: </em>${productDB.prodId}

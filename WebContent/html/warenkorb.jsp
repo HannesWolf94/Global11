@@ -5,15 +5,14 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Warenkorb</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
-
 <body>
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	
 	<h1>Warenkorb</h1>
-   
    		<table>
 				<tbody>
 					<tr>
@@ -41,8 +40,6 @@
             <form action="../Warenkorb" method="POST">
                <button name="submit" type="submit"> bestellen </button>
             </form>
-
-
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>

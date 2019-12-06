@@ -5,6 +5,8 @@
 <head>
 <base href="${pageContext.request.requestURI}" />
 <title>Abmelden</title>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
 	<div id="header">

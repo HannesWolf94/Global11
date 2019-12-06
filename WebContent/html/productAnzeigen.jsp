@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Produkt anzeigen</title>
 <script type="text/javascript" src="../js/prodIdCheck.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
