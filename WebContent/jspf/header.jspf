@@ -7,7 +7,7 @@
 </noscript>
 <script type="text/javascript" src="../js/cookieCheck.js"></script>
 
-     <div id="Navigation">
+     <div id="site.header">
         <c:choose>
             <c:when test="${sessionScope.user.email != null }">
                 <nav>

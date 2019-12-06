@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Startseite</title>
 <script src="js/cookieCheck.js"></script>
+<link rel="stylesheet" type="text/css" href="css/header.css" />
 <link rel="stylesheet" type="text/css" href="css/startseite.css" />
 </head>
 <body>
