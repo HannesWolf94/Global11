@@ -1,89 +1,31 @@
-@charset "UTF-8";
-#header {
-    display: flex;
-    flex-flow: row-reverse wrap;
-
+/* vgl. https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black_right */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-.site-header {
-    flex: auto;
-    margin: .5em;
-    padding: .5em;
-    background-color: #0B243B;
-    display: flex;
-
+li {
+  float: left;
 }
 
-#logo {
-    width: 30%;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-/* https://www.webnots.com/11-image-hovering-effects-for-weebly/ */
-.site-header img{
-
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+li a:hover:not(.logout) {
+  background-color: #111;
 }
 
-.site-header img:hover {
-    -webkit-transform:scale(1.05);
-    transform:scale(1.05);
+.Logout {
+  background-color: #880000;
+  style="float:right"
 }
-
-#rwfont {
-    flex-grow: 1;
-    text-align: center;
-    margin: auto;
-
-}
-
-#leiste {
-    width: 30%;
-}
-
-#header a {
-    /* https://stackoverflow.com/questions/12528316/removing-underline-with-href-attribute */
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color: white;
-    color: #0B243B;
-    position: relative;
-    /* https://stackoverflow.com/questions/6008324/fade-effect-on-link-hover */
-    transition: color .2s ease-out, background .2s ease-in;
-}
-
-nav ul {
-    list-style-type: none;
-    background-size: cover;
-    padding-left: 0;
-    padding-right: 0;
-
-}
-#cookieCheck{
-    font-size: 2em;
-    text-align: center;
-    margin: auto;
-
-}
-noscript{
-    font-size: 1.5em ;
-    text-align: center;
-    background-color: red;
-}
-
-@media screen and (max-width: 600px) {
-    #leiste{
-        margin: auto;
-    }
-
-    #rwfont {
-        display: none;
-    }
-}
-
-
-
 
 

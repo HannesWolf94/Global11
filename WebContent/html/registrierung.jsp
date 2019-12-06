@@ -6,7 +6,8 @@
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registrierung</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/header.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script type="text/javascript" src="../js/regiPwCheck.js"></script>
 </head>
 <body>
@@ -15,18 +16,14 @@
 	</div>
 	<form action="../Registrierung" method="post">
 		<div>
-			<label for="email"> E-Mail:</label> <input type="email" name="email" id="email"><br />
-			<label for="pwRegi"> Passwort:</label> <input type="password"
-				name="password" id="pwRegi"><br /> <label for="pwRegiR">
-				Passwort wiederholen:</label> <input type="password" name="passwordRepeat" id="pwRegiR"><br />
-			<label for="firstname"> Vorname:</label> <input type="text"
-				name="firstname" id="firstname"><br /> <label for="lastname">
-				Nachname:</label> <input type="text" name="lastname" id="lastname"><br /> <label
-				for="street">Straße und Hausnummer.: </label> <input type="text"
-				name="street" id="street"><br /> <label for="city">PLZ und Ort:
-			</label> <input type="text" name="city" id="city"><br />
-			<button class="button" type="submit" value="Submit">
-				registrieren</button>
+			<label for="email"> E-Mail:</label> <input type="email" name="email" id="email" required autofocus><br />
+			<label for="pwRegi"> Passwort:</label>  <input type="password" name="password" id="pwRegi" required><br /> 
+			<label for="pwRegiR"> Passwort wiederholen:</label> <input type="password" name="passwordRepeat" id="pwRegiR" required><br />
+			<label for="firstname"> Vorname:</label> <input type="text"name="firstname" id="firstname" required><br /> 
+			<label for="lastname"> Nachname:</label> <input type="text" name="lastname" id="lastname" required><br /> 
+			<label for="street">Straße und Hausnummer.: </label> <input type="text" name="street" id="street" required><br /> 
+			<label for="city">PLZ und Ort: </label> <input type="text" name="city" id="city"required><br />
+			<button class="button" type="submit" value="Submit">registrieren</button>
 			<button class="button" name="Reset" type="reset">zurücksetzen</button>
 		</div>
 	</form>

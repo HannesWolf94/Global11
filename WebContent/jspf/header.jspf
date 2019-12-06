@@ -7,33 +7,33 @@
 </noscript>
 <script type="text/javascript" src="../js/cookieCheck.js"></script>
 
-     <div id="site.header">
+     <div>
         <c:choose>
             <c:when test="${sessionScope.user.email != null }">
                 <nav>
                     <ul>
                         <c:if test="${user.email eq 'admin@admin.de'}">
-                            <li><a href= "${pageContext.request.contextPath}/html/productUpload.jsp"> Produkt Upload </a></li>
+                            <li><a href= "${pageContext.request.contextPath}/html/productUpload.jsp"> Produktupload </a></li>
                              <li><a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung</a></li>
-                              <li><a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produkt anzeigen Admin</a></li>
+                              <li><a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produktverwaltung</a></li>
                                                             
                         </c:if>
-                        <li><a href= "${pageContext.request.contextPath}/Logout"> Logout</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/index.jsp">Global11</a></li>
                         <c:if test="${user.email != 'admin@admin.de'}">
-                            <li><a href= "${pageContext.request.contextPath}/Kontobereich"> Kontobereich</a></li>
-                            <li><a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht</a></li>
+                            <li><a href= "${pageContext.request.contextPath}/UserProductGesamt">Unsere Produkte</a></li>
+                            <li><a href= "${pageContext.request.contextPath}/Kontobereich">Mein Konto</a></li>
                         </c:if>
-                        <li><a href= "${pageContext.request.contextPath}/index.jsp"> Home</a></li>
+                        <li><a class="Logout" href= "${pageContext.request.contextPath}/Logout">Logout</a></li>
                     </ul>
                 </nav>
             </c:when>
             <c:otherwise>
                 <nav>
                     <ul>
-                        <li><a href= "${pageContext.request.contextPath}/html/registrierung.jsp"> Registrierung</a></li>
-                        <li><a href= "${pageContext.request.contextPath}/html/login.jsp"> Login</a></li>
-                        <li><a href= "${pageContext.request.contextPath}/index.jsp"> Home</a></li>
-                        <li><a href= "${pageContext.request.contextPath}/UserProductGesamt"> Produktgesamtansicht</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/index.jsp">Global11</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/html/registrierung.jsp">Registrierung</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/html/login.jsp">Login</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/UserProductGesamt"> Unsere Produkte</a></li>
                     </ul>
                 </nav>
             </c:otherwise>

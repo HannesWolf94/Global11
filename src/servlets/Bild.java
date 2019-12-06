@@ -28,10 +28,6 @@ public class Bild extends HttpServlet {
 
 	@Resource(lookup="java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
-	
-//	public Bild() {
-//		super();
-//	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -52,7 +48,6 @@ public class Bild extends HttpServlet {
 					Blob image = rs.getBlob("prod_image");
 					response.reset();
 					long length = image.length();
-					//response.setContentType("application/octet-stream");
 					response.setHeader("Content-Length",String.valueOf(length));
 										
 					try (InputStream in = image.getBinaryStream()) {

@@ -3,6 +3,7 @@ package servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,8 @@ public class Logout extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		request.getRequestDispatcher("html/logout.jsp").include(request, response);
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/login.jsp");
+		dispatcher.forward(request, response);
 
 	}
 

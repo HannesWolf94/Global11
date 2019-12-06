@@ -44,7 +44,7 @@ public class Registrierung extends HttpServlet {
 		
 		if(emailCheck(form.getEmail())) {
 //			Fehlermeldung nicht auf UserverwaltungAdmin verweisen
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("UserverwaltungAdmin");
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/registrierung.jsp");
             dispatcher.forward(request, response);
 		
 		} else {

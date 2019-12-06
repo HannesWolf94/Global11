@@ -2,24 +2,18 @@
 Quelle: w3 school bei den bilder(max-width und height) damit es responsive ist
 und button https://www.w3schools.com/Css/tryit.asp?filename=trycss_buttons_animate3*/
 
-#footer {
-
-}
-#header {
-
-}
 .Login {
 	width: 30%;
 	height: 100px;
 	float: center;
+	text-align: left;
 	padding: 20px;
-	border: 1px solid grey;
 	display: inline-block;
 }
 
  label {
 	font-weight: bold;
-	min-width: 6em;
+	min-width: 15em;
 	display: inline-block;
 	text-align: left; 
 	cursor: pointer;
@@ -40,15 +34,16 @@ input:hover {
 }
 
 button:hover {
-	background: #3e8e41;
+	background: #808080;
 }
 
 button:active {
-	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translateY(4px);
+	background-color: #808080;
 }
+
 /* Damit Felder nicht zu dicht folgen */
 form div {
 	padding: 0.2em;
 }
+
+
