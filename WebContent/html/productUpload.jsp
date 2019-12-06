@@ -22,8 +22,8 @@
 				<option value="Nike">
 				<option value="Puma">
 			</datalist>
-			<label for="type"> Typ:</label> <input type="text" name="type" id="type" required autofocus><br /> 
-			<label for="colour"> Farbe:</label> <input type="text" list="colourList" name="colour" id="colour" required autofocus><br />
+			<label for="type"> Typ:</label> <input type="text" name="type" id="type" required><br /> 
+			<label for="colour"> Farbe:</label> <input type="text" list="colourList" name="colour" id="colour" required><br />
 			<datalist id="colourList">
 				<option value="weiß">
 				<option value="schwarz">
@@ -31,8 +31,8 @@
 				<option value="gelb">
 				<option value="rot">
 			</datalist>
-			<label for="price"> Preis:</label> <input type="text" name="price" id="price" placeholder="100.00" required autofocus><br /> 
-			<label for="image"> Bild: </label> <input type="file" name="image" id="image" accept="image/*" required autofocus><br />
+			<label for="price"> Preis:</label> <input type="text" name="price" id="price" placeholder="100.00" required><br /> 
+			<label for="image"> Bild: </label> <input type="file" name="image" id="image" accept="image/*" required><br />
 			<button class="button" type="submit" value="submit">upload</button>
 			<button class="button" name="Reset" type="reset">zurücksetzen</button>
 		</div>
