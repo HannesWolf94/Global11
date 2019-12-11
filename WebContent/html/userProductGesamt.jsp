@@ -35,6 +35,7 @@
 				<tbody>
 					<c:forEach items="${productUserList}" var="product">
 						<tr>
+							<td>${product.prodId}</td>
 							<td>${product.label}</td>
 							<td>${product.type}</td>
 							<td>${product.colour}</td>

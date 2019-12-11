@@ -15,6 +15,14 @@
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 	<h1>Herzlichen Glückwunsch! Ihr Produkt wurde erfolgreich gespeichert!</h1>
+	
+	<div>
+		<form action="../ProductAnzeigen">
+			<button class="button" type="submit" value="Submit">Weiter zur Produktverwaltung</button>
+		</form>
+	</div>
+	
+	
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>
