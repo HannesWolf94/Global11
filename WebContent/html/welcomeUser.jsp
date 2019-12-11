@@ -14,6 +14,13 @@
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 	<h1>Sie haben Sich erfolgreich eingeloggt</h1>
+	
+	<div>
+		<form action="kontobereich.jsp">
+			<button class="button" type="submit" value="Submit">Mein Konto</button>
+		</form>
+	</div>
+	
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
 	</div>

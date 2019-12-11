@@ -6,16 +6,18 @@
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Startseite</title>
 <script src="js/cookieCheck.js"></script>
+<script src="js/slideshow.js"></script>
 <link rel="stylesheet" type="text/css" href="css/header.css" />
 <link rel="stylesheet" type="text/css" href="css/startseite.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
 	<div id="header">
 		<%@include file="jspf/header.jspf"%>
 	</div>
 	<h1>GLOBAL 11 - Ihr Webshop für Fußballschuhe</h1>
-	<div>
-		<img src="img/Start.jpg" width=960 height=540 alt="start" class="image">
+	<div class="image">
+		<img src="img/Startcut.jpg" alt="start">
 	</div>
 	<p class="blocksatz">Wir von Global 11 begrüßen Dich recht herzlich
 		in unserem Sport Online Shop und wünschen Dir viel Spaß beim Shoppen.
@@ -48,47 +50,16 @@
 			onclick="plusSlides(1)">&#10095;</a>
 	</div>
 	<br>
-	<div style="text-align: center">
+	<div class="point">
 		<span class="dot" onclick="currentSlide(1)"></span> <span class="dot"
 			onclick="currentSlide(2)"></span> <span class="dot"
 			onclick="currentSlide(3)"></span> <span class="dot"
 			onclick="currentSlide(4)"></span>
 	</div>
+
+	<script src="js/slideshow.js"></script>
+	<div id="footer">
+		<%@include file="jspf/footer.jspf"%>
+	</div>
 </body>
-
-<script>
-	var slideIndex = 1;
-	showSlides(slideIndex);
-
-	function plusSlides(n) {
-		showSlides(slideIndex += n);
-	}
-
-	function currentSlide(n) {
-		showSlides(slideIndex = n);
-	}
-
-	function showSlides(n) {
-		var i;
-		var slides = document.getElementsByClassName("mySlides");
-		var dots = document.getElementsByClassName("dot");
-		if (n > slides.length) {
-			slideIndex = 1
-		}
-		if (n < 1) {
-			slideIndex = slides.length
-		}
-		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
-		}
-		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" active", "");
-		}
-		slides[slideIndex - 1].style.display = "block";
-		dots[slideIndex - 1].className += " active";
-	}
-</script>
-<div id="footer">
-	<%@include file="jspf/footer.jspf"%>
-</div>
 </html>

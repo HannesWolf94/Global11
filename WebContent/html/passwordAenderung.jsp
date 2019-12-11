@@ -13,13 +13,11 @@
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 
-	<h1>Passwort erfolgreich geändert</h1>
+	<h1>Das Passwort wurde erfolgreich geändert!</h1>
 
 	<div>
-		<h3>Passwort wurde erfolgreich geändert</h3>
 		<form action="kontobereich.jsp">
-			<button class="button" type="submit" value="Submit">Weiter
-				zum Profil</button>
+			<button class="button" type="submit" value="Submit">Mein Konto</button>
 		</form>
 	</div>
 	<div id="footer">

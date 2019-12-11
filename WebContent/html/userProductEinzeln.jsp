@@ -2,6 +2,7 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<html>
 <head>
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
@@ -14,14 +15,15 @@
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 
-	<div >
-		<h1>Produktansicht</h1>
-	</div>
+
+		<h1>${productDB.label} ${productDB.type} ${productDB.colour} </h1> <br>
+		
+	
 	<div class="product" id="product">
 		<img src="../Bild?prod_id=${productDB.prodId}" width="500"
-			height="500" alt="Schuh"> <br> 
-			<em>Artikel: </em> ${productDB.label} ${productDB.type} ${productDB.colour} <br> 
-			<em>Preis: </em> ${productDB.price} € <br> 
+			height="500" alt="Schuh"> 
+			<h2>${productDB.price} € </h2><br> 
+			 
 			<em>Größe: <input type="text" list="sizeList" name="size" id="size" required autofocus> 
 			<datalist id="sizeList">
 				<option value="40">

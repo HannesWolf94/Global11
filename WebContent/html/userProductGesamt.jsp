@@ -1,6 +1,7 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<html>
 <head>
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
@@ -18,14 +19,15 @@
 		<fieldset>
 			<legend>Produktsuche</legend>
 			<div>
-				<label for="label">Hersteller:</label> <input type="text" name="label" id="label" placeholder="Hersteller">
+				<label for="label">Suche nach Hersteller:</label> <input type="text"
+					name="label" id="label" placeholder="Hersteller">
 				<button type="submit" id="submit" name="submit">Suchen</button>
 				<button name="reset" type="reset">Zurücksetzen</button>
 			</div>
 		</fieldset>
 	</form>
 	<br>
-	<h1>Produkt anzeigen</h1>
+	<h1>Unsere Produkte von Global11</h1>
 	<c:choose>
 		<c:when test="${products == null || empty products}">
 
@@ -66,8 +68,8 @@
 						<td>${product.type}</td>
 						<td>${product.colour}</td>
 						<td>${product.price}€</td>
-						<td><img src="../Bild?prod_id=${product.prodId}" width="500"
-							height="500" alt="Schuh"></td>
+						<td><img src="../Bild?prod_id=${product.prodId}" width="200"
+							height="200" alt="Schuh"></td>
 						<td>
 							<div class="auswaehlen">
 								<form action="../UserProductEinzeln" method="POST">
