@@ -33,8 +33,8 @@
 				<option value="44">
 				<option value="45">
 			</datalist>
-		</em> <em>Anzahl: <input type="text" list="anzahlList" name="anzahl"
-			id="anzahl" required autofocus> <datalist id="anzahlList">
+		</em> <em>Anzahl: <input type="text" list="anzahlList" name="anzahl" id="anzahl" required autofocus> 
+		<datalist id="anzahlList">
 				<option value="1">
 				<option value="2">
 				<option value="3">
@@ -43,11 +43,11 @@
 			</datalist>
 		</em>
 		<form id="auswaehlen" method="post" action="../ProductInWarenkorb">
-			<input name="prodId" type="hidden" value="${productDB.prodId}">
-			<input name="label" type="hidden" value="${productDB.label}">
-			<input name="type" type="hidden" value="${productDB.type}"> <input
-				name="price" type="hidden" value="${productDB.price}"> <input
-				name="colour" type="hidden" value="${productDB.colour}">
+			<input name="prodId" type="hidden" value="${product.prodId}">
+			<input name="label" type="hidden" value="${product.label}">
+			<input name="type" type="hidden" value="${product.type}"> 
+			<input name="price" type="hidden" value="${product.price}"> 
+			<input name="colour" type="hidden" value="${product.colour}">
 			<button name="submit" type="submit">in den Warenkorb</button>
 		</form>
 	</div>
