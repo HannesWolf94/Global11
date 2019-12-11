@@ -15,14 +15,12 @@
 		<%@include file="../jspf/header.jspf"%>
 	</div>
 	<form action="${pageContext.request.contextPath}/Login" method="post">
-		<div class="Login">
+		<div>
 		<p>
-			<label for="email"> E-Mail:</label> <input type="text" name="email"
-				id="email" autofocus required>
+			<label for="email"> E-Mail:</label> <input type="text" name="email" id="email" autofocus required>
 		</p>
 		<p>
-			 <label for="password"> Passwort:</label> <input
-				type="password" name="password" id="password" required>
+			 <label for="password"> Passwort:</label> <input type="password" name="password" id="password" required>
 		</p>
 			<button class="button" type="submit" value="Submit">Login</button>
 		</div>

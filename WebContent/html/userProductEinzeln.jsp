@@ -19,11 +19,11 @@
 	</div>
 	<div class="product" id="product">
 		<img src="../Bild?prod_id=${productDB.prodId}" width="500"
-			height="500" alt="Schuh"> <br> <em>Artikel: </em>${productDB.prodId}
-		${productDB.label} ${productDB.type} ${productDB.colour} <br> <em>Preis:
-		</em> ${productDB.price} <br> <em>Größe: <input type="text"
-			list="sizeList" name="size" id="size" required autofocus> <datalist
-				id="sizeList">
+			height="500" alt="Schuh"> <br> 
+			<em>Artikel: </em> ${productDB.label} ${productDB.type} ${productDB.colour} <br> 
+			<em>Preis: </em> ${productDB.price} € <br> 
+			<em>Größe: <input type="text" list="sizeList" name="size" id="size" required autofocus> 
+			<datalist id="sizeList">
 				<option value="40">
 				<option value="41">
 				<option value="42">

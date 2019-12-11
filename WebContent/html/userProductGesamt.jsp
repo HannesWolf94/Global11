@@ -18,10 +18,7 @@
 		<fieldset>
 			<legend>Produktsuche</legend>
 			<div>
-				<label for="label">Hersteller:</label> <input type="text"
-					name="label" id="label" placeholder="Hersteller">
-			</div>
-			<div>
+				<label for="label">Hersteller:</label> <input type="text" name="label" id="label" placeholder="Hersteller">
 				<button type="submit" id="submit" name="submit">Suchen</button>
 				<button name="reset" type="reset">Zurücksetzen</button>
 			</div>
@@ -36,13 +33,12 @@
 				<tbody>
 					<c:forEach items="${productUserList}" var="product">
 						<tr>
-							<td>${product.prodId}</td>
 							<td>${product.label}</td>
 							<td>${product.type}</td>
 							<td>${product.colour}</td>
 							<td>${product.price}€</td>
-							<td><img src="../Bild?prod_id=${product.prodId}" width="500"
-								height="500" alt="Schuh"></td>
+							<td><img src="../Bild?prod_id=${product.prodId}" width="200"
+								height="200" alt="Schuh"></td>
 							<td>
 								<div class="auswaehlen">
 									<form action="../UserProductEinzeln" method="POST">

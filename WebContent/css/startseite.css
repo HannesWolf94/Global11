@@ -1,7 +1,11 @@
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
-img {vertical-align: middle;}
+img {
+	position: center;
+	vertical-align: middle;
+	margin:auto
+}
 
 /* Slideshow container */
 .slideshow-container {
