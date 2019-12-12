@@ -36,7 +36,7 @@
 				<option value="44">
 				<option value="45">
 			</datalist>
-			Anzahl: <input type="" list="anzahlList" name="anzahl" id="anzahl" required> 
+			Anzahl: <input type="text" list="anzahlList" name="anzahl" id="anzahl" required> 
 			<datalist id="anzahlList">
 					<option value="1">
 					<option value="2">
