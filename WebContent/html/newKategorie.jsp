@@ -22,7 +22,7 @@
 			
 			<div>
 				<form action="../ProductAnzeigen">
-					<button class="button" type="submit" value="Submit">Weiter zur Produktverwaltung</button>
+					<button class="button" type="submit" value="Submit">Weiter zur Produktanzeige</button>
 				</form>
 			</div>
 			

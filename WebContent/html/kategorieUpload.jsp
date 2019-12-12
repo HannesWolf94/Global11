@@ -18,12 +18,15 @@
 			<%@include file="../jspf/header.jspf"%>
 		</div>
 		
-		<form id="product"action="../KategorieUpload" method="post" enctype="multipart/form-data">
+		<form id="kategorie" action="../KategorieUpload" method="post">
 			<div>
-				<label for="kategorie"> Kategorie:</label> <input type="text" list="kategorieList" name="kategorie" id="kategorie" required ><br />
+				<label for="kategorie"> Kategorie:</label> <input type="text" name="kategorie" id="kategorie" required ><br />
 				<button class="button" type="submit" value="submit">upload</button>
 				<button class="button" name="reset" type="reset">zurücksetzen</button>
 			</div>
 		</form>
+		<div id="footer">
+			<%@include file="../jspf/footer.jspf"%>
+		</div>
 	</body>
 </html>
