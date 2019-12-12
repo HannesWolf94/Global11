@@ -2,8 +2,8 @@
 package beans;
 
 import java.io.Serializable;
-import java.util.List;
-
+import java.sql.Date;
+//import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
@@ -11,10 +11,13 @@ import javax.ejb.Stateless;
 @LocalBean
 public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	private int rechnungsnummer;
 	private int orderId;
-	private List<Product> products;
+	private int userId;
+	// private List<Product> products;
 	private double gesamtpreis;
-	private User user;
+	private Date rechnungsdatum;
 
 	public Integer orderId() {
 		return orderId;
@@ -32,19 +35,36 @@ public class Order implements Serializable {
 		this.gesamtpreis = gesamtpreis;
 	}
 
-	public User getUser() {
-		return user;
+	// public List<Product> getProducts() {
+	// return products;
+	// }
+	//
+	// public void setProducts(List<Product> products) {
+	// this.products = products;
+	// }
+
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public List<Product> getProducts() {
-		return products;
+	public int getRechnungsnummer() {
+		return rechnungsnummer;
 	}
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
+	public void setRechnungsnummer(int rechnungsnummer) {
+		this.rechnungsnummer = rechnungsnummer;
 	}
+
+	public Date getRechnungsdatum() {
+		return rechnungsdatum;
+	}
+
+	public void setRechnungsdatum(Date rechnungsdatum) {
+		this.rechnungsdatum = rechnungsdatum;
+	}
+
 }

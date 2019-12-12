@@ -2,6 +2,7 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!-- https://www.tutorialspoint.com/jsp/jstl_format_formatnumber_tag.htm -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,7 +37,7 @@
 				<option value="44">
 				<option value="45">
 			</datalist>
-			Anzahl: <input type="" list="anzahlList" name="anzahl" id="anzahl" required> 
+			Anzahl: <input type="text" list="anzahlList" name="anzahl" id="anzahl" required> 
 			<datalist id="anzahlList">
 					<option value="1">
 					<option value="2">

@@ -1,3 +1,4 @@
+//erstellt von Johannes Wolf 
 package servlets;
 
 import javax.annotation.Resource;
@@ -13,7 +14,7 @@ import java.sql.*;
 import beans.User;
 import beans.Warenkorb;
 
-@WebServlet("Buchen")
+@WebServlet("ProductInWarenkorb")
 
 public class Buchen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,7 +44,7 @@ public class Buchen extends HttpServlet {
 
 		speichern(warenkorb, user);
 		request.setAttribute("warenkorb", warenkorb);
-		response.sendRedirect("html/warenkorb.jsp");
+		response.sendRedirect("html/newKategorie.jsp");
 	}
 	
 	private void speichern(Warenkorb warenkorb, User user) throws ServletException  {
