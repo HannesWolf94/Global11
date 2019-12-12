@@ -30,33 +30,18 @@ public class KategorieUpload extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		Kategorie kategorie = new Kategorie();
 		kategorie.setKategorie(request.getParameter("kategorie"));
-		
-		speichern(kategorie);
-		request.setAttribute("kategorie", kategorie);
-		response.sendRedirect("html/newKategorie.jsp");
+	
+		if(kategorieCheck(kategorie.getKategorie()) == false) {
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/kategorieUpload.jsp");
+	        dispatcher.forward(request, response);
+		} else {
+	            speichern(kategorie);
+	            request.setAttribute("kategorie", kategorie);
+				final RequestDispatcher dispatcher = request.getRequestDispatcher("html/newKategorie.jsp");
+				dispatcher.forward(request, response);
+	    }
 	}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//		if(kategorieCheck(kategorie.getKategorie())) {
-//			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/newKategorie.jsp");
-//	        dispatcher.forward(request, response);
-//		} else {
-//	            speichern(kategorie);
-//	            
-//	            request.setAttribute("kategorie", kategorie);
-//				final RequestDispatcher dispatcher = request.getRequestDispatcher("html/newKategorie.jsp");
-//				dispatcher.forward(request, response);
-//	    }
-//	}
-//
+
 	private void speichern(Kategorie kategorie) throws ServletException {
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
@@ -74,21 +59,21 @@ public class KategorieUpload extends HttpServlet {
 	}
 
 
-//	protected boolean kategorieCheck(String kategorie) throws ServletException {
-//		try (Connection con = ds.getConnection(); PreparedStatement pstmt = con.prepareStatement("SELECT * FROM category WHERE cat_description = ?")) {
-//			pstmt.setString(1, kategorie);
-//			try (ResultSet rs = pstmt.executeQuery()) {
-//				if (rs.next()) {
-//					return false;
-//				} else {
-//					return true;
-//				}
-//			} catch (Exception e) {
-//			}
-//		} catch (Exception e) {
-//		}
-//		return true;
-//	}
+	protected boolean kategorieCheck(String kategorie) throws ServletException {
+		try (Connection con = ds.getConnection(); PreparedStatement pstmt = con.prepareStatement("SELECT * FROM category WHERE cat_description = ?")) {
+			pstmt.setString(1, kategorie);
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					return false;
+				} else {
+					return true;
+				}
+			} catch (Exception e) {
+			}
+		} catch (Exception e) {
+		}
+		return true;
+	}
 
 
 }
