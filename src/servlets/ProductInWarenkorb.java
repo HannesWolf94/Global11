@@ -23,8 +23,6 @@ public class ProductInWarenkorb extends HttpServlet {
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
 
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -43,7 +41,7 @@ public class ProductInWarenkorb extends HttpServlet {
 		Warenkorb warenkorb = new Warenkorb();
 		warenkorb.setSize(Integer.parseInt(request.getParameter("size")));
 		warenkorb.setAnzahl(Integer.parseInt(request.getParameter("anzahl")));
-
+		
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("INSERT INTO warenkorb (prod_id, number, size, user_id, date ) values (?,?,?,?,'2019-12-11')")) {
 			pstmt.setInt(1, product.getProdId());
@@ -54,33 +52,10 @@ public class ProductInWarenkorb extends HttpServlet {
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
-		
 		request.setAttribute("warenkorb", warenkorb);
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userProductEinzeln.jsp"); // richtige Verlinkung einbauen
 		dispatcher.forward(request, response);
 	}
-		
-//		Integer prodId = Integer.valueOf(request.getParameter("prodId"));
-//		String label = request.getParameter("label");
-//		String type = request.getParameter("type");
-//		String colour = request.getParameter("colour");
-//		Double price = Double.valueOf(request.getParameter("price"));
-//		Integer size = Integer.valueOf(request.getParameter("size"));
-//		Integer anzahl = Integer.valueOf(request.getParameter("anzahl"));
-
-//		ArrayList<Warenkorb> productWarenkorb = new ArrayList<>();		
-
-//		warenkorb.setProdId(prodId);
-//		warenkorb.setLabel(label);
-//		warenkorb.setType(type);
-//		warenkorb.setColour(colour);
-//		warenkorb.setPrice(price);
-//		warenkorb.setSize(size);
-//		warenkorb.setAnzahl(anzahl);
-//		
-//		productWarenkorb.add(warenkorb);
-//		
-//		request.setAttribute("productWarenkorb", productWarenkorb);
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

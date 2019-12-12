@@ -2,20 +2,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<base href="${pageContext.request.requestURI}" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Fehlerseite</title>
-<link rel="stylesheet" type="text/css" href="../css/header.css" />
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
-</head>
-<body>
-	<div id="header">
-		<%@include file="../jspf/header.jspf"%>
-	</div>
-	<h1>Hoppla, irgendwas ist wohl schief gelaufen!</h1>
-	<div id="footer">
-		<%@include file="../jspf/footer.jspf"%>
-	</div>
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+		<base href="${pageContext.request.requestURI}" />
+		
+		<title>Fehlerseite</title>
+		
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	</head>
+	<body>
+		<div id="header">
+			<%@include file="../jspf/header.jspf"%>
+		</div>
+		
+		<h1>Hoppla, irgendwas ist wohl schief gelaufen!</h1>
+		
+		<div id="footer">
+			<%@include file="../jspf/footer.jspf"%>
+		</div>
+	</body>
 </html>
