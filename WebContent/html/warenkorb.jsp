@@ -1,6 +1,7 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<html>
 <head>
 <base href="${pageContext.request.requestURI}" />
 <meta http-equiv="Content-Type" charset="UTF-8">
@@ -12,16 +13,16 @@
 	<div id="header">
 		<%@include file="../jspf/header.jspf"%>
 	</div>
-	<h1>Warenkorb</h1>
+	<h1>Ihr Warenkorb</h1>
    		<table>
 				<tbody>
 					<tr>
-						<th colspan= "3"> Produkt</th>
+						<th colspan= "3"> Hersteller</th>
+						<th>Typ</th>
 						<th>Farbe</th>
 						<th>Größe</th>
 						<th>Anzahl</th>
 						<th>Preis</th>
-						<th></th>
 					</tr>
 					<c:forEach items="${productWarenkorb}" var="warenkorb">
 					<tr> 
@@ -38,7 +39,7 @@
 				</tbody>
 			</table>
             <form action="../Warenkorb" method="POST">
-               <button name="submit" type="submit"> bestellen </button>
+               <button name="submit" type="submit"> Jetzt bestellen </button>
             </form>
 	<div id="footer">
 		<%@include file="../jspf/footer.jspf"%>
