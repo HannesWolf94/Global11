@@ -18,9 +18,9 @@
 			<%@include file="../jspf/header.jspf"%>
 		</div>
 	
+	<form id="auswaehlen" method="post" action="../ProductInWarenkorb">
 		<h1>${productDB.kategorie} ${productDB.label} ${productDB.type} ${productDB.colour} </h1> <br>	
 		
-		<div class="product" id="product">
 			<img src="../Bild?prod_id=${productDB.prodId}" width="500" height="500" alt="Schuh"> 
 			
 			<h2>${productDB.price} € </h2><br> 
@@ -35,7 +35,7 @@
 				<option value="44">
 				<option value="45">
 			</datalist>
-			Anzahl: <input type="text" list="anzahlList" name="anzahl" id="anzahl" required> 
+			Anzahl: <input type="" list="anzahlList" name="anzahl" id="anzahl" required> 
 			<datalist id="anzahlList">
 					<option value="1">
 					<option value="2">
@@ -44,16 +44,16 @@
 					<option value="5">
 				</datalist>
 				</p>
-			<form id="auswaehlen" method="post" action="../ProductInWarenkorb">
-				<input name="prodId" type="hidden" value="${product.prodId}">
-				<input name="kategorie" type="hidden" value="${product.kategorie}">
-				<input name="label" type="hidden" value="${product.label}">
-				<input name="type" type="hidden" value="${product.type}"> 
-				<input name="price" type="hidden" value="${product.price}"> 
-				<input name="colour" type="hidden" value="${product.colour}">
+			
+				<input name="prodId" type="hidden" value="${productDB.prodId}">
+				<input name="kategorie" type="hidden" value="${productDB.kategorie}">
+				<input name="label" type="hidden" value="${productDB.label}">
+				<input name="type" type="hidden" value="${productDB.type}"> 
+				<input name="price" type="hidden" value="${productDB.price}"> 
+				<input name="colour" type="hidden" value="${productDB.colour}">
 				<button name="submit" type="submit">in den Warenkorb</button>
-			</form>
-		</div>
+		</form>
+
 	
 		<div id="footer">
 			<%@include file="../jspf/footer.jspf"%>
