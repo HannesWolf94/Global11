@@ -26,13 +26,13 @@ public class UserProductEinzeln extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		Integer prodId = Integer.valueOf(request.getParameter("prodId"));
+		int prodId = Integer.valueOf(request.getParameter("prodId"));
 		String kategorie = request.getParameter("kategorie");
 		String label = request.getParameter("label");
 		String type = request.getParameter("type");
 		String colour = request.getParameter("colour");
-		Double price = Double.valueOf(request.getParameter("price"));
-
+		double price = Double.valueOf(request.getParameter("price"));
+		
 		Product productDB = new Product();
 
 		try (Connection con = ds.getConnection();
@@ -44,6 +44,7 @@ public class UserProductEinzeln extends HttpServlet {
 					productDB.setProdId(prodId);
 					kategorie = rs.getString("cat_description");
 					productDB.setKategorie(kategorie);
+					// productDB.setKategorie(rs.getString("cat_description"));	=> LIEBER SO
 					label = rs.getString("prod_label");
 					productDB.setLabel(label);
 					type = rs.getString("prod_type");

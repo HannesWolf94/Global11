@@ -56,6 +56,7 @@ public class Login extends HttpServlet {
 				try (ResultSet rs = pstmt.executeQuery()) {
 					if (rs != null && rs.next()) {
 						User form = new User();
+						form.setUserId(Integer.parseInt(rs.getString("user_id")));
 						String email = rs.getString("email");
 						form.setEmail(email);
 						String firstname = rs.getString("first_name");

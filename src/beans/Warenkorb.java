@@ -12,6 +12,7 @@ public class Warenkorb implements Serializable {
 
 	private int userId;
 	private int	prodId;
+	private String kategorie;
 	private String label;
 	private String type;
 	private String colour;
@@ -66,6 +67,12 @@ public class Warenkorb implements Serializable {
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public String getKategorie() {
+		return kategorie;
+	}
+	public void setKategorie(String kategorie) {
+		this.kategorie = kategorie;
 	}
 
 }
