@@ -1,6 +1,7 @@
 <!-- erstellt von Johannes Wolf  -->
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,7 +24,7 @@
 		<div class="product" id="product">
 			<img src="../Bild?prod_id=${productDB.prodId}" width="500" height="500" alt="Schuh"> 
 			
-			<h2>${productDB.price} € </h2><br> 
+			<h2><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${productDB.price}"/> € </h2><br> 
 			<p>Artikelnummer: ${productDB.prodId} <br>
 				 
 			Größe: <input type="text" list="sizeList" name="size" id="size" required autofocus> 
