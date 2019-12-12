@@ -18,12 +18,13 @@
 			<%@include file="../jspf/header.jspf"%>
 		</div>
 	
-		<h1>${productDB.label} ${productDB.type} ${productDB.colour} </h1> <br>	
+		<h1>${productDB.kategorie} ${productDB.label} ${productDB.type} ${productDB.colour} </h1> <br>	
 		
 		<div class="product" id="product">
 			<img src="../Bild?prod_id=${productDB.prodId}" width="500" height="500" alt="Schuh"> 
 			
 			<h2>${productDB.price} € </h2><br> 
+			<p>Artikelnummer: ${productDB.prodId} <br>
 				 
 			Größe: <input type="text" list="sizeList" name="size" id="size" required autofocus> 
 			<datalist id="sizeList">
@@ -42,8 +43,10 @@
 					<option value="4">
 					<option value="5">
 				</datalist>
+				</p>
 			<form id="auswaehlen" method="post" action="../ProductInWarenkorb">
 				<input name="prodId" type="hidden" value="${product.prodId}">
+				<input name="kategorie" type="hidden" value="${product.kategorie}">
 				<input name="label" type="hidden" value="${product.label}">
 				<input name="type" type="hidden" value="${product.type}"> 
 				<input name="price" type="hidden" value="${product.price}"> 

@@ -16,7 +16,8 @@ public class Product implements Serializable {
 	private String colour;
 	private double price; 
 	private byte[] image;
-	private int anzahl; 
+	private int anzahl;
+	private String kategorie;
 	
 
 	public String getLabel() {
@@ -60,6 +61,12 @@ public class Product implements Serializable {
 	}
 	public void setAnzahl(int anzahl) {
 		this.anzahl = anzahl;
+	}
+	public String getKategorie() {
+		return kategorie;
+	}
+	public void setKategorie(String kategorie) {
+		this.kategorie = kategorie;
 	}
 
 }

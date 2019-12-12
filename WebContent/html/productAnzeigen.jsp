@@ -26,6 +26,7 @@
 				<tbody>
 					<tr>
 						<th>ID</th>
+						<th>Kategorie</th>
 						<th>Marke</th>
 						<th>Typ</th>
 						<th>Farbe</th>
@@ -35,6 +36,7 @@
 					<c:forEach items="${produktverwaltungAdminList}" var="produktverwaltung">
 						<tr>
 							<td>${produktverwaltung.prodId}</td>
+							<td>${produktverwaltung.kategorie}</td>
 							<td>${produktverwaltung.label}</td>
 							<td>${produktverwaltung.type}</td>
 							<td>${produktverwaltung.colour}</td>

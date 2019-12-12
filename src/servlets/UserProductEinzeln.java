@@ -27,6 +27,7 @@ public class UserProductEinzeln extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Integer prodId = Integer.valueOf(request.getParameter("prodId"));
+		String kategorie = request.getParameter("kategorie");
 		String label = request.getParameter("label");
 		String type = request.getParameter("type");
 		String colour = request.getParameter("colour");
@@ -41,6 +42,8 @@ public class UserProductEinzeln extends HttpServlet {
 				while (rs.next()) {
 					prodId = rs.getInt("prod_id");
 					productDB.setProdId(prodId);
+					kategorie = rs.getString("cat_description");
+					productDB.setKategorie(kategorie);
 					label = rs.getString("prod_label");
 					productDB.setLabel(label);
 					type = rs.getString("prod_type");

@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 import javax.servlet.http.Part;
 
 import beans.Product;
+import beans.Kategorie;
 
 @WebServlet("/ProductUpload")
 @MultipartConfig(
@@ -44,29 +45,35 @@ public class ProductUpload extends HttpServlet {
 		form.setType(request.getParameter("type"));
 		form.setColour(request.getParameter("colour"));
 		form.setPrice(Double.parseDouble(request.getParameter("price")));
+		
+		Kategorie kategorie = new Kategorie();
+		kategorie.setKategorie(request.getParameter("kategorie"));
+		
 		// Logausgabe über empfangene Parts
 				for (Part part : request.getParts()) {
 					log("Part received: " + part.getName());
 					if (part.getSubmittedFileName() != null)
 						log("Filename written via BinaryStream: " + part.getSubmittedFileName());
 				}
-		// Filebehandlung 
+		
 		Part filepart = request.getPart("image");
-		speichern(form,filepart);
+		speichern(form, filepart, kategorie);
 		request.setAttribute("form", form);
 		response.sendRedirect("html/newProduct.jsp");
 	}
 
-	private void speichern(Product form, Part filepart) throws ServletException {
+	private void speichern(Product form, Part filepart, Kategorie kategorie) throws ServletException {
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO product (prod_label, prod_type, prod_colour, prod_price, prod_image) VALUES (?, ?, ?, ?, ?)")) {
+						"INSERT INTO product (prod_label, prod_type, prod_colour, prod_price, prod_image, cat_description) VALUES (?, ?, ?, ?, ?, ?)")) {
 			pstmt.setString(1, form.getLabel());
 			pstmt.setString(2, form.getType());
 			pstmt.setString(3, form.getColour());
 			pstmt.setDouble(4, form.getPrice());
 			pstmt.setBinaryStream(5, filepart.getInputStream());
+			pstmt.setString(6, kategorie.getKategorie());
+			
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

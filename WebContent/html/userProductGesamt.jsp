@@ -39,6 +39,7 @@
 						<c:forEach items="${productUserList}" var="product">
 							<tr>
 								<td>${product.prodId}</td>
+								<td>${product.kategorie}</td>
 								<td>${product.label}</td>
 								<td>${product.type}</td>
 								<td>${product.colour}</td>
@@ -48,6 +49,7 @@
 									<div class="auswaehlen">
 										<form action="../UserProductEinzeln" method="POST">
 											<input name="prodId" type="hidden" value="${product.prodId}">
+											<input name="prodId" type="hidden" value="${product.kategorie}">
 											<input name="label" type="hidden" value="${product.label}">
 											<input name="type" type="hidden" value="${product.type}">
 											<input name="price" type="hidden" value="${product.price}">

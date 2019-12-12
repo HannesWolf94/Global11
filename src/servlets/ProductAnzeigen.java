@@ -43,6 +43,7 @@ public class ProductAnzeigen extends HttpServlet {
 			String type;
 			String colour;
 			double price;
+			String kategorie;
 
 			while (rs.next()) {
 				Product form = new Product();
@@ -56,6 +57,8 @@ public class ProductAnzeigen extends HttpServlet {
 				form.setColour(colour);
 				price = rs.getDouble("prod_price");
 				form.setPrice(price);
+				kategorie = rs.getString("cat_description");
+				form.setKategorie(kategorie);
 
 				produktverwaltungAdminList.add(form);
 			}

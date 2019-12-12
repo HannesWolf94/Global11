@@ -1,4 +1,4 @@
-//erstellt von Johannes Wolf 
+//Erstellt von Michael Haid
 package servlets;
 
 import javax.annotation.Resource;
@@ -12,16 +12,16 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.sql.*;
-import beans.Product;
+import beans.Kategorie;
 
-@WebServlet("UserProductGesamt")
-public class UserProductGesamt extends HttpServlet {
+@WebServlet("KategorieAnzeigen")
+public class KategorieAnzeigen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	public UserProductGesamt() {
+
+	public KategorieAnzeigen() {
 		super();
 	}
-	
+
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
 	
@@ -31,44 +31,36 @@ public class UserProductGesamt extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String sql = "SELECT * FROM product";
+		String sql = "SELECT * FROM category";
 		
-		ArrayList<Product> productUserList = new ArrayList<>();
+		ArrayList<Kategorie> kategorieList = new ArrayList<>();
 		try {
 			final Connection con = ds.getConnection();
 			PreparedStatement pstm = con.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
-			
-			int prodId;
-			double price; 
-			String label; 
-			String type; 
-			String colour; 
+
+			int kategorieId;
 			String kategorie;
+			
 
 			while (rs.next()) {
-				Product product = new Product();
-				prodId = rs.getInt("prod_id");
-				product.setProdId(prodId);
+				Kategorie form = new Kategorie();
+				kategorieId = rs.getInt("cat_id");
+				form.setKategorieId(kategorieId);
 				kategorie = rs.getString("cat_description");
-				product.setKategorie(kategorie);
-				label = rs.getString("prod_label");
-				product.setLabel(label);
-				type = rs.getString("prod_type");
-				product.setType(type);
-				colour = rs.getString("prod_colour");
-				product.setColour(colour);
-				price = rs.getDouble("prod_price");
-				product.setPrice(price);
+				form.setKategorie(kategorie);
+				
 
-				productUserList.add(product);
+				kategorieList.add(form);
 			}
 
-			request.setAttribute("productUserList", productUserList);
+			request.setAttribute("kategorieList", kategorieList);
+			con.close();
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userProductGesamt.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/productUpload.jsp");
 		dispatcher.forward(request, response);
-		}
+	}
+
 }

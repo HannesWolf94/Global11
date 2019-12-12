@@ -13,7 +13,8 @@
                 <nav>
                     <ul>
                         <c:if test="${user.email eq 'admin@admin.de'}">
-                            <li><a href= "${pageContext.request.contextPath}/html/productUpload.jsp"> Produktupload </a></li>
+                        <li><a href= "${pageContext.request.contextPath}/html/kategorieUpload.jsp"> Kategorieupload </a></li>
+                            <li><a href= "${pageContext.request.contextPath}/KategorieAnzeigen"> Produktupload </a></li>
                              <li><a href= "${pageContext.request.contextPath}/UserverwaltungAdmin"> Userverwaltung</a></li>
                               <li><a href= "${pageContext.request.contextPath}/ProductAnzeigen"> Produktverwaltung</a></li>
                                                             
