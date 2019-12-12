@@ -16,7 +16,7 @@ public class Order implements Serializable {
 	private int orderId;
 	private int userId;
 	// private List<Product> products;
-	private double gesamtpreis;
+	private double rechnungsbetrag;
 	private Date rechnungsdatum;
 
 	public Integer orderId() {
@@ -28,11 +28,11 @@ public class Order implements Serializable {
 	}
 
 	public double getGesatmpreis() {
-		return gesamtpreis;
+		return rechnungsbetrag;
 	}
 
-	public void setGesamtpreis(Double gesamtpreis) {
-		this.gesamtpreis = gesamtpreis;
+	public void setRechnungsbetrag(Double rechnungsbetrag) {
+		this.rechnungsbetrag = rechnungsbetrag;
 	}
 
 	// public List<Product> getProducts() {
