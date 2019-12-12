@@ -32,10 +32,11 @@ public class Suche extends HttpServlet {
 		// eines Beans zur Weitergabe der Formulardaten an eine JSP
 		
 		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
+		String kategorie = request.getParameter("kategorie");
 		String label = request.getParameter("label");
 		
 		// DB-Zugriff
-		List<Product> products = search(label);
+		List<Product> products = search(kategorie, label);
 				
 		// Scope "Request"
 		request.setAttribute("products", products);
@@ -45,15 +46,17 @@ public class Suche extends HttpServlet {
 		dispatcher.forward(request, response);	
 	}
 
-	private List<Product> search(String label) throws ServletException {
+	private List<Product> search(String kategorie, String label) throws ServletException {
+		kategorie = (kategorie == null || kategorie == "") ? "%" : "%" + kategorie + "%";
 		label = (label == null || label == "") ? "%" : "%" + label + "%";
 		List<Product> products = new ArrayList<Product>();
 		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM product WHERE prod_label LIKE ?")) {
+			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM product WHERE cat_description like ? and prod_label LIKE ?")) {
 
-			pstmt.setString(1, label);
+			pstmt.setString(1, kategorie);
+			pstmt.setString(2, label);
 			try (ResultSet rs = pstmt.executeQuery()) {
 			
 				while (rs.next()) {
@@ -61,6 +64,9 @@ public class Suche extends HttpServlet {
 					
 					Integer prodId = Integer.valueOf(rs.getInt("prod_id"));
 					product.setProdId(prodId);
+					
+					String prod_kategorie = rs.getString("cat_description");
+					product.setKategorie(prod_kategorie);
 					
 					String prodLabel = rs.getString("prod_label");
 					product.setLabel(prodLabel);
@@ -76,7 +82,7 @@ public class Suche extends HttpServlet {
 					product.setPrice(price);
 					
 					products.add(product);
-				} // while rs.next()
+				}
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
@@ -89,7 +95,6 @@ public class Suche extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
