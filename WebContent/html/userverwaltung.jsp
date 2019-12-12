@@ -21,7 +21,6 @@
 			<%@include file="../jspf/header.jspf"%>
 		</div>
 			<h1>Userverwaltung</h1>
-			<form id="UserverwaltungAdmin" action="${pageContext.request.contextPath}/UserverwaltungAdmin" method="POST">
 				<table>
 					<tbody>
 						<tr>
@@ -44,7 +43,6 @@
 						</c:forEach>
 					</tbody>
 				</table>
-			</form>
 			<form  id = "UserLoeschen" action="${pageContext.request.contextPath}/UserLoeschen" method = "POST">
 				<fieldset>
 					<div>
