@@ -33,31 +33,31 @@ public class WarenkorbAnzeigen extends HttpServlet {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		
+		
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement("SELECT product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number" + 
-					"from warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
+			PreparedStatement pstm = con.prepareStatement("SELECT warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
 			
 			pstm.setInt(1, user.getUserId());
 			ResultSet rs = pstm.executeQuery();
 							
 			while (rs.next()) {
 				Warenkorb warenkorb = new Warenkorb();
-				warenkorb.setUserId(rs.getInt("warenkorb.user_id"));
-				warenkorb.setProdId(rs.getInt("warenkorb.prod_id"));
-				warenkorb.setKategorie(rs.getString("product.cat_description"));
-				warenkorb.setLabel(rs.getString("product.prod_label"));
-				warenkorb.setType(rs.getString("product.prod_type"));
-				warenkorb.setColour(rs.getString("product.prod_colour"));
-				warenkorb.setPrice(rs.getInt("product.prod_price"));
-				warenkorb.setSize(rs.getInt("warenkorb.size"));
-				warenkorb.setAnzahl(rs.getInt("warenkorb.number"));
+				warenkorb.setUserId(rs.getInt("user_id"));
+				warenkorb.setProdId(rs.getInt("prod_id"));
+				warenkorb.setKategorie(rs.getString("cat_description"));
+				warenkorb.setLabel(rs.getString("prod_label"));
+				warenkorb.setType(rs.getString("prod_type"));
+				warenkorb.setColour(rs.getString("prod_colour"));
+				warenkorb.setPrice(rs.getInt("prod_price"));
+				warenkorb.setSize(rs.getInt("size"));
+				warenkorb.setAnzahl(rs.getInt("number"));
 				warenkorbList.add(warenkorb);
 			}
 			request.setAttribute("warenkorbList", warenkorbList);
 			con.close();
 		} catch (Exception ex) {
-//			ex.getMessage();
+			ex.getMessage();
 		}
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/warenkorb.jsp");
 		dispatcher.forward(request, response);

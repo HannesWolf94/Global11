@@ -16,34 +16,41 @@
 		<div id="header">
 			<%@include file="../jspf/header.jspf"%>
 		</div>
-		<h1>Ihr Warenkorb</h1>
-	   		<table>
+		<h1>Ihr Warenkorb</h1>	
+	   		<form action="../WarenkorbLoeschen" method="POST">
+		   		<table>
 					<tbody>
 						<tr>
-							<th colspan= "3"> Marke</th>
+							<th> </th>
+							<th>Marke</th>
 							<th>Typ</th>
 							<th>Farbe</th>
 							<th>Preis</th>
 							<th>Größe</th>
 							<th>Anzahl</th>
+							<th><th>
 						</tr>
 						<c:forEach items="${warenkorbList}" var="warenkorb">
 						<tr> 
-<%-- 							<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="50"
-	                             height="25" alt="Schuh"> </td>  --%>
+							<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="100" height="100" alt="Schuh"> </td>
 	                       	<td>${warenkorb.label}</td>
 	                    	<td>${warenkorb.type}</td>
 	                    	<td>${warenkorb.colour}</td>
-	                    	<td>${product.price} € <td> 
+	                    	<td>${warenkorb.price} € <td> 
 	                    	<td><input type="text" name="size" id="size" value="${warenkorb.size}"></td>
 	                    	<td><input type="text" name="anzahl" id="anzahl" value="${warenkorb.anzahl}"></td>
- 	                    </tr>
+	                    	<td><button name="delete" type="submit"> löschen </button></td>
+		                    </tr>
 						</c:forEach>
 					</tbody>
 				</table>
-	            <form action="../Warenkorb" method="POST">
-	               <button name="submit" type="submit"> Jetzt bestellen </button>
-	            </form>
+			</form>
+			<form action="../WarenkorbÄndern" method="POST">
+				<button name="ändern" type="submit"> Ändern </button>
+			</form>
+            <form action="../Warenkorb" method="POST">
+               <button name="bestellen" type="submit"> Jetzt bestellen </button>
+            </form>
 		<div id="footer">
 			<%@include file="../jspf/footer.jspf"%>
 		</div>
