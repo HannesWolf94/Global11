@@ -21,8 +21,8 @@
 			<h1>Herzlichen Glückwunsch! Ihre Kategorie wurde erfolgreich angelegt!</h1>
 			
 			<div>
-				<form action="../ProductAnzeigen">
-					<button class="button" type="submit" value="Submit">Weiter zur Produktverwaltung</button>
+				<form action="../KategorieAnzeigen">
+					<button class="button" type="submit" value="Submit">Weiter zum Produktupload</button>
 				</form>
 			</div>
 			
