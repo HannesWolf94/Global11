@@ -1,4 +1,3 @@
-//erstellt von Johannes Wolf 
 package servlets;
 
 import javax.annotation.Resource;
@@ -13,8 +12,9 @@ import java.io.IOException;
 import java.sql.*;
 import beans.User;
 import beans.Warenkorb;
+import beans.Order;
 
-@WebServlet("ProductInWarenkorb")
+@WebServlet("Buchen")
 
 public class Buchen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,33 +28,28 @@ public class Buchen extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		Warenkorb warenkorb = new Warenkorb(); 
+		Order order = new Order(); 
 		
-		warenkorb.setProdId(Integer.parseInt(request.getParameter("prodId")));
-		warenkorb.setKategorie(request.getParameter("kategorie"));
-		warenkorb.setLabel(request.getParameter("label"));
-		warenkorb.setType(request.getParameter("type"));
-		warenkorb.setColour(request.getParameter("colour"));
-		warenkorb.setPrice(Double.parseDouble(request.getParameter("price")));
-		warenkorb.setSize(Integer.parseInt((request.getParameter("size"))));
-		warenkorb.setAnzahl(Integer.parseInt((request.getParameter("anzahl"))));
+		order.setOrderId(Integer.parseInt(request.getParameter("orderId")));
+		order.setUserId(Integer.parseInt(request.getParameter("userId")));
+		order.setRechnungsbetrag(Double.parseDouble(request.getParameter("rechnungsbetrag")));
 		
 		HttpSession session = request.getSession(); 
 		User user = (User) session.getAttribute("user");
 
-		speichern(warenkorb, user);
-		request.setAttribute("warenkorb", warenkorb);
+		speichern(order, user);
+		request.setAttribute("order", order);
 		response.sendRedirect("html/newKategorie.jsp");
 	}
 	
-	private void speichern(Warenkorb warenkorb, User user) throws ServletException  {
+	private void speichern(Order order, User user) throws ServletException  {
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO warenkorb (prod_id, number, size, user_id) VALUES (?, ?, ?, ?)")) {
-			pstmt.setInt(1, warenkorb.getProdId());
-			pstmt.setInt(2, warenkorb.getAnzahl());
-			pstmt.setInt(3, warenkorb.getSize());
-			pstmt.setInt(4, user.getUserId());	
+						"INSERT INTO orders (order_id, user_id, rechnungsbetrag, rechnungs_datum ) VALUES (?, ?, ?, ?)")) {
+			pstmt.setInt(1, order.getOrderId());
+			pstmt.setInt(2, order.getUserId());
+			pstmt.setDouble(3, order.getRechnungsbetrag());
+
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
