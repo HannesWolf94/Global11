@@ -20,24 +20,24 @@
 	   		<table>
 					<tbody>
 						<tr>
-							<th colspan= "3"> Hersteller</th>
+							<th colspan= "3"> Marke</th>
 							<th>Typ</th>
 							<th>Farbe</th>
+							<th>Preis</th>
 							<th>Größe</th>
 							<th>Anzahl</th>
-							<th>Preis</th>
 						</tr>
-						<c:forEach items="${productWarenkorb}" var="warenkorb">
+						<c:forEach items="${warenkorbList}" var="warenkorb">
 						<tr> 
-							<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="50"
-	                             height="25" alt="Schuh"> </td> 
+<%-- 							<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="50"
+	                             height="25" alt="Schuh"> </td>  --%>
 	                       	<td>${warenkorb.label}</td>
 	                    	<td>${warenkorb.type}</td>
 	                    	<td>${warenkorb.colour}</td>
-	                    	<td>${warenkorb.size}</td>
-	                    	<td>${warenkorb.anzahl}</td>  
-	                    	<td>${product.price} € <td>  
-		                </tr>
+	                    	<td>${product.price} € <td> 
+	                    	<td><input type="text" name="size" id="size" value="${warenkorb.size}"></td>
+	                    	<td><input type="text" name="anzahl" id="anzahl" value="${warenkorb.anzahl}"></td>
+ 	                    </tr>
 						</c:forEach>
 					</tbody>
 				</table>
