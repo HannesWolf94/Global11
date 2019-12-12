@@ -22,6 +22,7 @@
                         <li><a href= "${pageContext.request.contextPath}/index.jsp">Global11</a></li>
                         <c:if test="${user.email != 'admin@admin.de'}">
                             <li><a href= "${pageContext.request.contextPath}/UserProductGesamt">Unsere Produkte</a></li>
+                            <li><a href= "${pageContext.request.contextPath}/WarenkorbAnzeigen">Mein Warenkorb</a></li>
                             <li><a href= "${pageContext.request.contextPath}/Kontobereich">Mein Konto</a></li>
                         </c:if>
                         <li><a class="Logout" href= "${pageContext.request.contextPath}/Logout">Logout</a></li>
