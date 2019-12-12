@@ -33,20 +33,12 @@ public class KontoAendern extends HttpServlet {
 		User user = (User) session.getAttribute("user");
 		
 		
-		System.out.println(user.getEmail());
-		
 		user.setEmail(user.getEmail());
 		user.setFirstName(request.getParameter("firstName"));
 		user.setLastName(request.getParameter("lastName"));
 		user.setStreet(request.getParameter("street"));
 		user.setCity(request.getParameter("city"));
 		
-		
-		System.out.println(user.getFirstName());
-		System.out.println(user.getLastName());
-		System.out.println(user.getStreet());
-		System.out.println(user.getCity());
-		System.out.println(user.getEmail());
 		
 				
 		try (
