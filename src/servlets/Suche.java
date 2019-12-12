@@ -82,7 +82,7 @@ public class Suche extends HttpServlet {
 					product.setPrice(price);
 					
 					products.add(product);
-				} // while rs.next()
+				}
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
