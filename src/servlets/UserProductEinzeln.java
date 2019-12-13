@@ -27,12 +27,7 @@ public class UserProductEinzeln extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		int prodId = Integer.valueOf(request.getParameter("prodId"));
-		String kategorie = request.getParameter("kategorie");
-		String label = request.getParameter("label");
-		String type = request.getParameter("type");
-		String colour = request.getParameter("colour");
-		double price = Double.valueOf(request.getParameter("price"));
-		
+
 		Product productDB = new Product();
 
 		try (Connection con = ds.getConnection();
@@ -40,19 +35,12 @@ public class UserProductEinzeln extends HttpServlet {
 			pstmt.setInt(1, prodId);
 			try (ResultSet rs = pstmt.executeQuery()) {
 				while (rs.next()) {
-					prodId = rs.getInt("prod_id");
-					productDB.setProdId(prodId);
-					kategorie = rs.getString("cat_description");
-					productDB.setKategorie(kategorie);
-					// productDB.setKategorie(rs.getString("cat_description"));	=> LIEBER SO
-					label = rs.getString("prod_label");
-					productDB.setLabel(label);
-					type = rs.getString("prod_type");
-					productDB.setType(type);
-					colour = rs.getString("prod_colour");
-					productDB.setColour(colour);
-					price = rs.getDouble("prod_price");
-					productDB.setPrice(price);
+					productDB.setProdId(rs.getInt("prod_id"));
+					productDB.setKategorie(rs.getString("cat_description"));
+					productDB.setLabel(rs.getString("prod_label"));
+					productDB.setType(rs.getString("prod_type"));
+					productDB.setColour(rs.getString("prod_colour"));
+					productDB.setPrice(rs.getDouble("prod_price"));
 				}
 
 			}

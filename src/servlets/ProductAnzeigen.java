@@ -23,42 +23,29 @@ public class ProductAnzeigen extends HttpServlet {
 
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String sql = "SELECT * FROM product";
-		
+
 		ArrayList<Product> produktverwaltungAdminList = new ArrayList<>();
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement(sql);
+			PreparedStatement pstm = con.prepareStatement("SELECT * FROM product");
 			ResultSet rs = pstm.executeQuery();
-
-			int prodId;
-			String label;
-			String type;
-			String colour;
-			double price;
-			String kategorie;
 
 			while (rs.next()) {
 				Product form = new Product();
-				prodId = rs.getInt("prod_id");
-				form.setProdId(prodId);
-				label = rs.getString("prod_label");
-				form.setLabel(label);
-				type = rs.getString("prod_type");
-				form.setType(type);
-				colour = rs.getString("prod_colour");
-				form.setColour(colour);
-				price = rs.getDouble("prod_price");
-				form.setPrice(price);
-				kategorie = rs.getString("cat_description");
-				form.setKategorie(kategorie);
+				form.setProdId(rs.getInt("prod_id"));
+				form.setKategorie(rs.getString("cat_description"));
+				form.setLabel(rs.getString("prod_label"));
+				form.setType(rs.getString("prod_type"));
+				form.setColour(rs.getString("prod_colour"));
+				form.setPrice(rs.getDouble("prod_price"));
 
 				produktverwaltungAdminList.add(form);
 			}

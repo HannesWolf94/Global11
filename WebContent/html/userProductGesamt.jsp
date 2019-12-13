@@ -52,11 +52,6 @@
 									<div class="auswaehlen">
 										<form action="../UserProductEinzeln" method="POST">
 											<input name="prodId" type="hidden" value="${product.prodId}">
-											<input name="kategorie" type="hidden" value="${product.kategorie}">
-											<input name="label" type="hidden" value="${product.label}">
-											<input name="type" type="hidden" value="${product.type}">
-											<input name="price" type="hidden" value="${product.price}">
-											<input name="colour" type="hidden" value="${product.colour}">
 											<button name="submit" type="submit">zum Produkt</button>
 										</form>
 									</div>
@@ -81,11 +76,6 @@
 								<div class="auswaehlen">
 									<form action="../UserProductEinzeln" method="POST">
 										<input name="prodId" type="hidden" value="${product.prodId}">
-										<input name="prodId" type="hidden" value="${product.kategorie}">
-										<input name="label" type="hidden" value="${product.label}">
-										<input name="type" type="hidden" value="${product.type}">
-										<input name="price" type="hidden" value="${product.price}">
-										<input name="colour" type="hidden" value="${product.colour}">
 										<button name="submit" type="submit">zum Produkt</button>
 									</form>
 								</div>
