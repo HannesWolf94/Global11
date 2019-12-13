@@ -18,11 +18,10 @@
 			<%@include file="../jspf/header.jspf"%>
 		</div>
 		<h1>Ihr Warenkorb</h1>	
-	   		<form action="../WarenkorbLoeschen" method="POST">
+	   		
 		   		<table>
 					<tbody>
 						<tr>
-							<th></th>
 							<th></th>
 							<th>Marke</th>
 							<th>Typ</th>
@@ -31,27 +30,33 @@
 							<th>Größe</th>
 							<th>Anzahl</th>
 							<th><th>
-							<th><th>
 						</tr>
 						<c:forEach items="${warenkorbList}" var="warenkorb">
 						<tr> 
-							<td><input name="orderId" type="hidden" value="${warenkorb.orderId}"></td>
 							<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="100" height="100" alt="Schuh"> </td>
 	                       	<td>${warenkorb.label}</td>
 	                    	<td>${warenkorb.type}</td>
 	                    	<td>${warenkorb.colour}</td>
 	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.price}"/> €<td> 
-	                    	<td><input type="text" name="size" id="size" value="${warenkorb.size}"></td>
-	                    	<td><input type="text" name="anzahl" id="anzahl" value="${warenkorb.anzahl}"></td>
-	                    	<td><button name="delete" type="submit"> löschen </button></td>
-		                    </tr>
+	                    	<td>${warenkorb.size}</td>
+	                    	<td>
+		                    	<form action="../WarenkorbAendern" method="POST">
+		                    		<input type="text" name="anzahl" id="anzahl" value="${warenkorb.anzahl}">	
+		                       	    <input name="orderId" type="hidden" value="${warenkorb.orderId}">
+		                    		<button name="aendern" type="submit"> ändern </button>
+		                    	</form>
+	                    	</td>
+	                    	<td>
+	                    		<form action="../WarenkorbLoeschen" method="POST">
+	                    			<input name="orderId" type="hidden" value="${warenkorb.orderId}">
+	                    			<button name="delete" type="submit"> löschen </button>
+	                    		</form>
+	                    	</td>
+	                    </tr>
 						</c:forEach>
 					</tbody>
 				</table>
-			</form>
-			<form action="../WarenkorbAendern" method="POST">
-				<button name="ändern" type="submit"> Ändern </button>
-			</form>
+
             <form action="../Buchen" method="POST">
                <button name="bestellen" type="submit"> Jetzt bestellen </button>
             </form>
