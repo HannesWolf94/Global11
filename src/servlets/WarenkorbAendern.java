@@ -31,15 +31,16 @@ public class WarenkorbAendern extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		int orderId = Integer.parseInt((request.getParameter("orderId")));
 		int anzahl = Integer.parseInt((request.getParameter("anzahl")));
-		
+		double gesamtpreis = Double.parseDouble(request.getParameter("gesamtpreis"));
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("UPDATE warenkorb SET number =? WHERE order_id = ? AND user_id =?")) {
+				PreparedStatement pstmt = con.prepareStatement("UPDATE warenkorb SET number =?, gesamtpreis =? WHERE order_id = ? AND user_id =?")) {
 			pstmt.setInt(1, anzahl);
-			pstmt.setInt(2, orderId);
-			pstmt.setInt(3, user.getUserId());
+			pstmt.setDouble(2, gesamtpreis);
+			pstmt.setInt(3, orderId);
+			pstmt.setInt(4, user.getUserId());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

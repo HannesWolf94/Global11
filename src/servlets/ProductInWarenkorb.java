@@ -44,8 +44,8 @@ public class ProductInWarenkorb extends HttpServlet {
 		warenkorb.setPrice(Double.parseDouble(request.getParameter("price")));
 		warenkorb.setSize(Integer.parseInt((request.getParameter("size"))));
 		warenkorb.setAnzahl(Integer.parseInt((request.getParameter("anzahl"))));
-		
-		
+		warenkorb.setGesamtpreis(berechneGesamtpreis(warenkorb.getAnzahl(), warenkorb.getPrice()));
+
 		HttpSession session = request.getSession(); 
 		User user = (User) session.getAttribute("user");
 
@@ -62,7 +62,7 @@ public class ProductInWarenkorb extends HttpServlet {
 			pstmt.setInt(2, warenkorb.getAnzahl());
 			pstmt.setInt(3, warenkorb.getSize());
 			pstmt.setInt(4, user.getUserId());	
-			pstmt.setDouble(5, warenkorb.getGesamtpreis(berechneGesamtpreis(warenkorb.getAnzahl(), warenkorb.getPrice())));
+			pstmt.setDouble(5, warenkorb.getGesamtpreis());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
