@@ -28,7 +28,7 @@
 			<h2><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${productDB.price}"/> € </h2><br> 
 			<p>Artikelnummer: ${productDB.prodId} <br>
 				 
-			Größe: <input type="text" list="sizeList" name="size" id="size" required autofocus> 
+			Größe: <input type="number" list="sizeList" name="size" id="size" min="40" max="46" required autofocus> 
 			<datalist id="sizeList">
 				<option value="40">
 				<option value="41">
@@ -37,7 +37,7 @@
 				<option value="44">
 				<option value="45">
 			</datalist>
-			Anzahl: <input type="text" list="anzahlList" name="anzahl" id="anzahl" required> 
+			Anzahl: <input type="number" list="anzahlList" name="anzahl" id="anzahl" min="1" max="99" required> 
 			<datalist id="anzahlList">
 					<option value="1">
 					<option value="2">
