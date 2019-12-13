@@ -1,7 +1,7 @@
 <!-- erstellt von Martin Scherzer -->
 <!-- Prüft ob JavaScript aktiviert ist, wenn nicht leitet er zu einer Fehlerseite. -->
 <noscript>
-    <meta http-equiv="refresh" content="0; ${pageContext.request.contextPath}/html/nojs.jsp">
+    <p> href="${pageContext.request.contextPath}/html/nojs.jsp"</p>
 </noscript>
 <script type="text/javascript" src="../js/cookieCheck.js"></script>
 
