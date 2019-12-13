@@ -1,5 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,7 +37,7 @@
 	                       	<td>${warenkorb.label}</td>
 	                    	<td>${warenkorb.type}</td>
 	                    	<td>${warenkorb.colour}</td>
-	                    	<td>${warenkorb.price} € <td> 
+	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.price}"/> €<td> 
 	                    	<td><input type="text" name="size" id="size" value="${warenkorb.size}"></td>
 	                    	<td><input type="text" name="anzahl" id="anzahl" value="${warenkorb.anzahl}"></td>
 	                    	<td><button name="delete" type="submit"> löschen </button></td>
@@ -45,10 +46,10 @@
 					</tbody>
 				</table>
 			</form>
-			<form action="../WarenkorbÄndern" method="POST">
+			<form action="../WarenkorbAendern" method="POST">
 				<button name="ändern" type="submit"> Ändern </button>
 			</form>
-            <form action="../Warenkorb" method="POST">
+            <form action="../Buchen" method="POST">
                <button name="bestellen" type="submit"> Jetzt bestellen </button>
             </form>
 		<div id="footer">
