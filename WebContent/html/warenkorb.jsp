@@ -22,7 +22,8 @@
 		   		<table>
 					<tbody>
 						<tr>
-							<th> </th>
+							<th></th>
+							<th></th>
 							<th>Marke</th>
 							<th>Typ</th>
 							<th>Farbe</th>
@@ -30,9 +31,11 @@
 							<th>Größe</th>
 							<th>Anzahl</th>
 							<th><th>
+							<th><th>
 						</tr>
 						<c:forEach items="${warenkorbList}" var="warenkorb">
 						<tr> 
+							<td><input name="orderId" type="hidden" value="${warenkorb.orderId}"></td>
 							<td> <img src="../Bild?prod_id=${warenkorb.prodId}" width="100" height="100" alt="Schuh"> </td>
 	                       	<td>${warenkorb.label}</td>
 	                    	<td>${warenkorb.type}</td>

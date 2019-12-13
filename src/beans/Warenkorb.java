@@ -10,6 +10,7 @@ import javax.ejb.Stateless;
 public class Warenkorb implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	private int orderId;
 	private int userId;
 	private int	prodId;
 	private String kategorie;
@@ -73,6 +74,12 @@ public class Warenkorb implements Serializable {
 	}
 	public void setKategorie(String kategorie) {
 		this.kategorie = kategorie;
+	}
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
 	}
 
 }
