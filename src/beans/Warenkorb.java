@@ -20,6 +20,8 @@ public class Warenkorb implements Serializable {
 	private double price; 
 	private int size;
 	private int anzahl;
+	private double rechnungsbetrag;
+	private double gesamtpreis;
 
 	public String getLabel() {
 		return label;
@@ -80,6 +82,18 @@ public class Warenkorb implements Serializable {
 	}
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
+	}
+	public double getRechnungsbetrag() {
+		return rechnungsbetrag;
+	}
+	public void setRechnungsbetrag(double rechnungsbetrag) {
+		this.rechnungsbetrag = rechnungsbetrag;
+	}
+	public double getGesamtpreis() {
+		return gesamtpreis;
+	}
+	public void setGesamtpreis(double gesamtpreis) {
+		this.gesamtpreis = gesamtpreis;
 	}
 
 }

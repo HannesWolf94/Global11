@@ -1,6 +1,4 @@
 <!-- erstellt von Martin Scherzer -->
-<!DOCTYPE html>
-<html>
 <!-- Prüft ob JavaScript aktiviert ist, wenn nicht leitet er zu einer Fehlerseite. -->
 <noscript>
     <meta http-equiv="refresh" content="0; ${pageContext.request.contextPath}/html/nojs.jsp">
@@ -41,4 +39,3 @@
             </c:otherwise>
         </c:choose>
     </div>
-    </html>

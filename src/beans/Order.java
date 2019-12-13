@@ -15,9 +15,8 @@ public class Order implements Serializable {
 	private int rechnungsnummer;
 	private int orderId;
 	private int userId;
-	// private List<Product> products;
 	private double rechnungsbetrag;
-	private Date rechnungsdatum;
+//	private Date rechnungsdatum;
 
 	public Integer orderId() {
 		return orderId;
@@ -35,14 +34,6 @@ public class Order implements Serializable {
 		this.rechnungsbetrag = rechnungsbetrag;
 	}
 
-	// public List<Product> getProducts() {
-	// return products;
-	// }
-	//
-	// public void setProducts(List<Product> products) {
-	// this.products = products;
-	// }
-
 	public int getUserId() {
 		return userId;
 	}
@@ -59,12 +50,12 @@ public class Order implements Serializable {
 		this.rechnungsnummer = rechnungsnummer;
 	}
 
-	public Date getRechnungsdatum() {
-		return rechnungsdatum;
-	}
-
-	public void setRechnungsdatum(Date rechnungsdatum) {
-		this.rechnungsdatum = rechnungsdatum;
-	}
+//	public Date getRechnungsdatum() {
+//		return rechnungsdatum;
+//	}
+//
+//	public void setRechnungsdatum(Date rechnungsdatum) {
+//		this.rechnungsdatum = rechnungsdatum;
+//	}
 
 }

@@ -25,6 +25,12 @@ public class ProductInWarenkorb extends HttpServlet {
 		super();
 	}
 
+	private Double berechneGesamtpreis(Integer anzahl, Double price) {
+		Double gesamtpreis = anzahl * price;
+
+		return gesamtpreis;
+	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -39,6 +45,7 @@ public class ProductInWarenkorb extends HttpServlet {
 		warenkorb.setSize(Integer.parseInt((request.getParameter("size"))));
 		warenkorb.setAnzahl(Integer.parseInt((request.getParameter("anzahl"))));
 		
+		
 		HttpSession session = request.getSession(); 
 		User user = (User) session.getAttribute("user");
 
@@ -50,11 +57,12 @@ public class ProductInWarenkorb extends HttpServlet {
 	private void speichern(Warenkorb warenkorb, User user) throws ServletException  {
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO warenkorb (prod_id, number, size, user_id) VALUES (?, ?, ?, ?)")) {
+						"INSERT INTO warenkorb (prod_id, number, size, user_id, gesamtpreis) VALUES (?, ?, ?, ?, ?)")) {
 			pstmt.setInt(1, warenkorb.getProdId());
 			pstmt.setInt(2, warenkorb.getAnzahl());
 			pstmt.setInt(3, warenkorb.getSize());
 			pstmt.setInt(4, user.getUserId());	
+			pstmt.setDouble(5, warenkorb.getGesamtpreis(berechneGesamtpreis(warenkorb.getAnzahl(), warenkorb.getPrice())));
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

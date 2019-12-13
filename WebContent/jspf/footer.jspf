@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <footer>
 	<ul>
 		<li> <a href="${pageContext.request.contextPath}/html/impressum.jsp">Impressum</a></li>
