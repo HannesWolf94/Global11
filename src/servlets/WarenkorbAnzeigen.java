@@ -37,7 +37,7 @@ public class WarenkorbAnzeigen extends HttpServlet {
 		
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement("SELECT warenkorb.order_id, warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
+			PreparedStatement pstm = con.prepareStatement("SELECT warenkorb.order_id, warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number, warenkorb.gesamtpreis FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
 			
 			pstm.setInt(1, user.getUserId());
 			ResultSet rs = pstm.executeQuery();
@@ -51,9 +51,10 @@ public class WarenkorbAnzeigen extends HttpServlet {
 				warenkorb.setLabel(rs.getString("prod_label"));
 				warenkorb.setType(rs.getString("prod_type"));
 				warenkorb.setColour(rs.getString("prod_colour"));
-				warenkorb.setPrice(rs.getInt("prod_price"));
+				warenkorb.setPrice(rs.getDouble("prod_price"));
 				warenkorb.setSize(rs.getInt("size"));
 				warenkorb.setAnzahl(rs.getInt("number"));
+				warenkorb.setGesamtpreis(rs.getDouble("gesamtpreis"));
 				warenkorbList.add(warenkorb);
 			}
 			request.setAttribute("warenkorbList", warenkorbList);

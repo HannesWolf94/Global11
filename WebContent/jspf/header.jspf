@@ -1,9 +1,11 @@
 <!-- erstellt von Martin Scherzer -->
 <!-- Prüft ob JavaScript aktiviert ist, wenn nicht leitet er zu einer Fehlerseite. -->
 <noscript>
-    <meta http-equiv="refresh" content="0; ${pageContext.request.contextPath}/html/nojs.jsp">
+    <h1 class="logotext">Javascript muss aktiviert werden</h1>
+		        <p >Um Ihnen die bestmögliche Nutzererfahrung zu ermöglichen, aktivieren Sie bitte JavaScript.</p>
+		        <p >Weitere Informationen erhalten Sie <a href="https://www.enable-javascript.com/">hier</a></p>
 </noscript>
-<script type="text/javascript" src="../js/cookieCheck.js"></script>
+<script src="../js/cookieCheck.js"></script>
 
      <div>
         <c:choose>
