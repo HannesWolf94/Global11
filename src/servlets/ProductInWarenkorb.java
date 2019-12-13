@@ -44,7 +44,7 @@ public class ProductInWarenkorb extends HttpServlet {
 
 		speichern(warenkorb, user);
 		request.setAttribute("warenkorb", warenkorb);
-		response.sendRedirect("html/newKategorie.jsp");
+		response.sendRedirect("WarenkorbAnzeigen");
 	}
 	
 	private void speichern(Warenkorb warenkorb, User user) throws ServletException  {

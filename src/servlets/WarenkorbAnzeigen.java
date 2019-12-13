@@ -36,13 +36,14 @@ public class WarenkorbAnzeigen extends HttpServlet {
 		
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement("SELECT warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
+			PreparedStatement pstm = con.prepareStatement("SELECT warenkorb.order_id, warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
 			
 			pstm.setInt(1, user.getUserId());
 			ResultSet rs = pstm.executeQuery();
 							
 			while (rs.next()) {
 				Warenkorb warenkorb = new Warenkorb();
+				warenkorb.setOrderId(rs.getInt("order_id"));
 				warenkorb.setUserId(rs.getInt("user_id"));
 				warenkorb.setProdId(rs.getInt("prod_id"));
 				warenkorb.setKategorie(rs.getString("cat_description"));

@@ -26,7 +26,7 @@ public class UserProductEinzeln extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		int prodId = Integer.valueOf(request.getParameter("prodId"));
+		int prodId = Integer.parseInt((request.getParameter("prodId")));
 
 		Product productDB = new Product();
 
