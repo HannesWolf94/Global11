@@ -26,12 +26,18 @@ public class WarenkorbAendern extends HttpServlet {
 		super();
 	}
 	
+	private Double berechneGesamtpreis(Integer anzahl, Double price) {
+		Double gesamtpreis = anzahl * price;
+
+		return gesamtpreis;
+	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		int orderId = Integer.parseInt((request.getParameter("orderId")));
 		int anzahl = Integer.parseInt((request.getParameter("anzahl")));
-		double gesamtpreis = Double.parseDouble(request.getParameter("gesamtpreis"));
+		double price = Double.parseDouble(request.getParameter("price"));
+		double gesamtpreis = berechneGesamtpreis(anzahl, price);
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 
