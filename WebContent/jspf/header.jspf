@@ -34,8 +34,8 @@
                     <ul>
                         <li><a href= "${pageContext.request.contextPath}/index.jsp">Global11</a></li>
                         <li><a href= "${pageContext.request.contextPath}/html/registrierung.jsp">Registrierung</a></li>
-                        <li><a href= "${pageContext.request.contextPath}/html/login.jsp">Login</a></li>
                         <li><a href= "${pageContext.request.contextPath}/UserProductGesamt"> Unsere Produkte</a></li>
+                        <li><a href= "${pageContext.request.contextPath}/html/login.jsp">Login</a></li>
                     </ul>
                 </nav>
             </c:otherwise>
