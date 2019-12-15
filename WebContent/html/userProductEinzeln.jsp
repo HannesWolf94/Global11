@@ -38,6 +38,7 @@
 					<option value="43">
 					<option value="44">
 					<option value="45">
+					<option value="46">
 				</datalist>
 				Anzahl: <input type="number" list="anzahlList" name="anzahl" id="anzahl" min="1" max="99" required> 
 				<datalist id="anzahlList">
@@ -58,6 +59,10 @@
 					<input name="colour" type="hidden" value="${productDB.colour}">
 					<button name="submit" type="submit">in den Warenkorb</button>
 				</c:when>
+				<c:otherwise>
+				<a href= "${pageContext.request.contextPath}/html/login.jsp">Zum Login </a>
+				<p>Bitte loggen Sie sich zuerst ein um Produkte in den Warenkorb zu legen! </p>
+				</c:otherwise>
 			</c:choose>
 		</form>
 	
