@@ -22,13 +22,23 @@
 		
 		<form action="../Registrierung" method="post">
 			<div>
-				<label for="email"> E-Mail:</label> <input type="email" name="email" id="email" required autofocus><br/>
+
+				<label for="email"> E-Mail:</label> <input type="email" name="email" id="mail" required autofocus><br/>
 				<label for="pwRegi"> Passwort:</label>  <input type="password" name="password" id="pwRegi" required><br/> 
 				<label for="pwRegiR"> Passwort wiederholen:</label> <input type="password" name="passwordRepeat" id="pwRegiR" required><br />
-				<label for="firstname"> Vorname:</label> <input type="text" name="firstname" id="firstname" required><br/> 
-				<label for="lastname"> Nachname:</label> <input type="text" name="lastname" id="lastname" required><br/> 
-				<label for="street">Straße und Hausnummer.: </label> <input type="text" name="street" id="street" required><br/> 
-				<label for="city">PLZ und Ort: </label> <input type="text" name="city" id="city" required><br/>
+				<label for="firstname"> Vorname:</label> <input type="text" name="firstname" id="firstName" required><br/> 
+				<label for="lastname"> Nachname:</label> <input type="text" name="lastname" id="lastName" required><br/> 
+				<label for="street">Straße und Hausnummer.: </label> <input type="text" name="street" id="Street" required><br/> 
+				<label for="city">PLZ und Ort: </label> <input type="text" name="city" id="City" required><br/>
+
+				<label for="email"> E-Mail:</label> <input type="email" name="email" id="mail" maxlength="64" required autofocus><br/>
+				<label for="pwRegi"> Passwort:</label>  <input type="password" name="password" id="pwRegi" maxlength="45" required><br/> 
+				<label for="pwRegiR"> Passwort wiederholen:</label> <input type="password" name="passwordRepeat" id="pwRegiR" maxlength="45" required><br />
+				<label for="firstname"> Vorname:</label> <input type="text"name="firstname" id="firstName" maxlength="45" required><br/> 
+				<label for="lastname"> Nachname:</label> <input type="text" name="lastname" id="lastName" maxlength="45" required><br/> 
+				<label for="street">Straße und Hausnummer.: </label> <input type="text" name="street" id="Street" maxlength="45" required><br/> 
+				<label for="city">PLZ und Ort: </label> <input type="text" name="city" id="City" maxlength="45" required><br/>
+
 				<button class="button" type="submit" value="Submit">registrieren</button>
 				<button class="button" name="Reset" type="reset">zurücksetzen</button>
 			</div>

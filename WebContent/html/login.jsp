@@ -21,10 +21,10 @@
 		<form action="${pageContext.request.contextPath}/Login" method="post">
 			<div>
 			<p>
-				<label for="email"> E-Mail:</label> <input type="text" name="email" id="email" autofocus required>
+				<label for="email"> E-Mail:</label> <input type="text" name="email" id="email" maxlength="64" autofocus required>
 			</p>
 			<p>
-				<label for="password"> Passwort:</label> <input type="password" name="password" id="password" required>
+				<label for="password"> Passwort:</label> <input type="password" name="password" id="password" maxlength="45" required>
 			</p>
 				<button class="button" type="submit" value="Submit">Login</button>
 			</div>

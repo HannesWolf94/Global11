@@ -29,6 +29,7 @@
 							<th>Preis</th>
 							<th>Größe</th>
 							<th>Anzahl</th>
+							<th>Gesamtpreis</th>
 							<th><th>
 						</tr>
 						<c:forEach items="${warenkorbList}" var="warenkorb">
@@ -38,14 +39,17 @@
 	                    	<td>${warenkorb.type}</td>
 	                    	<td>${warenkorb.colour}</td>
 	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.price}"/> €<td> 
-	                    	<td>${warenkorb.size}</td>
+	                    	<td>${warenkorb.size}</td> 
 	                    	<td>
 		                    	<form action="../WarenkorbAendern" method="POST">
-		                    		<input type="text" name="anzahl" id="anzahl" value="${warenkorb.anzahl}">	
+		                    		<input type="number" name="anzahl" id="anzahl" min="1" max="99" value="${warenkorb.anzahl}">
+		                    		 <input name="gesamtpreis" type="hidden" value="${warenkorb.gesamtpreis}">	
 		                       	    <input name="orderId" type="hidden" value="${warenkorb.orderId}">
 		                    		<button name="aendern" type="submit"> ändern </button>
 		                    	</form>
+		                    	
 	                    	</td>
+	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.gesamtpreis}"/> €<td>
 	                    	<td>
 	                    		<form action="../WarenkorbLoeschen" method="POST">
 	                    			<input name="orderId" type="hidden" value="${warenkorb.orderId}">
