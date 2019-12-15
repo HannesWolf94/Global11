@@ -45,6 +45,7 @@
 		                    		<input type="number" name="anzahl" id="anzahl" min="1" max="99" value="${warenkorb.anzahl}">
 		                    		 <input name="gesamtpreis" type="hidden" value="${warenkorb.gesamtpreis}">	
 		                       	    <input name="orderId" type="hidden" value="${warenkorb.orderId}">
+		                       	    <input name="price" type="hidden" value="${warenkorb.price}">
 		                    		<button name="aendern" type="submit"> ändern </button>
 		                    	</form>
 		                    	

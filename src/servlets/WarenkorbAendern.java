@@ -38,15 +38,12 @@ public class WarenkorbAendern extends HttpServlet {
 		int anzahl = Integer.parseInt((request.getParameter("anzahl")));
 		double price = Double.parseDouble(request.getParameter("price"));
 		double gesamtpreis = berechneGesamtpreis(anzahl, price);
-		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute("user");
 
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("UPDATE warenkorb SET number =?, gesamtpreis =? WHERE order_id = ? AND user_id =?")) {
+				PreparedStatement pstmt = con.prepareStatement("UPDATE warenkorb SET number =?, gesamtpreis =? WHERE order_id = ?")) {
 			pstmt.setInt(1, anzahl);
 			pstmt.setDouble(2, gesamtpreis);
 			pstmt.setInt(3, orderId);
-			pstmt.setInt(4, user.getUserId());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
