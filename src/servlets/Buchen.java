@@ -10,12 +10,10 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import beans.User;
 import beans.Warenkorb;
 import beans.Order;
+import beans.Product;
 
 @WebServlet("Buchen")
 
@@ -31,41 +29,41 @@ public class Buchen extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		Order bestellung = new Order(); 
-		bestellung.setUserId(Integer.parseInt(request.getParameter("userId")));
-		bestellung.setRechnungsbetrag(Double.parseDouble(request.getParameter("rechnungsbetrag")));
-	
-//		Date parsed = format.parse(datum);
-//        return new java.sql.Date(parsed.getTime());
-		
+		Order bestellung = new Order();
 
-		speichern(bestellung);
+		// bestellung.setRechnungsbetrag(Double.parseDouble(request.getParameter("rechnungsbetrag")));
+
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
+
+		speichern(bestellung, user);
 		request.setAttribute("bestellung", bestellung);
 		response.sendRedirect("html/buchungsbestaetigung.jsp");
 	}
-	
-	private void speichern(Order bestellung) throws ServletException  {
+
+	private void speichern(Order bestellung, User user) throws ServletException {
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO orders (user_id, rechnungsbetrag) VALUES (?, ?)")) {
-			pstmt.setInt(1, bestellung.getUserId());
-			pstmt.setDouble(2, bestellung.getRechnungsbetrag());
-		
-			
-			
+				PreparedStatement pstmt = con.prepareStatement("INSERT INTO orders (user_id) VALUES (?); DELETE FROM warenkorb WHERE user_id = ?")) {
+			pstmt.setInt(1, user.getUserId());
+			// pstmt.setDouble(2, bestellung.getRechnungsbetrag());
 
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 	}
-		
-//	public java.sql.Date setToSQLFormat(String datum) throws ParseException {
-//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-//        Date parsed = format.parse(datum);
-//        return new java.sql.Date(parsed.getTime());
-//    }
-	
+
+//	private void delete(User user) throws ServletException {
+//
+//		try (Connection con = ds.getConnection();
+//				PreparedStatement pstmt = con.prepareStatement("DELETE FROM warenkorb WHERE user_id = ?")) {
+//			pstmt.setInt(1, user.getUserId());
+//			pstmt.executeUpdate();
+//		} catch (Exception ex) {
+//			throw new ServletException(ex.getMessage());
+//		}
+//	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
