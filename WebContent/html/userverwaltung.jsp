@@ -2,9 +2,9 @@
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="de">
 	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset ="UTF-8">
 	
 	<base href="${pageContext.request.requestURI}" />
 	
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/header.css" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 	
-	<script type="text/javascript" src="../js/emailconfirmation.js"></script>
+	<script src="../js/emailconfirmation.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -47,11 +47,11 @@
 				<fieldset>
 					<div>
 						<label for="email"> Account löschen :</label> 
-						<input type="text" name="email" id="email" placeholder="Bitte Email eingeben" required>
-						<input type="text" name="emailRepeat" id="emailRepeat" placeholder="Email erneut eingeben" required>
+						<input type="text" name="email" id="mail" placeholder="Bitte Email eingeben" required>
+						<input type="text" name="emailRepeat" id="mailRepeat" placeholder="Email erneut eingeben" required>
 					</div>
 					<div>
-						<button name="submit" id="button" type="submit">löschen</button>
+						<button name="submitButton" id="button" type="submit">löschen</button>
 					</div>
 				</fieldset>
 			</form>
@@ -59,7 +59,7 @@
 				<fieldset>
 					<div>
 						<label for="email"> Account ändern :</label> <br>
-						<input type="text" name="email" id="email" placeholder="Email" required>
+						<input type="text" name="email" id="mail" placeholder="Email" required>
 						<input type="text" name="firstName" id="firstName" placeholder="Vorname" required>
 						<input type="text" name="lastName" id="lastName" placeholder="Nachname" required>
 						<input type="text" name="street" id="street" placeholder="Straße u. Hausnr." required>

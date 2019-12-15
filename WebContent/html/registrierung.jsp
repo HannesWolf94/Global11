@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="de">
 	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset ="UTF-8">
 	
 	<base href="${pageContext.request.requestURI}" />
 	
@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/header.css" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 	
-	<script type="text/javascript" src="../js/regiPwCheck.js"></script>
+	<script src="../js/regiPwCheck.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -25,10 +25,10 @@
 				<label for="email"> E-Mail:</label> <input type="email" name="email" id="email" required autofocus><br/>
 				<label for="pwRegi"> Passwort:</label>  <input type="password" name="password" id="pwRegi" required><br/> 
 				<label for="pwRegiR"> Passwort wiederholen:</label> <input type="password" name="passwordRepeat" id="pwRegiR" required><br />
-				<label for="firstname"> Vorname:</label> <input type="text"name="firstname" id="firstname" required><br/> 
+				<label for="firstname"> Vorname:</label> <input type="text" name="firstname" id="firstname" required><br/> 
 				<label for="lastname"> Nachname:</label> <input type="text" name="lastname" id="lastname" required><br/> 
 				<label for="street">Straße und Hausnummer.: </label> <input type="text" name="street" id="street" required><br/> 
-				<label for="city">PLZ und Ort: </label> <input type="text" name="city" id="city"required><br/>
+				<label for="city">PLZ und Ort: </label> <input type="text" name="city" id="city" required><br/>
 				<button class="button" type="submit" value="Submit">registrieren</button>
 				<button class="button" name="Reset" type="reset">zurücksetzen</button>
 			</div>
