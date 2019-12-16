@@ -66,6 +66,7 @@
 			<p>Rechnungsbetrag: <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${order.rechnungsbetrag}"/>€</p>
 
             <form action="../Buchen" method="POST">
+            	<input name="rechnungsbetrag" type="hidden" value="${order.rechnungsbetrag}">
                <button name="bestellen" type="submit"> Jetzt bestellen </button>
             </form>
 		<div id="footer">

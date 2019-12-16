@@ -2,8 +2,6 @@
 package beans;
 
 import java.io.Serializable;
-import java.sql.Date;
-//import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
