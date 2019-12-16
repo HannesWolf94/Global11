@@ -16,17 +16,6 @@ public class User implements Serializable {
 	private String street; 
 	private String city; 
 	 
-//	public User() {
-//	}
-//	
-//	public User(String email, String lastName, String firstName) {
-//		super();
-//		this.email = email; 
-//		this.lastName = lastName; 
-//		this.firstName = firstName; 
-//	}
-	
-	
 	public int getUserId() {
         return userId;
     }
@@ -77,7 +66,4 @@ public class User implements Serializable {
 	public void setPasswordRepeat(String passwordRepeat) {
 		this.passwordRepeat = passwordRepeat;
 	}
-	
-	
-
 }

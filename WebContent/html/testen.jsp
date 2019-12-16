@@ -5,7 +5,9 @@
 				"Id":${user.userId},
 				"Email":"${user.email}",
 				"Firstname":"${user.firstName}",
-				"Lastname":"${user.lastName}"
+				"Lastname":"${user.lastName}",
+				"Street":"${user.street}",
+				"City":"${user.city}"
 			}<c:if test="${not status.last}">,</c:if>
 		</c:forEach>]
 
