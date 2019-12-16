@@ -1,4 +1,5 @@
 package servlets;
+
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,44 +23,30 @@ public class UserverwaltungAdmin extends HttpServlet {
 
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String sql = "SELECT * FROM users";
 
 		ArrayList<User> userverwaltungAdminList = new ArrayList<>();
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement(sql);
+			PreparedStatement pstm = con.prepareStatement("SELECT * FROM users");
 			ResultSet rs = pstm.executeQuery();
-
-			int userId;
-			String email;
-			String firstName;
-			String lastName;
-			String street;
-			String city;
 
 			while (rs.next()) {
 				User form = new User();
-				userId = rs.getInt("user_id");
-				form.setUserId(userId);
-				email = rs.getString("email");
-				form.setEmail(email);
-				firstName = rs.getString("first_name");
-				form.setFirstName(firstName);
-				lastName = rs.getString("last_name");
-				form.setLastName(lastName);
-				street = rs.getString("street");
-				form.setStreet(street);
-				city = rs.getString("city");
-				form.setCity(city);
-				
 
+				form.setUserId(rs.getInt("user_id"));
+				form.setEmail(rs.getString("email"));
+				form.setFirstName(rs.getString("first_name"));
+				form.setLastName(rs.getString("last_name"));
+				form.setStreet(rs.getString("street"));
+				form.setCity(rs.getString("city"));
 				userverwaltungAdminList.add(form);
 			}
 
