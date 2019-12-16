@@ -27,15 +27,18 @@ public class UserSuche extends HttpServlet {
 	private DataSource ds;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("=== in  get ");
 
 		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
 		String lastName = request.getParameter("lastName2");
-		
 		List<User> users = search(lastName);
-				
+			
 		request.setAttribute("users", users);
+
+		users.forEach(e -> System.out.println(e.getFirstName()));
+		response.setCharacterEncoding("UTF-8");
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userverwaltung.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/testen.jsp");
 		dispatcher.forward(request, response);	
 	}
 
