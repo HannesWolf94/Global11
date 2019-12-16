@@ -59,9 +59,20 @@ public class WarenkorbAnzeigen extends HttpServlet {
 			}
 			request.setAttribute("warenkorbList", warenkorbList);
 			con.close();
+			
+			for(Warenkorb w : warenkorbList){
+				System.out.println(w.getGesamtpreis());
+				}
+			
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
+		
+
+		
+		
+		
+		
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/warenkorb.jsp");
 		dispatcher.forward(request, response);
 	}

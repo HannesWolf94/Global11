@@ -15,6 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 	
 	<script src="../js/emailconfirmation.js"></script>
+	
 	</head>
 	<body>
 		<div id="header">
@@ -70,6 +71,44 @@
 					</div>
 				</fieldset>
 			</form>
+			<script src="../js/userSuche.js"></script>
+		<form id="myForm">
+			<fieldset><legend>Mitarbeitersuche</legend>
+				<div>
+				  <label for="lastName2">Nachname:</label>
+				  <input type="text" name="lastName2" id="lastName2" placeholder="Ihr Nachname">
+				</div>
+				<div>
+				  <button type="button" id="button2" name="button2" >Absenden</button>
+				  <button name="reset" type="reset">Zurücksetzen</button>
+				</div>
+			</fieldset>
+		</form>
+		<h3>Trefferliste</h3>
+		<div id="hitlist">Keine Treffer</div>	
+			<table>
+					<tbody>
+						<tr>
+							<th>ID</th>
+							<th>Email</th>
+							<th>Vorname</th>
+							<th>Nachname</th>
+							<th>Straße u. Hausnr.</th>
+							<th>PLZ u. Ort</th>
+						</tr>
+						<c:forEach var="user" items="${users}" varStatus="status"> {
+							<tr>
+								<td>${user.userId}</td>
+								<td>${user.email}</td>
+								<td>${user.firstName}</td>
+								<td>${user.lastName}</td>
+								<td>${user.street}</td>
+								<td>${user.city}</td>
+							</tr>
+						}<c:if test="${not status.last}">,</c:if>
+						</c:forEach>
+					</tbody>
+				</table>
 		<div id="footer">
 			<%@include file="../jspf/footer.jspf"%>
 		</div>
