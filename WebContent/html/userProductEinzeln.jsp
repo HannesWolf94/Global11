@@ -23,9 +23,9 @@
 	
 		<h1>${productDB.kategorie} ${productDB.label} ${productDB.type} ${productDB.colour} </h1> <br>	
 		
-			<img src="../Bild?prod_id=${productDB.prodId}" width="500" height="500" alt="Schuh"> 
+			<img src="../Bild?prod_id=${productDB.prodId}" width="450" height="450" alt="Schuh"> 
 			
-			<h2><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${productDB.price}"/> € </h2><br> 
+			<h2><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${productDB.price}"/>€</h2><br> 
 			<p>Artikelnummer: ${productDB.prodId} </p>
 			
 			<form id="auswaehlen" method="post" action="../ProductInWarenkorb">	 

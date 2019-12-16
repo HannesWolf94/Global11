@@ -38,7 +38,7 @@
 	                       	<td>${warenkorb.label}</td>
 	                    	<td>${warenkorb.type}</td>
 	                    	<td>${warenkorb.colour}</td>
-	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.price}"/> €<td> 
+	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.price}"/>€<td> 
 	                    	<td>${warenkorb.size}</td> 
 	                    	<td>
 		                    	<form action="../WarenkorbAendern" method="POST">
@@ -50,7 +50,7 @@
 		                    	</form>
 		                    	
 	                    	</td>
-	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.gesamtpreis}"/> €<td>
+	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.gesamtpreis}"/>€<td>
 	                    	<td>
 	                    		<form action="../WarenkorbLoeschen" method="POST">
 	                    			<input name="orderId" type="hidden" value="${warenkorb.orderId}">

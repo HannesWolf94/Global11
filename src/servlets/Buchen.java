@@ -30,39 +30,38 @@ public class Buchen extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Order bestellung = new Order();
-
+		
 		// bestellung.setRechnungsbetrag(Double.parseDouble(request.getParameter("rechnungsbetrag")));
 
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 
 		speichern(bestellung, user);
+		delete(user);
 		request.setAttribute("bestellung", bestellung);
 		response.sendRedirect("html/buchungsbestaetigung.jsp");
 	}
 
 	private void speichern(Order bestellung, User user) throws ServletException {
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("INSERT INTO orders (user_id) VALUES (?); DELETE FROM warenkorb WHERE user_id = ?")) {
+				PreparedStatement pstmt = con.prepareStatement("INSERT INTO orders (user_id) VALUES (?)")) {
 			pstmt.setInt(1, user.getUserId());
 			// pstmt.setDouble(2, bestellung.getRechnungsbetrag());
-
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 	}
 
-//	private void delete(User user) throws ServletException {
-//
-//		try (Connection con = ds.getConnection();
-//				PreparedStatement pstmt = con.prepareStatement("DELETE FROM warenkorb WHERE user_id = ?")) {
-//			pstmt.setInt(1, user.getUserId());
-//			pstmt.executeUpdate();
-//		} catch (Exception ex) {
-//			throw new ServletException(ex.getMessage());
-//		}
-//	}
+	private void delete(User user) throws ServletException {
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM warenkorb WHERE user_id = ?")) {
+			pstmt.setInt(1, user.getUserId());
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
