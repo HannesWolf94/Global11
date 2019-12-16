@@ -31,24 +31,18 @@ public class KategorieAnzeigen extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String sql = "SELECT * FROM category";
 		
 		ArrayList<Kategorie> kategorieList = new ArrayList<>();
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement(sql);
+			PreparedStatement pstm = con.prepareStatement( "SELECT * FROM category");
 			ResultSet rs = pstm.executeQuery();
-
-			int kategorieId;
-			String kategorie;
 			
 
 			while (rs.next()) {
 				Kategorie form = new Kategorie();
-				kategorieId = rs.getInt("cat_id");
-				form.setKategorieId(kategorieId);
-				kategorie = rs.getString("cat_description");
-				form.setKategorie(kategorie);
+				form.setKategorieId(rs.getInt("cat_id"));
+				form.setKategorie(("cat_description"));
 				
 
 				kategorieList.add(form);

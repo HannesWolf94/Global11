@@ -34,12 +34,10 @@ public class Kontobereich extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-				
-		String sql = "SELECT * FROM users WHERE email = ?";
 
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement(sql);
+			PreparedStatement pstm = con.prepareStatement("SELECT * FROM users WHERE email = ?");
 			pstm.setString(1, user.getEmail());
 
 			ResultSet rs = pstm.executeQuery();
