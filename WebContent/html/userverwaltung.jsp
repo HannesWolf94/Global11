@@ -47,7 +47,7 @@
 				<fieldset>
 					<div>
 						<label for="email"> Account löschen :</label> 
-						<input type="text" name="email" id="mail" placeholder="Bitte Email eingeben" required>
+						<input type="text" name="email" id="email" placeholder="Bitte Email eingeben" required>
 						<input type="text" name="emailRepeat" id="mailRepeat" placeholder="Email erneut eingeben" required>
 					</div>
 					<div>
@@ -58,15 +58,15 @@
 			<form  id = "UserAendern" action="${pageContext.request.contextPath}/UserAendern" method = "POST">
 				<fieldset>
 					<div>
-						<label for="email"> Account ändern :</label> <br>
-						<input type="text" name="email" id="mail" placeholder="Email" required>
+						<label for="email1"> Account ändern :</label> <br>
+						<input type="text" name="email" id="email1" placeholder="Email" required>
 						<input type="text" name="firstName" id="firstName" placeholder="Vorname" required>
 						<input type="text" name="lastName" id="lastName" placeholder="Nachname" required>
 						<input type="text" name="street" id="street" placeholder="Straße u. Hausnr." required>
 						<input type="text" name="city" id="city" placeholder="PLZ u. Ort" required>
 					</div>
 					<div>
-						<button name="submit" id="button" type="submit">ändern</button>
+						<button name="submitButton" id="button1" type="submit">ändern</button>
 					</div>
 				</fieldset>
 			</form>
