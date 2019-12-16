@@ -1,3 +1,4 @@
+// erstellt von Martin Scherzer
 package servlets;
 
 import javax.annotation.Resource;
@@ -11,9 +12,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.*;
 import beans.User;
-import beans.Warenkorb;
 import beans.Order;
-import beans.Product;
 
 @WebServlet("Buchen")
 
@@ -30,9 +29,8 @@ public class Buchen extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Order bestellung = new Order();
-		
-		// bestellung.setRechnungsbetrag(Double.parseDouble(request.getParameter("rechnungsbetrag")));
-
+		bestellung.setRechnungsbetrag(Double.parseDouble(request.getParameter("rechnungsbetrag")));
+	
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 
@@ -44,9 +42,9 @@ public class Buchen extends HttpServlet {
 
 	private void speichern(Order bestellung, User user) throws ServletException {
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("INSERT INTO orders (user_id) VALUES (?)")) {
+				PreparedStatement pstmt = con.prepareStatement("INSERT INTO orders (user_id, rechnungsbetrag) VALUES (?, ?)")) {
 			pstmt.setInt(1, user.getUserId());
-			// pstmt.setDouble(2, bestellung.getRechnungsbetrag());
+			pstmt.setDouble(2, bestellung.getRechnungsbetrag());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
@@ -67,5 +65,4 @@ public class Buchen extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

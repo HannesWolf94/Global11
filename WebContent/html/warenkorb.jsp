@@ -1,3 +1,4 @@
+<!-- erstellt von Johannes Wolf -->
 <%@page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -61,8 +62,11 @@
 						</c:forEach>
 					</tbody>
 				</table>
+	
+			<p>Rechnungsbetrag: <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${order.rechnungsbetrag}"/>€</p>
 
             <form action="../Buchen" method="POST">
+            	<input name="rechnungsbetrag" type="hidden" value="${order.rechnungsbetrag}">
                <button name="bestellen" type="submit"> Jetzt bestellen </button>
             </form>
 		<div id="footer">
