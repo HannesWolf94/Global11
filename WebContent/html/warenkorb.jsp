@@ -61,6 +61,8 @@
 						</c:forEach>
 					</tbody>
 				</table>
+	
+			<p>Rechnungsbetrag: <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${order.rechnungsbetrag}"/>€</p>
 
             <form action="../Buchen" method="POST">
                <button name="bestellen" type="submit"> Jetzt bestellen </button>

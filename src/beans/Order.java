@@ -13,26 +13,8 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int rechnungsnummer;
-//	private int orderId;
 	private int userId;
 	private double rechnungsbetrag;
-	private Date rechnungsdatum;
-
-//	public Integer orderId() {
-//		return orderId;
-//	}
-//
-//	public void setOrderId(Integer orderId) {
-//		this.orderId = orderId;
-//	}
-
-	public double getGesatmpreis() {
-		return rechnungsbetrag;
-	}
-
-	public void setRechnungsbetrag(Double rechnungsbetrag) {
-		this.rechnungsbetrag = rechnungsbetrag;
-	}
 
 	public int getUserId() {
 		return userId;
@@ -50,12 +32,12 @@ public class Order implements Serializable {
 		this.rechnungsnummer = rechnungsnummer;
 	}
 
-	public Date getRechnungsdatum() {
-		return rechnungsdatum;
+	public double getRechnungsbetrag() {
+		return rechnungsbetrag;
 	}
 
-	public void setRechnungsdatum(java.util.Date rechnungsdatum) {
-		this.rechnungsdatum = (Date) rechnungsdatum;
+	public void setRechnungsbetrag(double rechnungsbetrag) {
+		this.rechnungsbetrag = rechnungsbetrag;
 	}
 
 }

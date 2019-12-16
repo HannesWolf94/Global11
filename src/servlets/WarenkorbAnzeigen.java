@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.sql.*;
 import beans.Warenkorb;
+import beans.Order;
 import beans.User;
 
 @WebServlet("WarenkorbAnzeigen")
@@ -24,7 +25,6 @@ public class WarenkorbAnzeigen extends HttpServlet {
 
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
-
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -35,6 +35,9 @@ public class WarenkorbAnzeigen extends HttpServlet {
 		User user = (User) session.getAttribute("user");
 		
 		
+		double rechnungsbetrag = 0.00;
+		Order order = new Order(); 
+			
 		try {
 			final Connection con = ds.getConnection();
 			PreparedStatement pstm = con.prepareStatement("SELECT warenkorb.order_id, warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number, warenkorb.gesamtpreis FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
@@ -57,22 +60,20 @@ public class WarenkorbAnzeigen extends HttpServlet {
 				warenkorb.setGesamtpreis(rs.getDouble("gesamtpreis"));
 				warenkorbList.add(warenkorb);
 			}
-			request.setAttribute("warenkorbList", warenkorbList);
-			con.close();
 			
 			for(Warenkorb w : warenkorbList){
-				System.out.println(w.getGesamtpreis());
-				}
+				rechnungsbetrag = rechnungsbetrag + w.getGesamtpreis();	
+			}
+			System.out.println(rechnungsbetrag);
+			order.setRechnungsbetrag(rechnungsbetrag);
 			
+			request.setAttribute("order", order);
+			request.setAttribute("warenkorbList", warenkorbList);
+			
+			con.close();	
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
-		
-
-		
-		
-		
-		
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/warenkorb.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -80,5 +81,4 @@ public class WarenkorbAnzeigen extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
