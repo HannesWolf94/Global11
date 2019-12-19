@@ -1,5 +1,6 @@
 //erstellt von Johannes Wolf
 package servlets;
+
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,7 +27,7 @@ public class WarenkorbAnzeigen extends HttpServlet {
 
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -34,18 +35,18 @@ public class WarenkorbAnzeigen extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-		
-		
+
 		double rechnungsbetrag = 0.00;
-		Order order = new Order(); 
-			
+		Order order = new Order();
+
 		try {
 			final Connection con = ds.getConnection();
-			PreparedStatement pstm = con.prepareStatement("SELECT warenkorb.order_id, warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number, warenkorb.gesamtpreis FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
-			
+			PreparedStatement pstm = con.prepareStatement(
+					"SELECT warenkorb.order_id, warenkorb.user_id, product.prod_id, product.cat_description, product.prod_label, product.prod_type, product.prod_colour, product.prod_price, warenkorb.size, warenkorb.number, warenkorb.gesamtpreis FROM warenkorb INNER JOIN product ON warenkorb.prod_id = product.prod_id WHERE warenkorb.user_id = ?");
+
 			pstm.setInt(1, user.getUserId());
 			ResultSet rs = pstm.executeQuery();
-							
+
 			while (rs.next()) {
 				Warenkorb warenkorb = new Warenkorb();
 				warenkorb.setOrderId(rs.getInt("order_id"));
@@ -61,25 +62,25 @@ public class WarenkorbAnzeigen extends HttpServlet {
 				warenkorb.setGesamtpreis(rs.getDouble("gesamtpreis"));
 				warenkorbList.add(warenkorb);
 			}
-			
-			for(Warenkorb w : warenkorbList){
-				rechnungsbetrag = rechnungsbetrag + w.getGesamtpreis();	
+
+			for (Warenkorb w : warenkorbList) {
+				rechnungsbetrag = rechnungsbetrag + w.getGesamtpreis();
 			}
-			System.out.println(rechnungsbetrag);
 			order.setRechnungsbetrag(rechnungsbetrag);
-			
+
 			request.setAttribute("order", order);
 			request.setAttribute("warenkorbList", warenkorbList);
-			
-			con.close();	
+
+			con.close();
 		} catch (Exception ex) {
 			ex.getMessage();
 		}
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/warenkorb.jsp");
 		dispatcher.forward(request, response);
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 }

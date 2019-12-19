@@ -19,7 +19,6 @@ label {
 	font-weight: bold;
 	min-width: 15em;
 	display: inline-block;
-	text-align: left;
 	cursor: pointer;
 	padding: 10px;
 }
@@ -27,6 +26,7 @@ label {
 input {
 	width: 250px;
 	margin: 5px;
+	font-size: 15pt;
 }
 
 input:hover {
@@ -71,4 +71,24 @@ th, td {
 	padding: 8px;
 	font-size: 12pt;
 	border-bottom: 1px solid #ddd;
+}
+
+#eingabeanzahl {
+	width: 50px;
+	font-size: 12pt;
+}
+
+.gesamtbetrag {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20pt;
+}
+
+.login {
+	font-size: 20pt;
+	text-align: center;
+}
+
+.registrierung {
+	text-align: center;
 }

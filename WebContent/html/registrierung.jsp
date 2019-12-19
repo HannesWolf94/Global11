@@ -19,8 +19,8 @@
 		<div id="header">
 			<%@include file="../jspf/header.jspf"%>
 		</div>
-		
-		<form action="../Registrierung" method="post">
+			<h1>Registrieren</h1>
+		<form class="registrierung" action="../Registrierung" method="post">
 			<div>
 
 				<label for="email"> E-Mail:</label> <input type="email" name="email" id="mail" maxlength="64" required autofocus><br/>

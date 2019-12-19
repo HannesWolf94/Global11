@@ -25,7 +25,7 @@
 			<fieldset>
 				<legend>Produktsuche</legend>
 				<div>
-				<label for="kategorie">Suche nach Kategorie:</label> <input type="text" name="kategorie" id="kategorie" placeholder="Kategorie">
+				<label for="kategorie">Suche nach Kategorie:</label> <input type="text" name="kategorie" id="kategorie" placeholder="Kategorie"> <br>
 					<label for="label">Suche nach Hersteller:</label> <input type="text" name="label" id="label" placeholder="Hersteller">
 					<button type="submit" id="submit" name="submit">Suchen</button>
 					<button name="reset" type="reset">Zurücksetzen</button>

@@ -27,7 +27,7 @@
 			<table>
 				<tbody>
 					<tr>
-						<th>ID</th>
+						<th>Artikelnummer</th>
 						<th>Kategorie</th>
 						<th>Marke</th>
 						<th>Typ</th>

@@ -28,6 +28,7 @@
 							<th>Typ</th>
 							<th>Farbe</th>
 							<th>Preis</th>
+							<th></th>
 							<th>Größe</th>
 							<th>Anzahl</th>
 							<th>Gesamtpreis</th>
@@ -43,13 +44,12 @@
 	                    	<td>${warenkorb.size}</td> 
 	                    	<td>
 		                    	<form action="../WarenkorbAendern" method="POST">
-		                    		<input type="number" name="anzahl" id="anzahl" min="1" max="99" value="${warenkorb.anzahl}">
-		                    		 <input name="gesamtpreis" type="hidden" value="${warenkorb.gesamtpreis}">	
+		                    		<input type="number" name="eingabeanzahl" id="eingabeanzahl" min="1" max="99" value="${warenkorb.anzahl}">
+		                    		<input name="gesamtpreis" type="hidden" value="${warenkorb.gesamtpreis}">	
 		                       	    <input name="orderId" type="hidden" value="${warenkorb.orderId}">
 		                       	    <input name="price" type="hidden" value="${warenkorb.price}">
 		                    		<button name="aendern" type="submit"> ändern </button>
 		                    	</form>
-		                    	
 	                    	</td>
 	                    	<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${warenkorb.gesamtpreis}"/>€<td>
 	                    	<td>
@@ -63,12 +63,17 @@
 					</tbody>
 				</table>
 	
-			<p>Rechnungsbetrag: <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${order.rechnungsbetrag}"/>€</p>
-
-            <form action="../Buchen" method="POST">
+			<p class="gesamtbetrag"> Gesamtbetrag: <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${order.rechnungsbetrag}"/>€</p>
+			<c:choose>
+	           <c:when test="${order.rechnungsbetrag != 0.00 }">
+				<form action="../Buchen" method="POST">
             	<input name="rechnungsbetrag" type="hidden" value="${order.rechnungsbetrag}">
                <button name="bestellen" type="submit"> Jetzt bestellen </button>
-            </form>
+          	  </form>
+				</c:when>
+			</c:choose>
+            
+            
 		<div id="footer">
 			<%@include file="../jspf/footer.jspf"%>
 		</div>

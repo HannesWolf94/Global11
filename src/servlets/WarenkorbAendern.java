@@ -33,7 +33,7 @@ public class WarenkorbAendern extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		int orderId = Integer.parseInt((request.getParameter("orderId")));
-		int anzahl = Integer.parseInt((request.getParameter("anzahl")));
+		int anzahl = Integer.parseInt((request.getParameter("eingabeanzahl")));
 		double price = Double.parseDouble(request.getParameter("price"));
 		double gesamtpreis = berechneGesamtpreis(anzahl, price);
 
