@@ -45,9 +45,9 @@
 					</tbody>
 				</table>
 			<form  id = "UserLoeschen" action="${pageContext.request.contextPath}/UserLoeschen" method = "POST">
-				<fieldset>
+				<fieldset><legend> Account löschen</legend>
 					<div>
-						<label for="email"> Account löschen :</label> 
+						<label for="email"></label> <br>
 						<input type="text" name="email" id="email" placeholder="Bitte Email eingeben" required>
 						<input type="text" name="emailRepeat" id="mailRepeat" placeholder="Email erneut eingeben" required>
 					</div>
@@ -57,9 +57,9 @@
 				</fieldset>
 			</form>
 			<form  id = "UserAendern" action="${pageContext.request.contextPath}/UserAendern" method = "POST">
-				<fieldset>
+				<fieldset><legend> Account ändern</legend>
 					<div>
-						<label for="email1"> Account ändern :</label> <br>
+						<label for="email1"></label> <br>
 						<input type="text" name="email" id="email1" placeholder="Email" required>
 						<input type="text" name="firstName" id="firstName" placeholder="Vorname" required>
 						<input type="text" name="lastName" id="lastName" placeholder="Nachname" required>

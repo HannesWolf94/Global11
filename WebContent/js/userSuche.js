@@ -21,7 +21,7 @@ function changeContent() {
 				return;
 			}
 
-			var ausgabe = "<table><tr><th>Id</th><th>Email</th><th>Vorname</th><th>Nachname</th><th>Straße u. Hausnr.</th><th>PLZ u. Ort</th></tr>";
+			var ausgabe = "<table><tr><th>ID</th><th>Email</th><th>Vorname</th><th>Nachname</th><th>Straße u. Hausnr.</th><th>PLZ u. Ort</th></tr>";
 			console.log(usersList.length);
 			for (var i = 0; i < usersList.length; i++) {
 							
@@ -43,7 +43,7 @@ function changeContent() {
 			
 			document.getElementById("hitlist").innerHTML = ausgabe;
 		}
-	};
+	}
 	xmlhttp.open("GET", searchURL, true);
 	xmlhttp.send();
 }

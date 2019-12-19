@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
-
 import beans.User;
 
 @WebServlet("UserSuche")
@@ -28,13 +26,13 @@ public class UserSuche extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
+		request.setCharacterEncoding("UTF-8");
 		String lastName = request.getParameter("lastName2");
 		List<User> users = search(lastName);
 			
 		request.setAttribute("users", users);
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/testen.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/userErgebnis.jsp");
 		dispatcher.forward(request, response);	
 	}
 
@@ -66,7 +64,6 @@ public class UserSuche extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 }
