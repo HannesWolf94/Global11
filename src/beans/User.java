@@ -1,3 +1,4 @@
+//erstellt von Michael Haid
 package beans;
 import java.io.Serializable;
 import javax.ejb.LocalBean;

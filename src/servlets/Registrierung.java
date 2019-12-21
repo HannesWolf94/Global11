@@ -39,11 +39,9 @@ public class Registrierung extends HttpServlet {
 		form.setLastName(request.getParameter("lastname"));
 		form.setStreet(request.getParameter("street"));
 		form.setCity(request.getParameter("city"));
-//		response.sendRedirect("html/welcomeUser.jsp");
 		
 		
 		if(emailCheck(form.getEmail())) {
-//			Fehlermeldung nicht auf UserverwaltungAdmin verweisen
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/registrierung.jsp");
             dispatcher.forward(request, response);
 		
@@ -56,7 +54,6 @@ public class Registrierung extends HttpServlet {
 				final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeUser.jsp");
 				dispatcher.forward(request, response);
 	        } else {
-//				Fehlermeldung nicht auf userverwaltung.jsp verweisen
 	        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/index.jsp");
 	            dispatcher.forward(request, response);
 	        }

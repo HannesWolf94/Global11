@@ -1,4 +1,4 @@
-<!-- erstellt von Martin Scherzer -->
+<!-- erstellt von Michael Haid und Martin Scherzer -->
 <!-- Prüft ob JavaScript aktiviert ist, wenn nicht leitet er zu einer Fehlerseite. -->
 <noscript>
     <h1 class="logotext">Javascript muss aktiviert werden</h1>

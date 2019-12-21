@@ -1,3 +1,4 @@
+//erstellt von Martin Scherzer
 /* vgl. https://wiki.selfhtml.org/wiki/JavaScript/Navigator/cookieEnabled */
 'use strict';
 document.addEventListener("DOMContentLoaded", cookieCheck);

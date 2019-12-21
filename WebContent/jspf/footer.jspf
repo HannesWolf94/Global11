@@ -1,3 +1,4 @@
+<!-- erstellt von Martin Scherzer -->
 <footer>
 	<ul>
 		<li> <a href="${pageContext.request.contextPath}/html/impressum.jsp">Impressum</a></li>
