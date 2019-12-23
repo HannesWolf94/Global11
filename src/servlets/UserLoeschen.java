@@ -4,6 +4,8 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,42 +23,42 @@ public class UserLoeschen extends HttpServlet {
 	@Resource(lookup = "java:jboss/datasources/MySqlGlobal11DS")
 	private DataSource ds;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8"); // In diesem Format erwartet das Servlet jetzt die Formulardaten
 		String email = request.getParameter("email");
 		String emailRepeat = request.getParameter("emailRepeat");
-		
-		if ((passwordCheck(email, emailRepeat) == true)) {
-			delete(email);
 
-	        final RequestDispatcher dispatcher = request.getRequestDispatcher("UserverwaltungAdmin");
-	        dispatcher.forward(request, response);
-        } else {
-        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
-             dispatcher.forward(request, response);
-        }
-		
-	}
+		User user = new User();
+		user.setEmail(email);
 
-	private void delete(String email) throws ServletException {
-		User user = new User(); 
-		user.setEmail(email); 
-		
-		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("DELETE FROM users WHERE email = ?;")) {
-			pstmt.setString(1,email);
-			pstmt.executeUpdate();
-		} catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
+		boolean error = false;
+
+		if (email == null || email == "" || emailRepeat == null || emailRepeat == "")
+			error = true;
+		else {
+
+			// Stimmen neues Email und Emailbestätigung überein?
+			if (!email.equals(emailRepeat))
+				error = true;
+
 		}
-	}
-	
-	protected boolean passwordCheck(String email, String emailRepeat) throws ServletException {
-		if (email.equals(emailRepeat)) {
-			return true;
-		} else {
-			return false;
-		}
+
+		if (error) {
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
+			dispatcher.forward(request, response);
+			return;
+		} else if (email.equals(emailRepeat))
+
+			try (Connection con = ds.getConnection();
+					PreparedStatement pstmt = con.prepareStatement("DELETE FROM users WHERE email = ?;")) {
+				pstmt.setString(1, email);
+				pstmt.executeUpdate();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("UserverwaltungAdmin");
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
