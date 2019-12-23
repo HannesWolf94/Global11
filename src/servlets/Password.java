@@ -1,3 +1,4 @@
+//erstellt von Michael Haid
 package servlets;
 import java.io.IOException;
 import java.sql.Connection;
@@ -27,15 +28,15 @@ public class Password extends HttpServlet {
 		String newPassword = request.getParameter("newPassword");
 		String passwordConfirmation = request.getParameter("passwordConfirmation");
 		
-		// Benutzerbean laden
+		
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		String password = user.getPassword();
 
-		// Fehlerfälle überprüfen
+		
 		boolean error = false;
 		
-		// Felder gefüllt?
+		
 		if (newPassword == null || newPassword == "" || passwordConfirmation == null || passwordConfirmation == "" || password == "" || password == null)
 			error = true;
 		else {
@@ -47,19 +48,18 @@ public class Password extends HttpServlet {
 			// Neues und altes Passwort müssen unterschiedlich sein
 			if (newPassword.equals(user.getPassword()))
 				error = true;
-			// Das Passwort, welches in der Bean gespeichert ist, muss mit den aktuellen Passwort übereinstimmen
-			// wenn nein dann error
+			
 		
 		}
 		
-		// Fehler entdeckt? Falls ja, Umleitung zur Fehlerseite
+		
 		if (error) {
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("html/fehlerseite.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}else if((password.equals(request.getParameter("oldPassword"))))
 		
-		// Kein Fehler entdeckt: DB-Zugriff
+		
 		try(Connection conn = ds.getConnection(); 
 			PreparedStatement pstm = conn.prepareStatement("UPDATE users"
 					+ " SET password = ?"

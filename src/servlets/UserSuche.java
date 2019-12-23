@@ -1,4 +1,4 @@
-//erstellt von Johannes Wolf, Michael Haid und Martin Scherzer
+//erstellt von Martin Scherzer
 package servlets;
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-// erstellt von Johannes Wolf und Martin Scherzer
+// erstellt von Martin Scherzer
 "use strict";
 document.addEventListener("DOMContentLoaded", init);
 function init() {

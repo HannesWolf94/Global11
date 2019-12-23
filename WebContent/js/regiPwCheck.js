@@ -1,4 +1,4 @@
-// erstellt von Martin Scherzer
+// erstellt von Michael Haid
 /* Quelle: https://www.w3schools.com/jsref/prop_style_border.asp */
 'use strict';
 document.addEventListener("DOMContentLoaded", init);

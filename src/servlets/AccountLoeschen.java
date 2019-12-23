@@ -25,7 +25,7 @@ public class AccountLoeschen extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8"); // In diesem Format erwartet das Servlet jetzt die Formulardaten
+		request.setCharacterEncoding("UTF-8"); 
 		HttpSession session = request.getSession();
 		User user =  (User) session.getAttribute("user");
 		String email = user.getEmail();
@@ -43,7 +43,7 @@ public class AccountLoeschen extends HttpServlet {
 		}
 		session.invalidate();
 
-		// Weiterleiten an JSP
+		
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/registrierung.jsp");
 		dispatcher.forward(request, response);
 
