@@ -45,11 +45,11 @@
 					</tbody>
 				</table>
 			<form  id = "UserLoeschen" action="${pageContext.request.contextPath}/UserLoeschen" method = "POST">
-				<fieldset><legend> Account löschen</legend>
+				<fieldset><legend> User löschen</legend>
 					<div>
 						<label for="email"></label> <br>
 						<input type="text" name="email" id="email" placeholder="Bitte Email eingeben" required>
-						<input type="text" name="emailRepeat" id="mailRepeat" placeholder="Email erneut eingeben" required>
+						<input type="text" name="emailRepeat" id="emailRepeat" placeholder="Email erneut eingeben" required>
 					</div>
 					<div>
 						<button name="submitButton" id="button" type="submit">löschen</button>
@@ -57,10 +57,10 @@
 				</fieldset>
 			</form>
 			<form  id = "UserAendern" action="${pageContext.request.contextPath}/UserAendern" method = "POST">
-				<fieldset><legend> Account ändern</legend>
+				<fieldset><legend> User ändern</legend>
 					<div>
 						<label for="email1"></label> <br>
-						<input type="text" name="email" id="email1" placeholder="Email" required>
+						<input type="text" name="email1" id="email1" placeholder="Email" required>
 						<input type="text" name="firstName" id="firstName" placeholder="Vorname" required>
 						<input type="text" name="lastName" id="lastName" placeholder="Nachname" required>
 						<input type="text" name="street" id="street" placeholder="Straße u. Hausnr." required>
@@ -72,11 +72,11 @@
 				</fieldset>
 			</form>
 			
-		<form id="myForm">
-			<fieldset><legend>Mitarbeitersuche</legend>
+		<form id="UserSuchen">
+			<fieldset><legend>User suchen</legend>
 				<div>
 				  <label for="lastName2">Nachname:</label>
-				  <input type="text" name="lastName2" id="lastName2" placeholder="Ihr Nachname">
+				  <input type="text" name="lastName2" id="lastName2" placeholder="Nachname">
 				</div>
 				<div>
 				  <button type="button" id="button2" name="button2" >Absenden</button>
