@@ -1,3 +1,4 @@
+//erstellt von Martin Scherzer
 package servlets;
 
 import javax.servlet.ServletException;
@@ -57,18 +58,13 @@ public class Login extends HttpServlet {
 					if (rs != null && rs.next()) {
 						User form = new User();
 						form.setUserId(Integer.parseInt(rs.getString("user_id")));
-						String email = rs.getString("email");
-						form.setEmail(email);
-						String firstname = rs.getString("first_name");
-						form.setFirstName(firstname);
-						String lastname = rs.getString("last_name");
-						form.setLastName(lastname);
-						String street = rs.getString("street");
-						form.setStreet(street);
-						String city = rs.getString("city");
-						form.setCity(city);
-						String password = rs.getString("password");
-						form.setPassword(password);
+						form.setEmail(rs.getString("email"));
+						
+						form.setFirstName(rs.getString("first_name"));
+						form.setLastName(rs.getString("last_name"));
+						form.setStreet(rs.getString("street"));
+						form.setCity(rs.getString("city"));
+						form.setPassword(rs.getString("password"));
 						request.setAttribute("form", form);
 						HttpSession session = request.getSession();
 						session.setAttribute("user", form);
