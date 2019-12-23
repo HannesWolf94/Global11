@@ -94,6 +94,8 @@ th, td {
 	text-align: center;
 }
 
+
+/*  https://stackoverflow.com/questions/54190149/how-to-zoom-image-on-hover-with-css/54190398 */
 .zoom{
 	margin: 0 auto;
 	overflow:hidden;
@@ -105,4 +107,17 @@ th, td {
 
 .zoom:hover img{
 	transform: scale(2,2);
+}
+
+#einzelschuh {
+	text-align: center;
+}
+
+#einzelschuh h2 {
+	text-align:center;
+}
+
+/* https://www.w3schools.com/csSref/sel_hover.asp */
+a.linkstyle:hover, a.linkstyle:active {
+	font-size: 150%;
 }
