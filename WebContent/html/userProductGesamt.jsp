@@ -48,7 +48,11 @@
 								<td>${product.type}</td>
 								<td>${product.colour}</td>
 								<td><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${product.price}"/>€</td> 
-								<td><img src="../Bild?prod_id=${product.prodId}" width="200" height="200" alt="Schuh"></td>
+								<td>
+									<div class = "zoom">	
+										<img src="../Bild?prod_id=${product.prodId}" width="200" height="200" alt="Schuh">
+									</div>
+								</td>
 								<td>
 									<div class="auswaehlen">
 										<form action="../UserProductEinzeln" method="POST">

@@ -89,6 +89,20 @@ th, td {
 	text-align: center;
 }
 
+
 .registrierung {
 	text-align: center;
+}
+
+.zoom{
+	margin: 0 auto;
+	overflow:hidden;
+}
+
+.zoom img{
+	transition: all 2s ease-in-out; 
+}
+
+.zoom:hover img{
+	transform: scale(2,2);
 }
