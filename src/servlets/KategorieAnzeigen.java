@@ -42,7 +42,7 @@ public class KategorieAnzeigen extends HttpServlet {
 			while (rs.next()) {
 				Kategorie form = new Kategorie();
 				form.setKategorieId(rs.getInt("cat_id"));
-				form.setKategorie(("cat_description"));
+				form.setKategorie(rs.getString("cat_description"));
 				
 
 				kategorieList.add(form);
