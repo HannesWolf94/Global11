@@ -29,7 +29,7 @@ public class UserAendern extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8"); // In diesem Format erwartet das Servlet jetzt die Formulardaten
 		User form = new User();
-		form.setEmail(request.getParameter("email"));
+		form.setEmail(request.getParameter("email1"));
 		form.setFirstName(request.getParameter("firstName"));
 		form.setLastName(request.getParameter("lastName"));
 		form.setStreet(request.getParameter("street"));
