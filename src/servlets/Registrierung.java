@@ -52,7 +52,7 @@ public class Registrierung extends HttpServlet {
 	            
 				HttpSession session = request.getSession();
 				session.setAttribute("user", form);
-				final RequestDispatcher dispatcher = request.getRequestDispatcher("html/welcomeUser.jsp");
+				final RequestDispatcher dispatcher = request.getRequestDispatcher("Logout");
 				dispatcher.forward(request, response);
 	        } else {
 	        	final RequestDispatcher dispatcher = request.getRequestDispatcher("html/index.jsp");
