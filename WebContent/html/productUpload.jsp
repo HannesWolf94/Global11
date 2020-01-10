@@ -46,7 +46,7 @@
 				<option value="rot">
 			</datalist>
 			<label for="price"> Preis:</label> <input type="text" name="price"
-				id="price" placeholder="100.00" required><br /> <label
+				id="price" placeholder="100.00" pattern="[0-9]+([\.][0-9]+)?" required><br /> <label
 				for="image"> Bild: </label> <input type="file" name="image"
 				id="image" accept="image/*" required><br />
 			<button class="button" type="submit" value="submit">upload</button>
